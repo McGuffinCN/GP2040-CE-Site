@@ -14,145 +14,143 @@ import { ColorBlock } from "@site/src/components/LEDColors";
 
 # RGB LEDs
 
-Select the button labels to be displayed in the usage guide:
+选择按钮标签以在使用指南中显示：
 
 <InputLabelSelector />
 
-## Hardware Requirements
+## 硬件需求
 
-GP2040-CE requires that addressable RGB LEDs be used for nearly all LED functions.
+GP2040-CE 需要使用可寻址 RGB LEDs 来实现几乎所有 LED 功能。
 
-The exception to this are [Player LEDs](./web-configurator/menu-pages/05-led-configuration.mdx), which can use pulse width modulation (PWM) to vary
-the brightness of the LEDs.
+例外的是[玩家 LED](./web-configurator/menu-pages/05-led-configuration.mdx)，它们可以使用脉宽调制（PWM）来调节 LED 的亮度。
 
-## RGB LED Hotkeys
+## RGB LED 热键
 
-| Hotkey                                 | Description                |
-| -------------------------------------- | -------------------------- |
-| <Hotkey buttons={["S1", "S2", "B3"]}/> | Next Animation             |
-| <Hotkey buttons={["S1", "S2", "B1"]}/> | Previous Animation         |
-| <Hotkey buttons={["S1", "S2", "B4"]}/> | Brightness Up              |
-| <Hotkey buttons={["S1", "S2", "B2"]}/> | Brightness Down            |
-| <Hotkey buttons={["S1", "S2", "R1"]}/> | LED Parameter Up           |
-| <Hotkey buttons={["S1", "S2", "R2"]}/> | LED Parameter Down         |
-| <Hotkey buttons={["S1", "S2", "L1"]}/> | Pressed Parameter Up       |
-| <Hotkey buttons={["S1", "S2", "L2"]}/> | Pressed Parameter Down     |
-| <Hotkey buttons={["S1", "S2", "L3"]}/> | Decrease LED Fade Duration |
-| <Hotkey buttons={["S1", "S2", "R3"]}/> | Increase LED Fade Duration |
-
-:::note
-
-The `LED Parameter` hotkeys may affect color, speed or theme depending on the current RGB LED animation.
-
-The `Pressed Parameter` options will change the colors/effects for the on-press animations.
-
-:::
-
-### RGB LED Animations
-
-Using these hotkeys will cycle through the animation modes. The following animations are available:
-
-| Name          | Description                                                                                                                    |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Rainbow Chase | A fading, rainbow cycling lines travels across the LED chain                                                                   |
-| Static Theme  | Set the LEDs to a pre-defined static theme                                                                                     |
-| Custom Theme  | Set the LEDs to a custom theme set up in [WebConfig - Custom LED Theme](./web-configurator/menu-pages/06-custom-led-theme.mdx) |
-| Static Color  | Sets all LEDs to the same color                                                                                                |
-| Rainbow Cycle | All LEDs cycle through the color wheel displaying the same color                                                               |
-
-### RGB LED Brightness
-
-These hotkeys will increase or decrease the brightness of the controller LEDs based on the `Brightness Steps` and
-`Max Brightness` settings in [LED Configuration](/docs/web-configurator/menu-pages/05-led-configuration.mdx#rgb-led-configuration).
-
-### RGB LED Parameter
-
-Depending on the specific animation, changing the LED parameter will result in different behavior.
-
-| Name          | LED Parameter                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Rainbow Chase | Adjust animation speed                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| Static Theme  | Cycle through themes, see [RGB LED Static Themes](#rgb-led-static-themes) for details.                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| Static Color  | Cycle through colors: Black<ColorBlock color="black" />, White<ColorBlock color="white" />, Red<ColorBlock color="red" />, Orange<ColorBlock color="orange" />, Yellow<ColorBlock color="yellow" />, Lime Green<ColorBlock color="limegreen" />, Green<ColorBlock color="green" />, Seafoam<ColorBlock color="seafoam" />, Aqua<ColorBlock color="aqua" />, Sky Blue<ColorBlock color="sky blue" />, Blue<ColorBlock color="blue" />, Purple<ColorBlock color="purple" />, Pink<ColorBlock color="pink" />, Magenta<ColorBlock color="magenta" /> |
-| Rainbow Cycle | Adjust animation speed                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-
-:::note Custom LED Theme
-
-When using a custom LED theme, these hotkeys will not affect the settings in any other animation mode.
-
-:::
-
-### RGB LED Pressed Parameter
-
-Changes the color the LED changes to when the button is pressed
-
-Cycle through colors: Black<ColorBlock color="black" />, White<ColorBlock color="white" />, Red<ColorBlock color="red" />,
-Orange<ColorBlock color="orange" />, Yellow<ColorBlock color="yellow" />, Lime Green<ColorBlock color="limegreen" />,
-Green<ColorBlock color="green" />, Seafoam<ColorBlock color="seafoam" />, Aqua<ColorBlock color="aqua" />,
-Sky Blue<ColorBlock color="sky blue" />, Blue<ColorBlock color="blue" />, Purple<ColorBlock color="purple" />,
-Pink<ColorBlock color="pink" />, Magenta<ColorBlock color="magenta" />
-
-:::note Custom LED Theme
-
-When using a custom LED theme, these hotkeys will not affect the settings in any other animation mode.
-
-:::
-
-### RGB LED Fade Duration
-
-Using these hotkeys will affect the duration for the fade animation on the LED after a button press.
+| 热键                                   | 描述                         |
+| -------------------------------------- | ---------------------------- |
+| <Hotkey buttons={["S1", "S2", "B3"]}/> | 下一个动画                   |
+| <Hotkey buttons={["S1", "S2", "B1"]}/> | 上一个动画                   |
+| <Hotkey buttons={["S1", "S2", "B4"]}/> | 亮度增加                     |
+| <Hotkey buttons={["S1", "S2", "B2"]}/> | 亮度减少                     |
+| <Hotkey buttons={["S1", "S2", "R1"]}/> | LED 参数增加                 |
+| <Hotkey buttons={["S1", "S2", "R2"]}/> | LED 参数减少                 |
+| <Hotkey buttons={["S1", "S2", "L1"]}/> | 按下参数增加                 |
+| <Hotkey buttons={["S1", "S2", "L2"]}/> | 按下参数减少                 |
+| <Hotkey buttons={["S1", "S2", "L3"]}/> | 减少 LED 渐变持续时间        |
+| <Hotkey buttons={["S1", "S2", "R3"]}/> | 增加 LED 渐变持续时间        |
 
 :::note
 
-This duration is shared across all themes and buttons and cannot be set individually per theme nor per button.
+`LED Parameter` 热键可能会根据当前 RGB LED 动画影响颜色、速度或主题。
+
+`Pressed Parameter` 选项将更改按压动画的颜色/效果。
 
 :::
 
-| Parameter        | Description |
-| ---------------- | ----------- |
-| Default Duration | 500ms       |
-| Duration Range   | 0ms - 500ms |
-| Hotkey Increment | 500ms       |
+### RGB LED 动画
+
+使用这些热键可以循环切换动画模式。可用的动画包括：
+
+| 名称           | 描述                                                                                                                  |
+| -------------- | --------------------------------------------------------------------------------------------------------------------- |
+| 彩虹追逐       | 一个渐变的彩虹循环线在 LED 链上移动                                                                                     |
+| 静态主题       | 将 LED 设置为预定义的静态主题                                                                                         |
+| 自定义主题     | 将 LED 设置为在[WebConfig - 自定义 LED 主题](./web-configurator/menu-pages/06-custom-led-theme.mdx)中设置的自定义主题 |
+| 静态颜色       | 将所有 LED 设置为同一种颜色                                                                                           |
+| 彩虹循环       | 所有 LED 通过颜色轮进行循环，显示相同的颜色                                                                           |
+
+### RGB LED 亮度
+
+这些热键将根据 [LED Configuration](/docs/web-configurator/menu-pages/05-led-configuration.mdx#rgb-led-configuration) 中的 `亮度步长` 和 `最大亮度` 设置来增加或减少控制器 LED 的亮度。
+
+### RGB LED 参数
+
+根据特定的动画，更改 LED 参数会导致不同的行为。
+
+| 名称           | LED 参数                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 彩虹追逐       | 调整动画速度                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| 静态主题       | 循环切换主题，详细信息请参见 [RGB LED 静态主题](#rgb-led-static-themes)。                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| 静态颜色       | 循环切换颜色：黑色<ColorBlock color="black" />, 白色<ColorBlock color="white" />, 红色<ColorBlock color="red" />, 橙色<ColorBlock color="orange" />, 黄色<ColorBlock color="yellow" />, 黄绿色<ColorBlock color="limegreen" />, 绿色<ColorBlock color="green" />, 海泡绿<ColorBlock color="seafoam" />, 水色<ColorBlock color="aqua" />, 天蓝<ColorBlock color="sky blue" />, 蓝色<ColorBlock color="blue" />, 紫色<ColorBlock color="purple" />, 粉色<ColorBlock color="pink" />, 洋红<ColorBlock color="magenta" /> |
+| 彩虹循环       | 调整动画速度                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+
+:::note 自定义 LED 主题
+
+使用自定义 LED 主题时，这些热键不会影响任何其他动画模式中的设置。
+
+:::
+
+### RGB LED 按下参数
+
+更改按钮按下时 LED 所变化的颜色。
+
+循环切换颜色：黑色<ColorBlock color="black" />, 白色<ColorBlock color="white" />, 红色<ColorBlock color="red" />,
+橙色<ColorBlock color="orange" />, 黄色<ColorBlock color="yellow" />, 黄绿色<ColorBlock color="limegreen" />,
+绿色<ColorBlock color="green" />, 海泡绿<ColorBlock color="seafoam" />, 水色<ColorBlock color="aqua" />,
+天蓝<ColorBlock color="sky blue" />, 蓝色<ColorBlock color="blue" />, 紫色<ColorBlock color="purple" />,
+粉色<ColorBlock color="pink" />, 洋红<ColorBlock color="magenta" />
+
+:::note 自定义 LED 主题
+
+使用自定义 LED 主题时，这些热键不会影响任何其他动画模式中的设置。
+
+:::
+
+### RGB LED 渐变持续时间
+
+使用这些热键将影响按钮按下后的 LED 渐变动画持续时间。
+
+:::note
+
+该持续时间在所有主题和按钮间共享，不能单独为每个主题或按钮设置。
+
+:::
+
+| 参数              | 描述     |
+| ----------------- | -------- |
+| 默认持续时间      | 500ms    |
+| 持续时间范围      | 0ms - 500ms |
+| 热键增量          | 500ms    |
 
 :::tip
 
-If you want to disable the Fade animation, set the duration to 0ms.
+如果您想禁用渐变动画，请将持续时间设置为 0ms。
 
 :::
 
-## RGB LED Static Themes
+## RGB LED 静态主题
 
-| Name                     | Preview                                                                         |
-| ------------------------ | ------------------------------------------------------------------------------- |
-| **Static Rainbow**       | ![Static Rainbow](./assets/images/led-themes/static-rainbow.png)                |
-| **Xbox**                 | ![Xbox](./assets/images/led-themes/xbox.png)                                    |
-| **Xbox (All)**           | ![Xbox (All)](./assets/images/led-themes/xbox-all.png)                          |
-| **Super Famicom**        | ![Super Famicom](./assets/images/led-themes/super-famicom.png)                  |
-| **Super Famicom (All)**  | ![Super Famicom (All)](./assets/images/led-themes/super-famicom-all.png)        |
-| **PlayStation**          | ![Xbox](./assets/images/led-themes/playstation.png)                             |
-| **PlayStation (All)**    | ![Xbox (All)](./assets/images/led-themes/playstation-all.png)                   |
-| **Neo Geo Straight**     | ![Neo Geo Classic](./assets/images/led-themes/neogeo-straight.png)              |
-| **Neo Geo Curved**       | ![Neo Geo Curved](./assets/images/led-themes/neogeo-curved.png)                 |
-| **Neo Geo Modern**       | ![Neo Geo Modern](./assets/images/led-themes/neogeo-modern.png)                 |
-| **Six Button Fighter**   | ![Six Button Fighter](./assets/images/led-themes/six-button-fighter.png)        |
-| **Six Button Fighter +** | ![Six Button Fighter +](./assets/images/led-themes/six-button-fighter-plus.png) |
-| **Street Fighter 2**     | ![Street Fighter 2](./assets/images/led-themes/street-fighter-2.png)            |
-| **Tekken**               | ![Tekken](./assets/images/led-themes/tekken.png)                                |
-| **Guilty Gear Type-A**   | ![Guilty Gear Type-A](./assets/images/led-themes/guilty-gear-type-a.png)        |
-| **Guilty Gear Type-B**   | ![Guilty Gear Type-B](./assets/images/led-themes/guilty-gear-type-b.png)        |
-| **Guilty Gear Type-C**   | ![Guilty Gear Type-C](./assets/images/led-themes/guilty-gear-type-c.png)        |
-| **Guilty Gear Type-D**   | ![Guilty Gear Type-D](./assets/images/led-themes/guilty-gear-type-d.png)        |
-| **Guilty Gear Type-E**   | ![Guilty Gear Type-E](./assets/images/led-themes/guilty-gear-type-e.png)        |
-| **Fightboard**           | ![Fightboard](./assets/images/led-themes/fightboard.png)                        |
+| 名称                     | 预览                                                                 |
+| ------------------------ | -------------------------------------------------------------------- |
+| **静态彩虹**             | ![Static Rainbow](./assets/images/led-themes/static-rainbow.png)     |
+| **Xbox**                 | ![Xbox](./assets/images/led-themes/xbox.png)                         |
+| **Xbox (所有)**          | ![Xbox (All)](./assets/images/led-themes/xbox-all.png)               |
+| **超级任天堂**           | ![Super Famicom](./assets/images/led-themes/super-famicom.png)       |
+| **超级任天堂 (所有)**    | ![Super Famicom (All)](./assets/images/led-themes/super-famicom-all.png) |
+| **PlayStation**          | ![Xbox](./assets/images/led-themes/playstation.png)                  |
+| **PlayStation (所有)**   | ![Xbox (All)](./assets/images/led-themes/playstation-all.png)        |
+| **新世界直线型**         | ![Neo Geo Classic](./assets/images/led-themes/neogeo-straight.png)   |
+| **新世界曲线型**         | ![Neo Geo Curved](./assets/images/led-themes/neogeo-curved.png)      |
+| **新世界现代型**         | ![Neo Geo Modern](./assets/images/led-themes/neogeo-modern.png)      |
+| **六按钮战士**           | ![Six Button Fighter](./assets/images/led-themes/six-button-fighter.png) |
+| **六按钮战士 +**         | ![Six Button Fighter +](./assets/images/led-themes/six-button-fighter-plus.png) |
+| **街头霸王2**            | ![Street Fighter 2](./assets/images/led-themes/street-fighter-2.png) |
+| **铁拳**                 | ![Tekken](./assets/images/led-themes/tekken.png)                     |
+| **罪恶装备 Type-A**      | ![Guilty Gear Type-A](./assets/images/led-themes/guilty-gear-type-a.png) |
+| **罪恶装备 Type-B**      | ![Guilty Gear Type-B](./assets/images/led-themes/guilty-gear-type-b.png) |
+| **罪恶装备 Type-C**      | ![Guilty Gear Type-C](./assets/images/led-themes/guilty-gear-type-c.png) |
+| **罪恶装备 Type-D**      | ![Guilty Gear Type-D](./assets/images/led-themes/guilty-gear-type-d.png) |
+| **罪恶装备 Type-E**      | ![Guilty Gear Type-E](./assets/images/led-themes/guilty-gear-type-e.png) |
+| **战斗板**               | ![Fightboard](./assets/images/led-themes/fightboard.png)             |
 
-## Case RGB LED Hotkeys
+## 机箱 RGB LED 热键
 
-| Hotkey                                 | Description                                        |
-| -------------------------------------- | -------------------------------------------------- |
-| <Hotkey buttons={["S2", "B3", "B1"]}/> | Cycle between `Ambient`, `Linked`, and `Off` mode. |
-| <Hotkey buttons={["S2", "B4"]}/>       | Increase brightness of case LEDs                   |
-| <Hotkey buttons={["S2", "B2"]}/>       | Decrease brightness of case LEDs                   |
-| <Hotkey buttons={["S2", "R1"]}/>       | Next color for static colors in case LEDs          |
-| <Hotkey buttons={["S2", "R2"]}/>       | Previous color for static colors in case LEDs      |
-| <Hotkey buttons={["S2", "L1"]}/>       | Next Effect in Ambient mode                        |
-| <Hotkey buttons={["S2", "L2"]}/>       | Previous Effect in Ambient mode                    |
+| 热键                                   | 描述                         |
+| -------------------------------------- | ---------------------------- |
+| <Hotkey buttons={["S2", "B3", "B1"]}/> | 在 `Ambient`、`Linked` 和 `Off` 模式间循环 |
+| <Hotkey buttons={["S2", "B4"]}/>       | 增加机箱 LED 的亮度          |
+| <Hotkey buttons={["S2", "B2"]}/>       | 减少机箱 LED 的亮度          |
+| <Hotkey buttons={["S2", "R1"]}/>       | 下一个静态颜色的机箱 LED 颜色  |
+| <Hotkey buttons={["S2", "R2"]}/>       | 上一个静态颜色的机箱 LED 颜色  |
+| <Hotkey buttons={["S2", "L1"]}/>       | Ambient 模式下的下一个效果   |
+| <Hotkey buttons={["S2", "L2"]}/>       | Ambient 模式下的上一个效果   |
