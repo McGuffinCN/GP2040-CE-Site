@@ -11,64 +11,64 @@ import InputLabelSelector, {
   Hotkey,
 } from "@site/src/components/LabelSelector.tsx";
 
-# GP2040-CE Mini Menu
+# GP2040-CE 迷你菜单
 
-Select the button labels to be displayed in the usage guide:
+选择按钮标签以在使用指南中显示：
 
 <InputLabelSelector />
 <br />
 
 :::note
 
-In order to use the Mini Menu you must have a connected OLED display. Most devices will need special configuration in web-config to allow use of the Mini Menu.
+要使用迷你菜单，必须连接一个 OLED 显示屏。大多数设备需要在 web-config 中进行特殊配置以允许使用迷你菜单。
 
 :::
 
-## Setting up the Mini Menu
+## 设置迷你菜单
 
-In order to set up the Mini Menu you will need either spare GPIO pins for dedicated Mini Menu controls or the ability to add controls via hotkeys.
+要设置迷你菜单，您需要备用的 GPIO 引脚用于专用迷你菜单控制，或通过热键添加控制的能力。
 
-There are 7 total inputs that you can assign for the Mini Menu:
+迷你菜单中有 7 个可分配的输入：
 
-- `Menu Up` - Will navigate `up` in the Mini Menu.
-- `Menu Down` - Will navigate `down` in the Mini Menu.
-- `Menu Left` - Will navigate `left` in the Mini Menu.
-- `Menu Right` - Will navigate `right` in the Mini Menu.
-- `Menu Select` - Will `select` or move forward in the Mini Menu.
-- `Menu Back` - Will move `back` in the Mini Menu.
-- `Menu Toggle` - Will `toggle` the Mini Menu on or off.
+- `Menu Up` - 在迷你菜单中向上导航。
+- `Menu Down` - 在迷你菜单中向下导航。
+- `Menu Left` - 在迷你菜单中向左导航。
+- `Menu Right` - 在迷你菜单中向右导航。
+- `Menu Select` - 在迷你菜单中选择或前进。
+- `Menu Back` - 在迷你菜单中后退。
+- `Menu Toggle` - 切换迷你菜单的开启或关闭。
 
-On most builds it is recommended to add a `FN` button and have a function layer for navigating the Mini Menu.
+在大多数情况下，建议添加一个 `FN` 按钮，并使用功能层来导航迷你菜单。
 
 ![GP2040-CE Mini Menu](./assets/images/gpc-mini-menu.png)
 
-Alternatively, the following configuration requires assigning `Menu Toggle` to a pin and using the Gamepad Settings to enable gamepad input on the Mini Menu.
+或者，以下配置需要将 `Menu Toggle` 分配到一个引脚，并使用游戏手柄设置启用游戏手柄输入到迷你菜单。
 
 ![GP2040-CE Mini Menu Pins](./assets/images/gpc-mini-menu-pins.png)
 
-After assigning `Menu Toggle` to a pin, go to the Gamepad Settings, and enable the `Use Gamepad Input for Display Mini Menu`. Please note the inputs for mini menu will also output to your controller when this option is selected.
+将 `Menu Toggle` 分配到一个引脚后，转到游戏手柄设置，启用 `Use Gamepad Input for Display Mini Menu`。请注意，在选择此选项时，Mini 菜单的输入也会输出到您的控制器。
 
 ![GP2040-CE Mini Menu Gamepad Setting](./assets/images/gpc-mini-menu-gamepad.png)
 
-With the `Menu Toggle` and `Use Gamepad Input for Display Mini Menu` options set, the Mini Menu will now only require a single pin assignment to operate. In this mode, you can use <Hotkey buttons={["B1"]}/> for `Menu Select`, <Hotkey buttons={["B2"]}/> for `Menu Back`, and Directional for `Menu Up`, `Menu Down`, `Menu Left`, and `Menu Right`.
+设置 `Menu Toggle` 和 `Use Gamepad Input for Display Mini Menu` 选项后，Mini 菜单现在只需要一个引脚分配即可操作。在此模式中，可以使用 <Hotkey buttons={["B1"]}/> 用于 `Menu Select`，<Hotkey buttons={["B2"]}/> 用于 `Menu Back`，方向键用于 `Menu Up`，`Menu Down`，`Menu Left` 和 `Menu Right`。
 
-## Options in the Mini Menu
+## 迷你菜单中的选项
 
-- `Input Mode` - Allows you to change `input mode` to any of our supported modes.
-- `D-Pad Mode` - Allows you to change the `D-Pad mode` between `D-Pad`, `Left Analog` and `Right Analog`.
-- `SOCD Mode` - Allows you to change the `SOCD mode` between `Up Priority`, `Neutral`, `Last Win`, `First Win` and, where possible, `Off`.
-- `Profile` - Allows you to choose a profile if you have multiple `profiles` set.
-- `Focus Mode` - Allows you to enable or disable `Focus Mode`.
-- `Turbo` - Allows you to enable or disable `Turbo`.
-- `Exit` - Allows you to `Save & Exit` or just `Exit` the Mini Menu. Choosing to `Exit` will not save any changes made.
+- `Input Mode` - 允许您将 `输入模式` 更改为我们的任意支持模式。
+- `D-Pad Mode` - 允许您将 `D-Pad 模式` 更改为 `D-Pad`，`左模拟` 和 `右模拟`。
+- `SOCD Mode` - 允许您将 `SOCD 模式` 更改为 `Up 优先级`，`中立`，`最后获胜`，`第一次获胜` 和（可能的情况下）`关闭`。
+- `Profile` - 如果设置了多个 `配置文件`，允许您选择一个配置文件。
+- `Focus Mode` - 允许您启用或禁用 `聚焦模式`。
+- `Turbo` - 允许您启用或禁用 `Turbo`。
+- `Exit` - 允许您 `保存并退出` 或仅仅 `退出`迷你菜单。选择 `退出` 将不会保存所做的任何更改。
 
 :::note
 
-Please note that accidentally hitting the assigned `Menu Back` button while still in the Mini Menu and having made unsaved changes will bring up a new screen.
+请注意，如果在进行未保存的更改时仍处于迷你菜单中不小心按下了分配的 `Menu Back` 按钮，将会出现一个新屏幕。
 
-You will be warned that:
-"Config has changed. Would you like to save"
+系统会警告您：
+“配置已更改。是否要保存”
 
-You can choose `Yes` or `No`.
+您可以选择 `是` 或 `否`。
 
 :::
