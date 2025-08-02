@@ -1,6 +1,7 @@
 # GP2040-CE网站文档
 
 这是GP2040-CE游戏手柄固件的文档库。它由[Docusaurus](https://docusaurus.io/)提供支持，可以在[这里](https://gp2040-ce.info)找到。
+
 此为由ChatGPT-4O翻译的分支。
 
 ## 构建网站
