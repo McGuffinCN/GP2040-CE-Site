@@ -11,226 +11,226 @@ import InputLabelSelector, {
   Hotkey,
 } from "@site/src/components/LabelSelector.tsx";
 
-# Hotkeys
+# 热键指南
 
-Select the button labels to be displayed in the usage guide:
+选择按钮标签以在使用指南中显示：
 
 <InputLabelSelector />
 <br />
 
 :::note
 
-All of the following hotkey bindings can be changed or assigned to different button combinations in [Hotkeys Settings](./web-configurator/menu-pages/01-settings.mdx#hotkey-settings) section of the Web Configurator.
+所有以下热键绑定都可以在 Web 配置器的[热键设置](./web-configurator/menu-pages/01-settings.mdx#hotkey-settings)中更改或分配为不同的按钮组合。
 
 :::
 
-## No Action
+## 无操作
 
-This hotkey does nothing. Use this hotkey to disable a specific hotkey combination.
+此热键无功能。使用这个热键来禁用特定的热键组合。
 
-## DPad Digital
+## DPad 数字
 
-This hotkey changes the DPad mode such the directions to be read as digital inputs on the DPad.
+此热键将 DPad 模式更改为读取为 DPad 上的数字输入。
 
-**Default**: <Hotkey buttons={["S1", "S2", "Down"]}/>
+**默认**: <Hotkey buttons={["S1", "S2", "Down"]}/>
 
-## DPad Left Analog
+## DPad 左模拟
 
-This hotkey changes the DPad mode to such the directions to be read as inputs on the Left analog joystick. The directional input is always the minimum, maximum, or zero value on that axis.
+此热键将 DPad 模式更改为读取为左模拟操纵杆上的输入。方向输入始终是该轴上的最小值、最大值或零值。
 
-**Default**: <Hotkey buttons={["S1", "S2", "Left"]}/>
+**默认**: <Hotkey buttons={["S1", "S2", "Left"]}/>
 
-## DPad Right Analog
+## DPad 右模拟
 
-This hotkey changes the DPad mode to such the directions to be read as inputs on the Right analog joystick. The directional input is always the minimum, maximum, or zero value on that axis.
+此热键将 DPad 模式更改为读取为右模拟操纵杆上的输入。方向输入始终是该轴上的最小值、最大值或零值。
 
-**Default**: <Hotkey buttons={["S1", "S2", "Right"]}/>
+**默认**: <Hotkey buttons={["S1", "S2", "Right"]}/>
 
-## Home Button
+## Home 按钮
 
-This hotkey emulates a press of the <Hotkey buttons={["A1"]}/> button as not all controllers may have this button natively on the controller.
+此热键模拟 <Hotkey buttons={["A1"]}/> 按钮的按压，因为并非所有控制器本身都有此按钮。
 
-**Default**: <Hotkey buttons={["S1", "S2", "Up"]}/>
+**默认**: <Hotkey buttons={["S1", "S2", "Up"]}/>
 
-## Capture Button
+## Capture 按钮
 
-This hotkey emulates a press of the <Hotkey buttons={["A2"]}/> button as not all controllers may have this button natively on the controller.
+此热键模拟 <Hotkey buttons={["A2"]}/> 按钮的按压，因为并非所有控制器本身都有此按钮。
 
-## SOCD Up Priority
+## SOCD 上优先
 
-This hotkey changes the SOCD cleaning method to resolve to a neutral input (no input) on the X-axis, but prioritize the `Up` input on the Y-axis when both directions are pressed simultaneously.
+此热键将 SOCD 清理方法更改为解决为 X 轴上的中性输入（无输入），但在同时按下两个方向时优先考虑 Y 轴上的 `上` 输入。
 
-**Default**: <Hotkey buttons={["S2", "A1", "Up"]}/>
+**默认**: <Hotkey buttons={["S2", "A1", "Up"]}/>
 
-| 1st Input + 2nd Input | Result  |
-| :-------------------: | :-----: |
-|     Left + Right      | Neutral |
-|     Right + Left      | Neutral |
-|       Up + Down       |   Up    |
-|       Down + Up       |   Up    |
+| 第一输入 + 第二输入 | 结果  |
+| :-----------------: | :---: |
+|     左 + 右         | 中性  |
+|     右 + 左         | 中性  |
+|     上 + 下         |  上   |
+|     下 + 上         |  上   |
 
-## SOCD Neutral
+## SOCD 中性
 
-This hotkey changes the SOCD cleaning method to resolve to a neutral input (no input) on both the X-axis and Y-axis when both directions are pressed simultaneously.
+此热键将 SOCD 清理方法更改为解决为 X 轴和 Y 轴上的中性输入（无输入），当同时按下两个方向时。
 
-**Default**: <Hotkey buttons={["S2", "A1", "Down"]}/>
+**默认**: <Hotkey buttons={["S2", "A1", "Down"]}/>
 
-| 1st Input + 2nd Input | Result  |
-| :-------------------: | :-----: |
-|     Left + Right      | Neutral |
-|     Right + Left      | Neutral |
-|       Up + Down       | Neutral |
-|       Down + Up       | Neutral |
+| 第一输入 + 第二输入 | 结果  |
+| :-----------------: | :---: |
+|     左 + 右         | 中性  |
+|     右 + 左         | 中性  |
+|     上 + 下         | 中性  |
+|     下 + 上         | 中性  |
 
-## SOCD Last Win
+## SOCD 后者优先
 
-This hotkey changes the SOCD cleaning method to prioritize the second directional input on both the X-axis and Y-axis when both directions are pressed simultaneously.
+此热键将 SOCD 清理方法更改为在同时按下两个方向时优先考虑 X 轴和 Y 轴上的第二个方向输入。
 
-**Default**: <Hotkey buttons={["S2", "A1", "Left"]}/>
+**默认**: <Hotkey buttons={["S2", "A1", "Left"]}/>
 
-| 1st Input + 2nd Input | Result |
-| :-------------------: | :----: |
-|     Left + Right      | Right  |
-|     Right + Left      |  Left  |
-|       Up + Down       |  Down  |
-|       Down + Up       |   Up   |
+| 第一输入 + 第二输入 | 结果  |
+| :-----------------: | :---: |
+|     左 + 右         |  右   |
+|     右 + 左         |  左   |
+|     上 + 下         |  下   |
+|     下 + 上         |  上   |
 
-## SOCD First Wins
+## SOCD 前者优先
 
-This hotkey changes the SOCD cleaning method to prioritize the first directional input on both the X-axis and Y-axis when both directions are pressed simultaneously.
+此热键将 SOCD 清理方法更改为在同时按下两个方向时优先考虑 X 轴和 Y 轴上的第一个方向输入。
 
-| 1st Input + 2nd Input | Result |
-| :-------------------: | :----: |
-|     Left + Right      |  Left  |
-|     Right + Left      | Right  |
-|       Up + Down       |   Up   |
-|       Down + Up       |  Down  |
+| 第一输入 + 第二输入 | 结果  |
+| :-----------------: | :---: |
+|     左 + 右         |  左   |
+|     右 + 左         |  右   |
+|     上 + 下         |  上   |
+|     下 + 上         |  下   |
 
-## SOCD Cleaning Off
+## SOCD 清理关闭
 
-This hotkey changes the SOCD cleaning method to not resolve any directional inputs on both the X-axis and Y-axis when both directions are pressed simultaneously. The controller will send both directional inputs.
+此热键将 SOCD 清理方法更改为不在同时按下两个方向时解决 X 轴和 Y 轴上的任何方向输入。控制器将发送两个方向输入。
 
 :::note
 
-This cleaning mode is only available in XInput mode as PS3/DirectInput, PS4 and Nintendo Switch modes do not support setting SOCD Cleaning to Off and will default to Neutral SOCD Cleaning mode.
+此清理模式仅在 XInput 模式下可用，因为 PS3/DirectInput、PS4 和 Nintendo Switch 模式不支持设置 SOCD 清理关闭，会默认设为中性 SOCD 清理模式。
 
 :::
 
-| 1st Input + 2nd Input |     Result     |
-| :-------------------: | :------------: |
-|     Left + Right      | Left and Right |
-|     Right + Left      | Left and Right |
-|       Up + Down       |  Up and Down   |
-|       Down + Up       |  Up and Down   |
+| 第一输入 + 第二输入 |      结果      |
+| :-----------------: | :------------: |
+|     左 + 右         | 左和右        |
+|     右 + 左         | 左和右        |
+|     上 + 下         | 上和下        |
+|     下 + 上         | 上和下        |
 
-## Invert X Axis
+## 反转 X 轴
 
-This hotkey will invert the X-axis of your controller (i.e. pressing the Right button will result a Left input and vice versa).
+此热键将反转控制器的 X 轴（即按下右按钮将导致左输入，反之亦然）。
 
-## Invert Y Axis
+## 反转 Y 轴
 
-This hotkey will invert the Y-axis of your controller (i.e. pressing the Up button will result in a Down input and vice versa).
+此热键将反转控制器的 Y 轴（即按下上按钮将导致下输入，反之亦然）。
 
-## Toggle 4-Way Joystick Mode
+## 切换四向操纵杆模式
 
-This hotkey will prevent non-cardinal directions from registering. When a second cardinal direction input is received, the gamepad direction will change to the newest cardinal direction, similar to [SOCD Last Win](#socd-last-win).
+此热键会防止非主方向的注册。当接收到第二个主方向输入时，游戏手柄方向将更改为最新的主方向，类似于[SOCD 后者优先](#socd-last-win)。
 
-## Toggle DDI 4-Way Joystick Mode
+## 切换 DDI 四向操纵杆模式
 
-This hotkey will alter the behavior of the directional buttons mapped with the [Dual Direction Input](./add-ons/dual-direction-input.mdx) add-on to prevent non-cardinal directions from registering. When a second cardinal direction input is received, the gamepad direction will change to the newest cardinal direction, similar to [SOCD Last Win](#socd-last-win).
+此热键将改变与[双方向输入](./add-ons/dual-direction-input.mdx)插件映射的方向按钮的行为，以防止非主方向的注册。当接收到第二个主方向输入时，游戏手柄方向将更改为最新的主方向，类似于[SOCD 后者优先](#socd-last-win)。
 
-## Load Profile #1-4
+## 加载配置文件 #1-4
 
-This hotkey will load various input to GPIO pin mapping profiles set in [Profile Settings](./web-configurator/menu-pages/02-gpio-pin-mapping.mdx#profiles) in the Web Configurator.
+此热键将加载在 Web 配置器中的[配置文件设置](./web-configurator/menu-pages/02-gpio-pin-mapping.mdx#profiles)中设置的各种输入到 GPIO 引脚映射配置文件。
 
-:::caution Multiple Load Profile Hotkeys
+:::caution 多个加载配置文件热键
 
-It is recommended that multiple `Load Profile` hotkeys be configured so as to prevent you from changing profiles without any way to change the profiles back.
+建议配置多个`加载配置文件`热键，以防您更改配置文件后无法更改回去。
 
 :::
 
-## Next Profile
+## 下一个配置文件
 
-This hotkey cycles through GPIO pin mapping profiles set in [Profile Settings](./web-configurator/menu-pages/02-gpio-pin-mapping.mdx#profiles) in the Web Configurator.
-For example, if `Profile 1` is active, pressing the hotkey will cycle to the next enabled profile, e.g. `Profile 2`. After reaching the last profile, it will cycle back to the first profile.
+此热键循环通过在 Web 配置器中的[配置文件设置](./web-configurator/menu-pages/02-gpio-pin-mapping.mdx#profiles)中设置的 GPIO 引脚映射配置文件。
+例如，如果`配置文件1`是活动的，按下热键将循环到下一个启用的配置文件，例如`配置文件2`。到达最后一个配置文件后，将循环回第一个配置文件。
 
-## Previous Profile
-This hotkey cycles through GPIO pin mapping profiles set in [Profile Settings](./web-configurator/menu-pages/02-gpio-pin-mapping.mdx#profiles) in the Web Configurator.
-For example, if `Profile 2` is active, pressing the hotkey will cycle to the previous enabled profile, e.g. `Profile 1`. After reaching the first profile, it will cycle back to the last profile.
+## 上一个配置文件
 
+此热键循环通过在 Web 配置器中的[配置文件设置](./web-configurator/menu-pages/02-gpio-pin-mapping.mdx#profiles)中设置的 GPIO 引脚映射配置文件。
+例如，如果`配置文件2`是活动的，按下热键将循环到上一个启用的配置文件，例如`配置文件1`。到达第一个配置文件后，将循环回最后一个配置文件。
 
-## L3 Button
+## L3 按钮
 
-This hotkey emulates a press of the <Hotkey buttons={["L3"]}/> button as not all controllers may have this button natively on the controller.
+此热键模拟 <Hotkey buttons={["L3"]}/> 按钮的按压，因为并非所有控制器本身都有此按钮。
 
-## R3 Button
+## R3 按钮
 
-This hotkey emulates a press of the <Hotkey buttons={["R3"]}/> button as not all controllers may have this button natively on the controller.
+此热键模拟 <Hotkey buttons={["R3"]}/> 按钮的按压，因为并非所有控制器本身都有此按钮。
 
-## Touchpad Button
+## 触摸板按钮
 
-This hotkey emulates a press of the Touchpad button as not all controllers may have this button natively on the controller.
+此热键模拟触摸板按钮的按压，因为并非所有控制器本身都有此按钮。
 
 :::note
 
-The Touchpad Button is distinct from the [A1 Button](#a1-button) hotkey as this hotkey will trigger the Touchpad button regardless of whether the toggle for `Switch Touchpad and Share` is on or off.
+触摸板按钮与[A1按钮](#a1-button)热键不同，因为此热键在`切换触摸板和共享`开关启用或禁用时都会触发触摸板按钮。
 
 :::
 
-## Restart GP2040-CE
+## 重启 GP2040-CE
 
-This hotkey will restart the controller without pressing the hardware reset button on the board (if present) or requiring the controller to be unplugged from the PC or game console.
+此热键将在无需按下板上的硬件重置按钮（如果存在）或者拔掉控制器与 PC 或游戏主机连接的情况下重启控制器。
 
-## B1 Button
+## B1 按钮
 
-This hotkey emulates a press of the <Hotkey buttons={["B1"]}/> button as not all controllers may have this button natively on the controller.
+此热键模拟 <Hotkey buttons={["B1"]}/> 按钮的按压，因为并非所有控制器本身都有此按钮。
 
-## B2 Button
+## B2 按钮
 
-This hotkey emulates a press of the <Hotkey buttons={["B2"]}/> button as not all controllers may have this button natively on the controller.
+此热键模拟 <Hotkey buttons={["B2"]}/> 按钮的按压，因为并非所有控制器本身都有此按钮。
 
-## B3 Button
+## B3 按钮
 
-This hotkey emulates a press of the <Hotkey buttons={["B3"]}/> button as not all controllers may have this button natively on the controller.
+此热键模拟 <Hotkey buttons={["B3"]}/> 按钮的按压，因为并非所有控制器本身都有此按钮。
 
-## B4 Button
+## B4 按钮
 
-This hotkey emulates a press of the <Hotkey buttons={["B4"]}/> button as not all controllers may have this button natively on the controller.
+此热键模拟 <Hotkey buttons={["B4"]}/> 按钮的按压，因为并非所有控制器本身都有此按钮。
 
-## L1 Button
+## L1 按钮
 
-This hotkey emulates a press of the <Hotkey buttons={["L1"]}/> button as not all controllers may have this button natively on the controller.
+此热键模拟 <Hotkey buttons={["L1"]}/> 按钮的按压，因为并非所有控制器本身都有此按钮。
 
-## R1 Button
+## R1 按钮
 
-This hotkey emulates a press of the <Hotkey buttons={["R1"]}/> button as not all controllers may have this button natively on the controller.
+此热键模拟 <Hotkey buttons={["R1"]}/> 按钮的按压，因为并非所有控制器本身都有此按钮。
 
-## L2 Button
+## L2 按钮
 
-This hotkey emulates a press of the <Hotkey buttons={["L2"]}/> button as not all controllers may have this button natively on the controller.
+此热键模拟 <Hotkey buttons={["L2"]}/> 按钮的按压，因为并非所有控制器本身都有此按钮。
 
-## R2 Button
+## R2 按钮
 
-This hotkey emulates a press of the <Hotkey buttons={["R2"]}/> button as not all controllers may have this button natively on the controller.
+此热键模拟 <Hotkey buttons={["R2"]}/> 按钮的按压，因为并非所有控制器本身都有此按钮。
 
-## S1 Button
+## S1 按钮
 
-This hotkey emulates a press of the <Hotkey buttons={["S1"]}/> button as not all controllers may have this button natively on the controller.
+此热键模拟 <Hotkey buttons={["S1"]}/> 按钮的按压，因为并非所有控制器本身都有此按钮。
 
-## S2 Button
+## S2 按钮
 
-This hotkey emulates a press of the <Hotkey buttons={["S2"]}/> button as not all controllers may have this button natively on the controller.
+此热键模拟 <Hotkey buttons={["S2"]}/> 按钮的按压，因为并非所有控制器本身都有此按钮。
 
-## A1 Button
+## A1 按钮
 
-This hotkey emulates a press of the <Hotkey buttons={["A1"]}/> button as not all controllers may have this button natively on the controller.
+此热键模拟 <Hotkey buttons={["A1"]}/> 按钮的按压，因为并非所有控制器本身都有此按钮。
 
 :::note
 
-The A1 Button hotkey is distinct from the [Touchpad Button](#touchpad-button) hotkey as this hotkey will trigger either the Touchpad button or Share button depending on whether the toggle for [`Switch Touchpad and Share`](./web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings) is on or off.
+A1 按钮热键与[触摸板按钮](#touchpad-button)热键不同，因为此热键将根据[`切换触摸板和共享`](./web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings)的开启或关闭而触发触摸板按钮或共享按钮。
 
 :::
 
-## A2 Button
+## A2 按钮
 
-This hotkey emulates a press of the <Hotkey buttons={["A2"]}/> button as not all controllers may have this button natively on the controller.
+此热键模拟 <Hotkey buttons={["A2"]}/> 按钮的按压，因为并非所有控制器本身都有此按钮。
