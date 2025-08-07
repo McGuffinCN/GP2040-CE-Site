@@ -5,8 +5,8 @@ import styles from '@site/src/components/labelselector.module.css';
 import { persist } from 'zustand/middleware';
 
 const inputLabels = [
-	{ value: 'GP2040', label: 'GP2040' },
 	{ value: 'XInput', label: 'XInput' },
+	{ value: 'GP2040', label: 'GP2040' },
 	{ value: 'DirectInput', label: 'DirectInput' },
 	{ value: 'Nintendo Switch', label: 'Nintendo Switch' },
 	{ value: 'PS3', label: 'PS3' },
