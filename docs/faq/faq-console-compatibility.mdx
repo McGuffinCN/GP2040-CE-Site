@@ -1,5 +1,5 @@
 ---
-title: 控制台兼容性
+title: 主机兼容性
 # tags:
 # -
 pagination_next: null
@@ -12,9 +12,9 @@ description: "FAQ related to Console Compatibility. Now supports Playstation 4, 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-# FAQ: 控制台兼容性
+# FAQ: 主机兼容性
 
-GP2040-CE 支持多种控制台，以下列出关于控制台兼容性的常见问题。
+GP2040-CE 支持多种主机，以下列出关于主机兼容性的常见问题。
 
 ## 通用问题
 
@@ -35,7 +35,7 @@ Converter/Adapter/Dongle -- USB Port <br> on controller --> Controller([Controll
 
 :::caution 不正确的通过认证设备连接方式
 
-许多用户错误地将控制器插入转换器/适配器，然后再将转换器/适配器插入控制台。这种连接方式并非通过认证的预期用法，会导致转换器/适配器处理输入从而增加延迟。
+许多用户错误地将控制器插入转换器/适配器，然后再将转换器/适配器插入主机。这种连接方式并非通过认证的预期用法，会导致转换器/适配器处理输入从而增加延迟。
 
 请勿按如下方式进行连接：
 
@@ -50,7 +50,7 @@ Controller([Controller]) -- USB Port <br> on Converter --> Converter/Adapter/Don
 
 ### 为什么我的控制器在 PS4 或 PS5 上使用一段时间后不再响应？
 
-PS4 和 PS5 使用认证机制确保仅限授权控制器在控制台上使用。如果设备未实现该认证机制，控制器将在 8 分钟后超时。
+PS4 和 PS5 使用认证机制确保仅限授权控制器在主机上使用。如果设备未实现该认证机制，控制器将在 8 分钟后超时。
 
 在 PC 上使用 PS4 输入模式则不会出现超时，不过建议在 PC 上使用 XInput 模式以获得最佳兼容性。
 
@@ -61,7 +61,7 @@ PS4 和 PS5 使用认证机制确保仅限授权控制器在控制台上使用�
 1. 将控制器插入 PS4/5。
 2. 按下 PS 按钮初始化控制器。
 3. 大约 8 分钟后游戏。
-4. 由于认证失败，控制台拒绝控制器。
+4. 由于认证失败，主机拒绝控制器。
 5. 用户拔下停止响应的控制器。
 6. 返回第 1 步并重复上述过程。
 
@@ -79,7 +79,7 @@ GP2040-CE 提供多种方法避免 8 分钟超时。建议根据是否在 PS4 �
 
 ### 什么是 PS4 输入模式？
 
-PS4 输入模式是一种允许 GP2040-CE 与 PS4 控制台兼容的输入模式。可以通过上传密钥文件或使用带通过认证设备的 USB 主机端口来绕过 8 分钟超时。
+PS4 输入模式是一种允许 GP2040-CE 与 PS4 主机兼容的输入模式。可以通过上传密钥文件或使用带通过认证设备的 USB 主机端口来绕过 8 分钟超时。
 
 <Tabs groupId="authentication-settings" defaultValue="host-usb">
 
@@ -123,7 +123,7 @@ GP2040-CE 项目**不会**提供**任何**关于获取这些密钥和文件的�
 
 ### 什么是 PS5 输入模式？
 
-PS5 输入模式是一种通过另一控制器或加密狗进行认证，从而令 GP2040-CE 与 PS4 或 PS5 控制台兼容的输入模式。
+PS5 输入模式是一种通过另一控制器或加密狗进行认证，从而令 GP2040-CE 与 PS4 或 PS5 主机兼容的输入模式。
 
 <Tabs groupId="authentication-settings" defaultValue="host-usb">
 
@@ -153,7 +153,7 @@ PS4 和 PS5 共享设备列表，因为控制器认证为已授权的 PS4 控制
 
 :::
 
-以下设备适用于 PS5 并且支持通过认证。这些设备搭载 `NXP7105` 芯片，可与 PS5 控制台认证：
+以下设备适用于 PS5 并且支持通过认证。这些设备搭载 `NXP7105` 芯片，可与 PS5 主机认证：
 
 - [MagicBoots FPS Adapter Joystick Converter for PS4 v1.1](https://www.mayflash.com/product/MAGPS4.html)
 - [N5 for PXN Game Steering Wheel](https://pxn-game.com/products/n5-for-pxn-game-steering-wheel)
@@ -176,8 +176,8 @@ PS4 和 PS5 共享设备列表，因为控制器认证为已授权的 PS4 控制
 
 如果使用 OLED 显示屏：
 
-- **PS4 输入模式**：设备成功通过 PS4 控制台认证后，显示的输入模式将从 `PS4` 变为 `PS4:AS`。
-- **PS5 输入模式**：设备成功通过 PS5 控制台认证后，显示的输入模式将从 `PS5` 变为 `PS5:AS`。
+- **PS4 输入模式**：设备成功通过 PS4 主机认证后，显示的输入模式将从 `PS4` 变为 `PS4:AS`。
+- **PS5 输入模式**：设备成功通过 PS5 主机认证后，显示的输入模式将从 `PS5` 变为 `PS5:AS`。
 
 通常的选择是将控制器插入 PS4 或 PS5，等待 8 分钟，验证控制器是否仍然响应。
 
@@ -189,7 +189,7 @@ PS4 和 PS5 共享设备列表，因为控制器认证为已授权的 PS4 控制
 
 #### 插入控制器后可否移除 PS4/PS5 认证设备？
 
-PlayStation 控制台每 30 秒左右重复发送认证请求。如果请求失败（即未插入通过认证设备），约 8 分钟后控制器将停止响应。一旦发生这种情况，只能通过重置控制器或重新插拔控制器恢复。
+PlayStation 主机每 30 秒左右重复发送认证请求。如果请求失败（即未插入通过认证设备），约 8 分钟后控制器将停止响应。一旦发生这种情况，只能通过重置控制器或重新插拔控制器恢复。
 
 ## Xbox 360
 
