@@ -141,9 +141,9 @@ const config = {
         // options here
         name: "README", // used by CLI, must be path safe
         sourceBaseUrl:
-          "https://raw.githubusercontent.com/McGuffinCN/GP2040-CE-Site/main/", // the base url for the markdown (gets prepended to all of the documents when fetching)
+          "https://raw.githubusercontent.com/OpenStickCommunity/GP2040-CE/main/", // the base url for the markdown (gets prepended to all of the documents when fetching)
         outDir: "/docs", // the base directory to output to.
-        documents: ["index.md"], // the file names to download
+        documents: ["README.md"], // the file names to download
         performCleanup: true,
         modifyContent(filename, content) {
           if (filename.includes("README")) {
