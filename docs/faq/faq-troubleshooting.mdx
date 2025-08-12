@@ -1,5 +1,5 @@
 ---
-title: Troubleshooting
+title: 排查故障
 # tags:
 # -
 pagination_next: null
@@ -16,171 +16,175 @@ Select the button labels to be displayed in the usage guide:
 
 <InputLabelSelector />
 
-## Input Issues
+## 输入问题
 
-### Why are my buttons out of order?
+### **为什么我的按键顺序不对？**
 
-There are many different reasons why this could be the case.
+可能有以下几种原因：
 
-#### Incorrect Mapping in Steam
+#### **1. Steam 中的映射不正确**
 
-Verify that your controller settings in Steam are correctly set, both global settings and the per-game settings. See [Steam Support](https://partner.steamgames.com/doc/features/steam_controller/getting_started_for_players) for more information on how to resolve this issue.
+检查 Steam 中的控制器设置是否正确，包括全局设置和每个游戏的设置。有关解决此问题的更多信息，请参阅 [Steam 支持](https://partner.steamgames.com/doc/features/steam_controller/getting_started_for_players)。
 
-#### Incorrect Input Mode
+#### **2. 输入模式不正确**
 
-Verify that you are using the correct input mode as different modes may swap the mapping of inputs (e.g. Switch vs XInput, PS3/PS4, etc). See [GP2040-CE Usage](../usage.mdx#input-modes) for more information on how to change input modes.
+确认是否使用了正确的输入模式，不同的模式可能会更改输入映射（例如 Switch 模式与 XInput 模式，PS3/PS4 等）。有关更改输入模式的更多信息，请参阅 [GP2040-CE 使用指南](../usage.mdx#input-modes)。
 
-#### Incorrect Button Wiring
+#### **3. 按键接线错误**
 
-Verify that your buttons are correctly connected to the controller board according to the GPIO pin mapping provided by the vendor of your controller board.
+检查您的按键是否根据控制器主板供应商提供的 GPIO 引脚映射正确连接到控制器主板。
 
-#### Incorrect Firmware
+#### **4. 固件不正确**
 
-Firmware is built to assume a specific GPIO pin out and there may be a mismatch between what the firmware expects and what you expect the controls to be. You can either update the GPIO pin mappings in the [Web Configurator](../web-configurator/menu-pages/02-gpio-pin-mapping.mdx) or install the correct firmware onto this device.
+固件是基于特定 GPIO 引脚配置而构建的，如果固件的预期配置与您的配置不匹配，可能会导致问题。您可以在 [Web 配置器](../web-configurator/menu-pages/02-gpio-pin-mapping.mdx) 中更新 GPIO 引脚映射，或者为您的设备安装正确的固件版本。
 
-See [Incorrect Firmware](#incorrect-firmware-for-a-supported-device) below for more information on how to resolve this issue.
+有关如何解决此问题的更多信息，请参阅下文的 [不支持设备的固件版本不正确](#incorrect-firmware-for-a-supported-device)。
 
-### Why does my button not register when I press it?
+### **按下按钮时为什么没有反应？**
 
-Check your wiring. The button should have two terminals where one side goes to the GPIO pin and the other to ground. Test whether wiring is working properly by touching the wires together and verifying that an input is received.
+1. 检查接线：按钮应有两个端子，一个端子连接到 GPIO 引脚，另一个连接到接地（GND）。通过短接这些线并验证是否收到输入信号来测试接线是否正常工作。
+2. 检查按钮：按钮本身可能存在问题。尝试更换其他按钮。
 
-There might also be an issue with your button. Try using different buttons.
+### **为什么即使没有按下按钮，仍会收到输入？**
 
-### Why do I keep getting an input even though the button is not being pressed?
+1. 检查接线：信号线可能无意中与地线（GND）或与 GND 相连的电线接触，从而导致短路。
+2. 检查按钮：按钮本身可能损坏。尝试更换其他按钮。
 
-Check your wiring. There may be an unintended short where the signal wire is in contact with ground (GND) or a wire connected to GND.
+### **上下或左右方向颠倒了，如何修复此问题？**
 
-There might also be an issue with your button. Try using different buttons.
-
-### Up/Down or Left/Right have been swapped. How do I fix this?
-
-You've likely activated [Invert Y-Axis](../hotkeys.mdx#invert-y-axis) or [Invert X-Axis](../hotkeys.mdx#invert-x-axis) hotkey on your controller. Activate the hotkey again to disable the feature.
+可能是您在控制器上启动了 [反转 Y 轴](../hotkeys.mdx#invert-y-axis) 或 [反转 X 轴](../hotkeys.mdx#invert-x-axis) 的快捷键功能。再次激活相应快捷键以关闭该功能。
 
 <HotkeyNote />
 
-### My SOCD cleaning changed. How do I get it back to X cleaning mode?
+### **我的 SOCD 清理模式更改了，该如何恢复为 X 清理模式？**
 
-You've likely activated one of the following SOCD cleaning mode hotkeys on your controller. Activate the hotkey again to disable the feature.
+可能是您在控制器上激活了以下 SOCD 清理模式快捷键之一，再次激活快捷键可以关闭此功能：
 
-- [SOCD Up Priority](../hotkeys.mdx#socd-up-priority)
-- [SOCD Neutral](../hotkeys.mdx#socd-neutral)
-- [SOCD Last Win](../hotkeys.mdx#socd-last-win)
-- [SOCD First Wins](../hotkeys.mdx#socd-first-wins)
-- [SOCD Cleaning Off](../hotkeys.mdx#socd-cleaning-off)
-
-<HotkeyNote />
-
-### Why is my DPad stuck outputting directions on the Left/Right Analog Joystick?
-
-You've likely activated [DPad Left Analog](../hotkeys.mdx#dpad-left-analog) or [DPad Right Analog](../hotkeys.mdx#dpad-right-analog) hotkey on your controller. Activate the hotkey again to disable the feature.
+- [SOCD 向上优先模式](../hotkeys.mdx#socd-up-priority)
+- [SOCD 中立模式](../hotkeys.mdx#socd-neutral)
+- [SOCD 后输赢模式](../hotkeys.mdx#socd-last-win)
+- [SOCD 先输赢模式](../hotkeys.mdx#socd-first-win)
+- [关掉 SOCD 清理模式](../hotkeys.mdx#socd-cleaning-off)
 
 <HotkeyNote />
 
-## Connection Issues
+### **为什么方向键会卡在输出方向到左/右摇杆？**
 
-### Why is the controller connected to the PC/Console not being recognized?
+可能是您在控制器上启用了 [方向键左摇杆模式](../hotkeys.mdx#dpad-left-analog) 或 [方向键右摇杆模式](../hotkeys.mdx#dpad-right-analog) 的快捷键功能。再次激活对应快捷键可以关闭功能。
 
-There are a number of reasons this could be happening. Check for the following issues.
+<HotkeyNote />
 
-#### Keyboard Mode
+---
 
-Check that the input mode of the device is not in keyboard mode. This will cause your computer to only recognize your controller as a keyboard and not as a gamepad.
+## 连接问题
 
-#### Web Configurator
+### **为什么连接到 PC/主机的控制器无法识别？**
 
-When booting into the Web Configurator, the controller initializes as a RNDIS device and will not be recognized by the PC/Console as a controller. Check that the controller is not booting into the Web Configurator and <Hotkey buttons={["S2"]}/> is not being activated while booting.
+这可能有多种原因。检查以下问题：
 
-### Why does my controller not connect to the PC/console when using a USB Type C-C?
+#### **1. 键盘模式**
 
-Depending on how your device hardware is designed, it may not be set up to use a reversible USB Type C. Try reversing the cable. If that does not work, try using a USB 2.0 Type C-C cable or a USB 2.0 Type C-A cable with an adapter.
+检查设备的输入模式是否设置为键盘模式。这会导致您的电脑仅识别控制器作为键盘，而不是游戏手柄。
 
-### Why does my controller stop responding on Playstation 4 or Playstation 5?
+#### **2. Web 配置器**
 
-Regarding PS4 disconnection issues, verify that you have the [PS4 Input Mode](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings) with uploaded key files or USB Host with a valid passthrough authentication device.
+使用 Web 配置器时，控制器会初始化为 RNDIS 设备，PC/主机会无法将其识别为控制器。检查控制器是否已启动到 Web 配置器模式，并确保开机时未触发快捷键 <Hotkey buttons={["S2"]}/>。
 
-Regarding PS5 disconnection issues. verify that you have the [PS5 Input Mode](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings) with USB Host using a valid passthrough authentication device.
+### **为什么使用 USB Type-C 转 Type-C 无法连接到 PC/主机？**
 
-For more information, refer to the [PS4/PS5 Compatibility FAQ](../faq/faq-console-compatibility.mdx).
+由于设备硬件设计的原因，可能无法使用可逆的 USB Type-C。尝试翻转电缆方向。如果仍然不起作用，尝试使用 USB 2.0 Type-C 转 Type-C 电缆或带适配器的 USB 2.0 Type-C 转 Type-A 电缆。
 
-### Why can't I access the Web Configurator?
+### **为什么我的控制器在 PS4 或 PS5 上无响应？**
 
-#### Controller is not booting into Web Configurator Mode
+- **针对 PS4 的问题**：确认已启用 [PS4 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings) 并上传密钥文件，或通过 USB 主机使用有效的认证设备。
+- **针对 PS5 的问题**：确认已启用 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings)，并通过 USB 主机使用有效的认证设备。
 
-If the Web Configurator page is timing out, verify that the controller is booting into Web Configurator Mode.
+有关更多信息，请参阅 [PS4/PS5 兼容性常见问题](../faq/faq-console-compatibility.mdx)。
 
-:::info How to get into Webconfig Mode
+### **为什么我无法访问 Web 配置器？**
 
-- Holding <Hotkey buttons={["S2"]} /> while plugging in
-- Holding <Hotkey buttons={["S2", "B3", "B4"]} /> for 5 seconds.
+#### **1. 控制器未启动到 Web 配置器模式**
+
+如果 Web 配置器页面超时，请确认控制器是否已启动到 Web 配置器模式。
+
+:::info 如何进入 Web 配置模式
+
+- 插入设备时按住 <Hotkey buttons={["S2"]} />。
+- 按住 <Hotkey buttons={["S2", "B3", "B4"]} /> 持续 5 秒。
 
 :::
 
-Test that you are holding correct buttons, using a using the website like [Gamepad Tester](https://gamepad-tester.com/), or in another application such as the Steam Input Overlay. to verify that you are pressing the correct button.
+测试是否按下了正确的按键，例如使用 [Gamepad Tester](https://gamepad-tester.com/) 网站或其他应用（如 Steam 输入界面）进行验证。
 
-#### Another device on your network has the IPV4 address of 192.168.7.1
+#### **2. 网络中其他设备占用了 192.168.7.1 的 IPV4 地址**
 
-If another device (e.g. router, managed switch/hub, IoT device, etc.) is on the network and has the same IP address, the web configurator will not be able to access the Web Configurator due to IP conflicts.
+如果网络中其他设备（例如路由器、交换机、IoT 设备等）占用了相同的 IP 地址，则会发生 IP 地址冲突，导致无法访问 Web 配置器。
 
-Disconnect your computer from your local network (e.g. unplug the ethernet cable) and then attempt to access the Web Configurator again.
+断开电脑与本地网络的连接（例如拔掉网线），然后重新尝试访问 Web 配置器。
 
-## Configuration Issues
+--- 
 
-### Why does PS4 or PS5 Input Mode not work on my device?
+## 配置问题
 
-#### Did not press A1 after connecting the controller.
+### **为什么我的设备上的 PS4 或 PS5 输入模式无法正常工作？**
 
-After connecting a controller that is correctly configured for PS4 or PS5 Input Mode, you need to press <Hotkey buttons={["A1"]} /> in order to have the PS4 or PS5 register the controller. Once you have done so, the console should now properly receive inputs from the controller.
+#### **1. 连接控制器后未按下 A1 键**
 
-#### The controller mode is incorrectly configured.
+在连接已正确配置为 PS4 或 PS5 输入模式的控制器后，您需要按下快捷键 <Hotkey buttons={["A1"]} />，以便 PS4 或 PS5 识别控制器。操作后，游戏机应能正常接收控制器输入。
 
-Ensure that, under the `Settings` section, you have uploaded key files for PS4 or selected Host USB for PS4 and PS5.
+#### **2. 控制器模式配置错误**
 
-For more information, refer to the [PS4 Input Mode](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings) or [PS5 Input Mode](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings) documentation.
+确保在“设置”部分中已上传 PS4 的密钥文件或选择了 PS4/PS5 的 USB 主机模式。
 
-#### USB Host Port not configured correctly
+有关更多信息，请参阅 [PS4 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings) 或 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings) 文档。
 
-Verify that your USB host port is correctly configured in the Web Configurator under [Peripheral Mapping](/docs/web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-host). The specific pins for Data+ and Data- may differ between devices and device manufacturers so check with the documentation provided by the vendor.
+#### **3. USB 主机端口未正确配置**
 
-#### Incompatible Controller/Dongle is being used
+在 Web 配置器的 [外设映射](/docs/web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-host) 中，确认您的 USB 主机端口配置正确。不同设备制造商提供的 Data+ 和 Data- 的特定引脚可能会有所不同，请参考供应商的文档。
 
-Only compatible devices will allow the use of a GP2040-CE controller with PS Passthrough to work on PS4 and not all devices will work with PS5.
+#### **4. 使用的控制器或适配器不兼容**
 
-For more information, refer to the [PS4/PS5 Compatibility FAQ](../faq/faq-console-compatibility.mdx).
+只有兼容的设备才能使 GP2040-CE 控制器通过 PS Passthrough 功能在 PS4 上正常工作，而并非所有设备都支持 PS5。
 
-### I cannot get to WebConfig using the shortcuts. How do I get to the Web Configurator?
+有关更多信息，请参阅 [PS4/PS5 兼容性常见问题](../faq/faq-console-compatibility.mdx)。
 
-**_Without flash nuking your device_**, flash this [firmware file](/assets/force_webconfig.uf2) using the [firmware installation](../installation.mdx) instructions. This will force your device to reboot into Web Configurator mode.
+### **我无法通过快捷方式进入 Web 配置器。如何手动进入 Web 配置器？**
 
-### Why are my RGB LEDs the wrong color?
+如果 **不擦除您的设备固件**，请按以下步骤操作：
 
-Verify that the `LED Format` is correctly set as different LEDs may have a different order to the Red, Green, and Blue data being sent.
+1. 使用本 [强制 WebConfig 固件文件](/assets/force_webconfig.uf2) 并按照 [固件安装说明](../installation.mdx) 运行。  
+2. 这会强制您的设备以 Web 配置器模式进行启动。
 
-For more information, refer to the [RGB LED Button Order](../web-configurator/menu-pages/05-led-configuration.mdx#rgb-led-button-order) section of the Web Configurator menu.
+### **为什么我的 RGB LED 显示的颜色不对？**
 
-### Why are my RGB LEDs out of order?
+确认 `LED 格式` 设置正确，不同的 LED 类型使用的 RGB 数据顺序可能不同。
 
-The order of RGB LEDs can be set in the Web Configurator and the correct configuration is determined by the hardware, how the user wires up the LED chain or the device designer set the LED chain on the board.
+有关更多信息，请参阅 Web 配置器菜单中的 [RGB LED 按钮顺序](../web-configurator/menu-pages/05-led-configuration.mdx#rgb-led-button-order) 部分。
 
-For more information, refer to the [RGB LED Button Order](../web-configurator/menu-pages/05-led-configuration.mdx#rgb-led-button-order) section of the Web Configurator menu.
+### **为什么我的 RGB LED 顺序不对？**
 
-### When I updated my device, why did my controller stop working?
+RGB LED 的顺序可以在 Web 配置器中设置，正确的配置取决于硬件和用户如何布线 LED 链，或设备设计师如何在电路板上设置 LED 链。
 
-If you updated your device and suddenly your inputs aren't correct and your OLED Display or RGB LED stopped working, it's likely that the incorrect compiled firmware was flashed onto your device or your device is not supported and thus the precompiled builds on the [Downloads](/downloads) page may not work for your device.
+有关更多信息，请参阅 Web 配置器菜单中的 [RGB LED 按钮顺序](../web-configurator/menu-pages/05-led-configuration.mdx#rgb-led-button-order) 部分。
 
-#### Incorrect Firmware for a Supported Device
+### **更新设备后，为什么我的控制器停止工作了？**
 
-If your device is supported and the incorrect firmware was flashed, follow the [firmware installation](../installation.mdx) instructions and reflash the correct firmware, verifying that the name of the firmware file matches your device.
+更新设备后，输入设置突然异常，OLED 显示屏或 RGB LED 停止工作，很可能是因为您为设备安装了错误的固件，或者设备不受支持，因此 [下载页面](/downloads) 上的预编译版本可能无法正常运行。
 
-#### Unsupported Devices
+#### **1. 支持设备的固件错误**
 
-If your device is not supported, please speak with the vendor you purchased the device from for the proper firmware file to flash onto your device using the [firmware installation](../installation.mdx) instructions.
+如果设备受支持，但安装了错误的固件，请按照 [固件安装说明](../installation.mdx) 操作并重新刷写正确的固件，确认固件文件名称与设备匹配。
 
-If your vendor is incapable of supporting their device, you will need to perform some investigative work to properly set up your device.
+#### **2. 不支持的设备**
 
-1. Flash the compiled **Pico** GP2040 firmware from the downloads page using the [firmware installation](../installation.mdx) instructions.
-2. Repeat those steps **_without flash nuking your device_**, flashing this [firmware file](/assets/force_webconfig.uf2). This will force your device to boot into Web Configurator mode on boot.
-3. Go to Configuration>GPIO Pin Mapping
-4. For each gamepad input, use the “Press Button to Map” feature to map the input to a GPIO Pin connected to that button. Repeat for all inputs
-5. For any additional features (e.g. RGB LED, OLED display, USB Host Port, etc.), you will need to determine what GPIO pin is associated. This can be done by tracing physical copper paths on the PCB to the button/component.
+如果您的设备不受支持，请联系您购买设备的供应商获取正确的固件文件，并按照 [固件安装说明](../installation.mdx) 操作。
 
-No further assistance can be supplied as this last step is entirely determined by the manufacturer and how they designed the PCB, which is unsupported.
+如果供应商无法为设备提供支持，您需要自行研究并正确设置您的设备：
+
+1. 从下载页面获取 **Pico GP2040 固件** 并按照 [固件安装说明](../installation.mdx) 操作刷入设备。
+2. 不擦除设备固件，刷入 [强制 WebConfig 固件文件](/assets/force_webconfig.uf2)，强制设备以 Web 配置器模式启动。
+3. 进入 Web 配置器，转到“配置 > GPIO 引脚映射”。
+4. 对于每个游戏手柄输入，使用“按键映射功能”将输入映射到连接按钮的 GPIO 引脚，重复进行所有输入的映射操作。
+5. 对于任何附加功能（如 RGB LED、OLED 显示屏、USB 主机端口等），需要确定其关联的 GPIO 引脚。这可以通过追踪 PCB 上的物理铜箔路径找到。
+
+由于上述步骤完全取决于 PCB 制造商的设计，无法提供进一步的支持。
