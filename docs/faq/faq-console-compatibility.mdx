@@ -12,19 +12,19 @@ description: "FAQ related to Console Compatibility. Now supports Playstation 4, 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-# FAQ: Console Compatibility
+# FAQ: 控制台兼容性
 
-GP2040-CE supports a wide variety of consoles and the most common questions regarding console compatibility are listed below.
+GP2040-CE 支持多种控制台，以下列出关于控制台兼容性的常见问题。
 
-## General
+## 通用问题
 
-### Is there additional latency when using the Host USB authentication for PS4, PS5, and Xbox One?
+### 使用主机 USB 认证功能（用于 PS4、PS5 和 Xbox One）是否会增加延迟？
 
-As long as Host USB authentication is configured correctly and the passthrough authentication device is properly plugged into the controller, there should be no additional latency. The passthrough authentication device is used solely for authentication without processing inputs and inputs come directly from the GP2040-CE firmware.
+只要主机 USB 认证正确配置且通过认证的设备正确插入控制器，就不会增加延迟。通过认证的设备仅用于认证，不处理输入，输入由 GP2040-CE 固件直接处理。
 
-### How do I plug in my passthrough authentication device for PS4, PS5, and Xbox One Input Modes?
+### 如何为 PS4、PS5 和 Xbox One 输入模式连接通过认证的设备？
 
-When using converters and adapters with PS4, PS5, and Xbox One Input Modes, you plug the device directly into the controller through a USB host port. You do not plug anything else into the converter/adapter.
+在使用 PS4、PS5 和 Xbox One 输入模式的情况下，通过转换器或适配器将设备直接插入控制器的 USB 主机端口，而不是将其他设备连接到转换器/适配器。
 
 ```mermaid
 graph LR
@@ -33,11 +33,11 @@ Converter/Adapter/Dongle -- USB Port <br> on controller --> Controller([Controll
 
 <br />
 
-:::caution Incorrect Usage of Converters/Adapters with Passthrough Add-ons
+:::caution 不正确的通过认证设备连接方式
 
-Many users incorrectly plug their controllers into the converters/adapters and then plug the converter/adapter into the console. This is not how passthrough authentication is intended to be used and will result in additional latency as inputs are processed by the converter/adapter.
+许多用户错误地将控制器插入转换器/适配器，然后再将转换器/适配器插入控制台。这种连接方式并非通过认证的预期用法，会导致转换器/适配器处理输入从而增加延迟。
 
-Do not plug the converter/adapter as shown below.
+请勿按如下方式进行连接：
 
 ```mermaid
 graph LR
@@ -46,263 +46,261 @@ Controller([Controller]) -- USB Port <br> on Converter --> Converter/Adapter/Don
 
 :::
 
-## Playstation
+## PlayStation
 
-### Why does my controller stop responding after a while on PS4 or PS5?
+### 为什么我的控制器在 PS4 或 PS5 上使用一段时间后不再响应？
 
-PlayStation 4 and PlayStation 5 use an authentication mechanism to ensure only authorized controllers are used on the console. If a device doesn't implement this authentication mechanism, the controller is subject to an 8-minute timeout.
+PS4 和 PS5 使用认证机制确保仅限授权控制器在控制台上使用。如果设备未实现该认证机制，控制器将在 8 分钟后超时。
 
-Using PS4 Input Mode on a PC does not result in any timeout behavior, but note that XInput is the suggested mode on PC for best compatibility.
+在 PC 上使用 PS4 输入模式则不会出现超时，不过建议在 PC 上使用 XInput 模式以获得最佳兼容性。
 
-### What is the 8-Minute Timeout?
+### 什么是 8 分钟超时？
 
-The 8-minute timeout works like this:
+8 分钟超时机制如下：
 
-1. Plug your controller into the PS4/5
-2. Press the PS button to initialize the controller
-3. Play for roughly 8 minutes
-4. Console rejects the controller due to failed authentication
-5. User unplugs their non-functional controller
-6. Go back to step 1 and repeat
+1. 将控制器插入 PS4/5。
+2. 按下 PS 按钮初始化控制器。
+3. 大约 8 分钟后游戏。
+4. 由于认证失败，控制台拒绝控制器。
+5. 用户拔下停止响应的控制器。
+6. 返回第 1 步并重复上述过程。
 
-### How do I avoid the 8-Minute Timeout?
+### 如何避免 8 分钟超时？
 
-GP2040-CE provides multiple methods for you to avoid the 8-Minute Timeout. The recommended method will depend on whether you are using your controller on Playstation 4 or Playstation 5.
+GP2040-CE 提供多种方法避免 8 分钟超时。建议根据是否在 PS4 或 PS5 上使用控制器选择对应的方法。
 
-For PS4, you can either use the [PS4 Input Mode](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings) or the [PS5 Input Mode](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings).
+- 对于 PS4，可使用 [PS4 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings) 或 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings)。
+- 对于 PS5，只能使用 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings)。
 
-For PS5 you can **only** use the [PS5 Input Mode](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings).
+### 如何让我的 GP2040-CE 设备在 PS4 或 PS5 上工作？
 
-### How do I get my GP2040-CE unit to work on a Playstation 4 or Playstation 5?
+- **PS4**：需要使用 [PS4 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings) 或 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings)。
+- **PS5**：不能使用 [PS4 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings)，必须使用 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings)。
 
-For Playstation 4 compatibility, you will need to use either the [PS4 Input Mode](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings) or the [PS5 Input Mode](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings).
+### 什么是 PS4 输入模式？
 
-For Playstation 5 compatibility, you **cannot** use the [PS4 Input Mode](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings). You will need to use the [PS5 Input Mode](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings)
-
-### What is the PS4 Input Mode?
-
-The PS4 Input Mode is an input mode that grants GP2040-CE compatibility with the Playstation 4 console. You can either use uploaded key files or a Host USB port with a passthrough authentication device to bypass the 8-minute Timeout.
+PS4 输入模式是一种允许 GP2040-CE 与 PS4 控制台兼容的输入模式。可以通过上传密钥文件或使用带通过认证设备的 USB 主机端口来绕过 8 分钟超时。
 
 <Tabs groupId="authentication-settings" defaultValue="host-usb">
 
-<TabItem value="upload-key-file" label="Uploaded Key File" default>
+<TabItem value="upload-key-file" label="上传密钥文件" default>
 
-- `Private Key (PEM)` - Choose your PEM file.
-- `Serial Number (16 Bytes in Hex Ascii)` - Choose your serial number file.
-- `Signature (256 Bytes in Binary)` - Choose your signature file.
+- `私钥 (PEM)` - 选择您的 PEM 文件。
+- `序列号 (16 字节十六进制 ASCII)` - 选择您的序列号文件。
+- `签名 (256 字节二进制)` - 选择您的签名文件。
 
-It was built using the efforts of another open source firmware project named [Passing Link](https://github.com/passinglink/passinglink). The team behind Passing Link are in no way affiliated with the GP2040-CE project, however the work and information they've made available was greatly appreciated so we could bring this highly-requested feature to our users.
+此功能基于另一开源固件项目 [Passing Link](https://github.com/passinglink/passinglink) 的努力构建。Passing Link 项目团队与 GP2040-CE 无关联，但感谢他们的工作和共享的信息，使我们得以为用户提供这一高需求功能。
 
-For more information, refer to [PS4 Input Mode](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings) in the `Web Configurator - Settings` section of the documentation.
+更多信息请参阅文档中 `Web Configurator > Settings` 部分的 [PS4 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings)。
 
 </TabItem>
 
-<TabItem value="host-usb" label="Host USB" default>
+<TabItem value="host-usb" label="主机 USB" default>
 
-:::note Additional Hardware Required
+:::note 需要额外硬件
 
-- [USB Host Port](../controller-build/usb-host.mdx)
-- PS4/PS5 Authentication Device
+- [USB 主机端口](../controller-build/usb-host.mdx)
+- PS4/PS5 认证设备
 
 :::
 
-In order to use this setting, a USB Peripheral must be configured in [Web Configurator > Peripheral Mapping > USB Host](../web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-host).
+为使用此设置，需要在 [Web Configurator > Peripheral Mapping > USB Host](../web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-host) 中配置 USB 外围设备。
 
-Once the USB Peripheral is configured, you need to plug in the dongle, converter, or categorized licensed PS4 controller into the USB A port on your GP2040-CE device.
+配置完成后，将加密狗、转换器，或已认证的 PS4 控制器插入 GP2040-CE 设备上的 USB A 端口。
 
 </TabItem>
 </Tabs>
 
-#### How do I get the necessary keys and files for the PS4 Input Mode - Uploaded Key File?
+#### 如何获取 PS4 输入模式所需的密钥和文件（上传密钥文件）？
 
-The GP2040-CE project will not provide **_any_** files or information related to acquiring these keys and files.
+GP2040-CE 项目**不会**提供**任何**关于获取这些密钥和文件的信息。
 
 :::danger
 
-**Do not ask via any of communication channels (e.g. social media, direct messages, Github Issues, GP2040-CE Discord) as this will result in a permanent blacklist/ban.**
+**请勿通过任何联系方式（例如社交媒体、直接消息、Github 问题、GP2040-CE Discord）寻求帮助，否则将被永久黑名单/封禁。**
 
 :::
 
-### What is the PS5 Input Mode?
+### 什么是 PS5 输入模式？
 
-PS5 Input Mode is an input mode that grants GP2040-CE compatibility with the Playstation 4 or Playstation 5 console by using another controller or dongle to answer authentication.
+PS5 输入模式是一种通过另一控制器或加密狗进行认证，从而令 GP2040-CE 与 PS4 或 PS5 控制台兼容的输入模式。
 
 <Tabs groupId="authentication-settings" defaultValue="host-usb">
 
-<TabItem value="host-usb" label="Host USB" default>
+<TabItem value="host-usb" label="主机 USB" default>
 
-:::note Additional Hardware Required
+:::note 需要额外硬件
 
-- [USB Host Port](../controller-build/usb-host.mdx)
-- PS4/PS5 Authentication Device
+- [USB 主机端口](../controller-build/usb-host.mdx)
+- PS4/PS5 认证设备
 
 :::
 
-In order to use this setting, a USB Peripheral must be configured in [Web Configurator > Peripheral Mapping > USB Host](../web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-host).
+为使用此设置，需要在 [Web Configurator > Peripheral Mapping > USB Host](../web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-host) 中配置 USB 外围设备。
 
-Once the USB Peripheral is configured, you need to plug in the dongle, converter, or categorized licensed PS4 controller into the USB A port on your GP2040-CE device.
+配置完成后，将加密狗、转换器，或已认证的 PS4 控制器插入 GP2040-CE 设备上的 USB A 端口。
 
 </TabItem>
 </Tabs>
 
-For more information, refer to [PS5 Input Mode](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings) in the `Web Configurator - Settings` section of the documentation.
+更多信息，请参考文档中 `Web Configurator - Settings` 部分的 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings)。
 
-#### What controller or dongle do I use for Host USB with PS4 and PS5 Input Modes?
+#### 在 PS5 和 PS4 输入模式下，我应使用什么认证设备？
 
 :::note
 
-The list of devices is shared between PS4 and PS5 as the controller is authenticating as a licensed, "categorized" PS4 controller. If it works for PS5, it will work for PS4 as well.
+PS4 和 PS5 共享设备列表，因为控制器认证为已授权的 PS4 控制器。如果适用于 PS5，那么也适用于 PS4。
 
 :::
 
-There are a number of devices that the PS5 recognizes as a "categorized" controller (e.g. arcade stick, racing wheel, flight sim joystick, etc.) where the developer of the game has supported the use of "categorized" controllers. These devices have the `NXP7105` chips that allow them to authenticate with PS5 consoles.
-
-Any USB device that works as a categorized PS4 controller (arcade stick/racing wheel/flight sim joystick) or a USB dongle that allows a controller to authenticate should work with PS Passthrough. Note that this functionality is not present in all games, but is common in fighting games and racing simulators.
-
-Some devices that do work for PS5 include, but are not limited to;
+以下设备适用于 PS5 并且支持通过认证。这些设备搭载 `NXP7105` 芯片，可与 PS5 控制台认证：
 
 - [MagicBoots FPS Adapter Joystick Converter for PS4 v1.1](https://www.mayflash.com/product/MAGPS4.html)
 - [N5 for PXN Game Steering Wheel](https://pxn-game.com/products/n5-for-pxn-game-steering-wheel)
-- Licensed PS4 Arcade Sticks
+- 授权的 PS4 街机摇杆
 
-Because your experience and purchased products may vary, GP2040-CE will not provide additional specific recommendations beyond these known working devices.
+此功能不适用于所有游戏，但常用于格斗游戏和赛车模拟游戏。
 
-:::caution Incompatible Controllers
+:::caution 不兼容的控制器
 
-The following controllers are not supported at all with the PS4 and PS5 Input Modes
+以下控制器无法通过 PS4 和 PS5 输入模式识别：
 
 - DualShock 4
 - DualSense
 - DualSense Edge
-- Other licensed PS5 controllers
+- 其他授权 PS5 控制器
 
 :::
 
-#### How do I know the PS4 or PS5 Input Mode is working?
+#### 如何验证 PS4 或 PS5 输入模式是否正常工作？
 
-If you're using an OLED display,
+如果使用 OLED 显示屏：
 
-- **PS4 Input Mode** - The displayed input mode will change from `PS4` to `PS4:AS` to indicate your device has successfully authenticated with the PS4 console
-- **PS5 Input Mode**- the input mode will change from `PS5` to `PS5:AS` to indicate your device has successfully authenticated with the PS4 console
+- **PS4 输入模式**：设备成功通过 PS4 控制台认证后，显示的输入模式将从 `PS4` 变为 `PS4:AS`。
+- **PS5 输入模式**：设备成功通过 PS5 控制台认证后，显示的输入模式将从 `PS5` 变为 `PS5:AS`。
 
-Otherwise the common option is to plug the controller into a PS4 or PS5 and wait 8 minutes to verify that the controller is still responding afterwards.
+通常的选择是将控制器插入 PS4 或 PS5，等待 8 分钟，验证控制器是否仍然响应。
 
 :::info
 
-For the MagicBoots Adapter and N5 listed above, there is an indicator light on the dongle that should flash on boot and then become solid after a moment. If the indicator light is on and solid, your controllers _should_ be compatible with PS5 at that point and not time out.
+对于上述的 MagicBoots 和 N5，启动时加密狗上的指示灯应闪烁一会，之后保持常亮。如果灯常亮，那么控制器应该可以正常兼容 PS5 并避免超时。
 
 :::
 
-#### Can I remove the PS4/PS5 authentication device once I have plugged in my controller?
+#### 插入控制器后可否移除 PS4/PS5 认证设备？
 
-Playstation consoles repeatedly send authorization requests every 30 seconds or so. If the request fails (i.e. there is no passthrough authentication device plugged in), in about 8 minutes, the controller will stop responding. Once this happens, the only option is to either reset the controller or unplug and then plug the controller back into the console.
+PlayStation 控制台每 30 秒左右重复发送认证请求。如果请求失败（即未插入通过认证设备），约 8 分钟后控制器将停止响应。一旦发生这种情况，只能通过重置控制器或重新插拔控制器恢复。
 
 ## Xbox 360
 
-### How do I get my GP2040-CE unit to work on an Xbox 360?
+### 如何让我的 GP2040-CE 设备在 Xbox 360 上工作？
 
-For Xbox 360 compatibility, you will need to use the [XInput](../web-configurator/menu-pages/01-settings.mdx).  XInput mode will change to Xbox 360 automatically when a appropiate Xbox 360 dongle is connected.
+为了实现 Xbox 360 的兼容性，您需要使用 [XInput](../web-configurator/menu-pages/01-settings.mdx)。当连接适配的 Xbox 360 加密狗时，XInput 模式会自动切换到 Xbox 360 模式。
 
-### What is the Xbox 360 Input Mode?
+### 什么是 Xbox 360 输入模式？
 
-:::caution Additional Hardware Required
+:::caution 需要额外硬件
 
-- [USB Host Port](../controller-build/usb-host.mdx)
-- Xbox 360 Authentication Device
+- [USB 主机端口](../controller-build/usb-host.mdx)  
+- Xbox 360 验证设备  
 
 :::
 
-Xbox 360 Mode through XInput grants GP2040-CE compatibility with the Xbox 360 by using a dongle to answer authentication
+通过 XInput 的 Xbox 360 模式，GP2040-CE 可以通过加密狗实现对 Xbox 360 的兼容性，用于完成认证过程。
 
-For more information, refer to [Xbox 360 Input Mode](../web-configurator/menu-pages/01-settings.mdx) in the `Web Configurator - Add-ons` section of the documentation.
+欲了解更多信息，请参阅文档中 “Web Configurator - Add-ons” 部分的 [Xbox 360 输入模式](../web-configurator/menu-pages/01-settings.mdx)。
 
-### What dongle do I use for Xbox 360 Input Mode?
+### 哪种加密狗可以用于 Xbox 360 输入模式？
 
-Currently there is only one dongle that will work for Xbox 360 input mode:
+当前，仅有以下加密狗可用于 Xbox 360 输入模式：  
 - [MagicBoots FPS Adapter Joystick Converter for Xbox 360](https://www.mayflash.com/product/MAG360.html)
 
-Because your experience and purchased products may vary, GP2040-CE will not provide additional specific recommendations beyond these known working devices.
+由于您的体验和购买的产品可能不同，GP2040-CE 不会提供除这些已知设备以外的其他具体建议。
 
-:::caution Xbox 360 Controllers
+:::caution Xbox 360 控制器  
 
-Xbox 360 Wireless Controllers, Xbox 360 Wired Controllers, and other licensed Xbox 360 controllers will not work with this add-on.
-
-:::
-
-### How do I know the Xbox 360 Input Mode add-on is working?
-
-Because of the numerous devices to be used for passthrough authentication, there is not just one way to verify that the input mode is working without plugging the controller into a console and attempting to use it.
-
-For the MagicBoots Adapter listed above, there is an indicator light on the dongle that should flash on boot and then become solid after a moment. If the indicator light is on and solid, your controllers _should_ be compatible and you may use your controller as intended.
-
-### Can I remove the Xbox 360 authentication device once I have plugged in my controller?
-
-Xbox 360 consoles only perform the authentication process once when the controller is plugged into the console. Once this occurs, the passthrough authentication device can be removed. However, it is still recommended to keep the device plugged in.
-
-## Xbox One, Xbox Series S, and Xbox Series X
-
-### How do I get my GP2040-CE unit to work on a Xbox One, Xbox Series S, or Xbox Series X?
-
-For Xbox One, Xbox Series S, or Xbox Series X compatibility, you will need to use the [Xbox One Input Mode](../web-configurator/menu-pages/01-settings.mdx#additional-xbox-one-settings)
-
-### What is the Xbox One Input Mode?
-
-:::caution Additional Hardware Required
-
-- [USB Host Port](../controller-build/usb-host.mdx)
-- Xbox One Authentication Device
+Xbox 360 无线控制器、Xbox 360 有线控制器和其他授权的 Xbox 360 控制器无法与此附加功能兼容。  
 
 :::
 
-Xbox One Input Mode grants GP2040-CE compatibility with the Xbox One, Xbox Series S, or Xbox Series X by using another controller or dongle to answer authentication
+### 如何判断 Xbox 360 输入模式附加功能是否正常工作？
 
-For more information, refer to [Xbox One Input Mode](../web-configurator/menu-pages/01-settings.mdx#additional-xbox-one-settings) in the `Web Configurator - Add-ons` section of the documentation.
+由于需要使用多种设备进行传递认证，因此无法在不将控制器连接到主机并尝试使用之前，确认输入模式是否正常工作。
 
-### What controller or dongle do I use for Xbox One Input Mode?
+对于上述的 MagicBoots 加密狗，该加密狗上有一个指示灯。启动时，指示灯会闪烁，然后在片刻后变为常亮。如果指示灯亮起且保持常亮，您的控制器**应该**是兼容的，您可以正常使用控制器。
 
-Some devices that do work for Xbox One Input Mode are currently limited to the following;
+### 插入控制器后，我可以移除 Xbox 360 验证设备吗？
 
-- [MagicBoots FPS Adapter Joystick Converter for Xbox One](https://www.mayflash.com/product/MAGONE.html)
+Xbox 360 主机在控制器插入主机时，仅会进行一次认证。一旦完成认证，传递认证设备可以移除。但建议始终将设备保持连接状态。
+
+---
+
+## Xbox One、Xbox Series S 和 Xbox Series X
+
+### 如何让我的 GP2040-CE 设备在 Xbox One、Xbox Series S 或 Xbox Series X 上工作？
+
+为了实现 Xbox One、Xbox Series S 或 Xbox Series X 的兼容性，您需要使用 [Xbox One 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-xbox-one-settings)。
+
+### 什么是 Xbox One 输入模式？
+
+:::caution 需要额外硬件
+
+- [USB 主机端口](../controller-build/usb-host.mdx)  
+- Xbox One 验证设备  
+
+:::
+
+Xbox One 输入模式允许 GP2040-CE 通过另一款控制器或加密狗完成认证，从而实现对 Xbox One、Xbox Series S 和 Xbox Series X 的兼容性。
+
+欲了解更多信息，请参阅文档中 “Web Configurator - Add-ons” 部分的 [Xbox One 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-xbox-one-settings)。
+
+### 哪种控制器或加密狗可用于 Xbox One 输入模式？
+
+以下设备可用于 Xbox One 输入模式：
+
+- [MagicBoots FPS Adapter Joystick Converter for Xbox One](https://www.mayflash.com/product/MAGONE.html)  
 - [Magic-X Wireless Bluetooth USB Adapter](https://www.mayflash.com/product/magic_x.html)
 
-Because your experience and purchased products may vary, GP2040-CE will not provide additional specific recommendations beyond these known working devices.
+由于您的体验和购买的产品可能不同，GP2040-CE 不会提供除这些已知设备以外的其他具体建议。
 
-:::caution Xbox One Controllers
+:::caution Xbox One 控制器
 
-Xbox Wireless Controllers, Xbox One Elite Controllers, and other licensed Xbox One controllers will not work with this add-on.
-
-:::
-
-### How do I know the Xbox One Input Mode add-on is working?
-
-Because of the numerous devices to be used for passthrough authentication, there is not just one way to verify that the input mode is working without plugging the controller into a console and attempting to use it.
-
-For the MagicBoots Adapter listed above, there is an indicator light on the dongle that should flash on boot and then become solid after a moment. If the indicator light is on and solid, your controllers _should_ be compatible and you may use your controller as intended.
-
-For the Magic-X Adapter listed above, there is an indicator light on the dongle that will continue flashing after the controller boots, unlike the MagicBoots Adapter.
-
-### Can I remove the Xbox One authentication device once I have plugged in my controller?
-
-Xbox One, Xbox Series S, and Xbox Series X consoles only perform the authentication process once when the controller is plugged into the console. Once this occurs, the passthrough authentication device can be removed. However, it is still recommended to keep the device plugged in.
-
-## Experimental USB Hub Support
-
-As of v0.7.10 GP2040-CE now includes experimental support for USB hubs which will allow you to connect multiple dongles along with a keyboard at the same time.  Please note the following cautions.
-
-:::caution Not all USB hubs are supported
-
-Please note that USB hub support is still very experimental and as such we cannot provide a list of known good USB hubs.
+Xbox 无线控制器、Xbox One 精英控制器和其他授权的 Xbox One 控制器无法与此附加功能兼容。
 
 :::
 
-:::caution Be mindful of power draw
+### 如何判断 Xbox One 输入模式附加功能是否正常工作？
 
-A USB hub and multiple connected USB dongles may add considerable load to your setups overall power draw.
+由于需要使用多种设备进行传递认证，因此无法在不将控制器连接到主机并尝试使用之前，确认输入模式是否正常工作。
+
+对于上述的 MagicBoots 加密狗，该加密狗上有一个指示灯。启动时，指示灯会闪烁，然后在片刻后变为常亮。如果指示灯亮起且保持常亮，您的控制器**应该**是兼容的，您可以正常使用控制器。
+
+对于上述的 Magic-X 加密狗，该设备上的指示灯会持续闪烁，而不像 MagicBoots 加密狗那样保持常亮。
+
+### 插入控制器后，我可以移除 Xbox One 验证设备吗？
+
+Xbox One、Xbox Series S 和 Xbox Series X 主机在控制器插入主机时，仅会进行一次认证。一旦完成认证，传递认证设备可以移除。但建议始终将设备保持连接状态。
+
+---
+
+## 实验性 USB 集线器支持
+
+从 v0.7.10 开始，GP2040-CE 现在包括对 USB 集线器的实验性支持，允许同时连接多个加密狗和键盘。但请注意以下警告。
+
+:::caution 并非所有 USB 集线器均被支持  
+
+请注意，USB 集线器支持仍在实验阶段，因此我们无法提供已知良好 USB 集线器的列表。  
 
 :::
 
-:::caution USB Hub Support and the RP2040 Advanced Breakout Board
+:::caution 注意功耗  
 
-Through testing we have found that on the RP2040 Advanced Breakout Board it is recommended to disable RGB LEDs via web-config if you are planning to use a USB hub.  RGB LEDs can be disabled by changing the GPIO pin to `-1` and saving.
+USB 集线器和多个连接的 USB 加密狗可能会显著增加整体配置的功耗。  
+
+:::
+
+:::caution USB 集线器支持与 RP2040 高级扩展板  
+
+通过测试，我们发现如果您计划使用 USB 集线器，建议在 RP2040 高级扩展板上通过 Web 配置禁用 RGB LED。可以通过将 GPIO 引脚改为 `-1` 并保存来禁用 RGB LED。  
 
 :::
