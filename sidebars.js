@@ -39,7 +39,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "常见问答",
+      label: "疑难解答",
       collapsed: false,
       items: [
         "faq/faq-general",
