@@ -1,5 +1,5 @@
 ---
-title: Keyboard Host Configuration
+title: 键盘主机配置
 # tags:
 # -
 pagination_next: null
@@ -12,65 +12,65 @@ import InputLabelSelector, {
 } from "@site/src/components/LabelSelector.tsx";
 import InstallUSBHostPort from "../snippets/_add-usb-host-port.mdx";
 
-Select the button labels to be displayed in the usage guide:
+选择要在使用指南中显示的按钮标签：
 
 <InputLabelSelector />
 <br />
 
-Purpose: This add-on is intended to allow you to use a keyboard with GP2040-CE to be used with GP2040-CE supported systems.
+用途：此附加功能旨在允许用户将键盘与 GP2040-CE 配合使用，并与 GP2040-CE 支持的系统兼容。
 
-![GP2040-CE Configurator - Keyboard Host Configuration](../assets/images/gpc-add-ons-keyboard-host-configuration.png)
+![GP2040-CE 配置器 - 键盘主机配置](../assets/images/gpc-add-ons-keyboard-host-configuration.png)
 
-## Web Configurator Options
+## Web 配置器选项
 
-:::info GPIO Pin Assignment
+:::info GPIO 引脚分配
 
-The Data, 5V Enable, and Pin Orientation options for USB host ports are now configured in [`Configuration > Peripheral Mapping - USB Host`](../web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-host).
+USB 主机端口的 Data、5V Enable 和 Pin Orientation 选项现在在 [`Configuration > Peripheral Mapping - USB Host`](../web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-host) 中配置。
 
 :::
 
-### Default Keybindings
+### 默认按键绑定
 
-| GP2040                           | Key          |
+| GP2040                           | 键盘按键     |
 | -------------------------------- | ------------ |
-| <Hotkey buttons={["Up"]}/>       | Arrow Up     |
-| <Hotkey buttons={["Down"]}/>     | Arrow Down   |
-| <Hotkey buttons={["Left"]}/>     | Arrow Left   |
-| <Hotkey buttons={["Right"]}/>    | Arrow Right  |
-| <Hotkey buttons={["B1"]}/>       | Shift Left   |
+| <Hotkey buttons={["Up"]}/>       | 上箭头       |
+| <Hotkey buttons={["Down"]}/>     | 下箭头       |
+| <Hotkey buttons={["Left"]}/>     | 左箭头       |
+| <Hotkey buttons={["Right"]}/>    | 右箭头       |
+| <Hotkey buttons={["B1"]}/>       | 左 Shift     |
 | <Hotkey buttons={["B2"]}/>       | Z            |
-| <Hotkey buttons={["B3"]}/>       | Control Left |
-| <Hotkey buttons={["B4"]}/>       | Alt Left     |
+| <Hotkey buttons={["B3"]}/>       | 左 Control   |
+| <Hotkey buttons={["B4"]}/>       | 左 Alt       |
 | <Hotkey buttons={["L1"]}/>       | C            |
-| <Hotkey buttons={["R1"]}/>       | Space        |
+| <Hotkey buttons={["R1"]}/>       | 空格         |
 | <Hotkey buttons={["L2"]}/>       | V            |
 | <Hotkey buttons={["R2"]}/>       | X            |
 | <Hotkey buttons={["S1"]}/>       | 5            |
 | <Hotkey buttons={["S2"]}/>       | 1            |
-| <Hotkey buttons={["L3"]}/>       | Equal        |
-| <Hotkey buttons={["R3"]}/>       | Minus        |
+| <Hotkey buttons={["L3"]}/>       | 等号         |
+| <Hotkey buttons={["R3"]}/>       | 减号         |
 | <Hotkey buttons={["A1"]}/>       | 9            |
 | <Hotkey buttons={["A2"]}/>       | F2           |
-| <Hotkey buttons={["Function"]}/> | None         |
+| <Hotkey buttons={["Function"]}/> | 无           |
 
-## Hardware
+## 硬件
 
-### Requirements
+### 要求
 
-This add-on requires that you have a USB host port available on your device connected to GPIO pins on the RP2040 board. There are a number of methods to do so.
+此附加功能需要设备上有一个 USB 主机端口，并且该端口连接到 RP2040 板上的 GPIO 引脚。实现此功能有多种方法。
 
-See [USB Host Port Installation](../controller-build/usb-host.mdx) for more information on the requirements for adding a USB host port to your controller.
+请参阅 [USB 主机端口安装](../controller-build/usb-host.mdx) 了解有关将 USB 主机端口添加到控制器的详细要求。
 
-### Installation
+### 安装
 
 <InstallUSBHostPort />
 
-## Miscellaneous Notes
+## 其他说明
 
-As long as the keyboard has a USB plug, any keyboard should work with this addon, including wireless USB keyboards.
+只要键盘带有 USB 插头，任何键盘都可以与此附加功能配合使用，包括无线 USB 键盘。
 
-Due to current implementation of Pico-PIO-USB and the add-on system, the following limitations are present.
+由于当前 Pico-PIO-USB 和附加功能系统的实现方式，存在以下限制：
 
-- The keyboard is limited to only as many inputs as listed above. All other keys on the keyboard will not function and will send no inputs to the system reading inputs.
-- The keyboard is limited to 6 key rollover, meaning that a maximum of 6 keyboard keys can be activated at a time. This is the case regardless if the keyboard being used normally has N key rollover (NKRO).
-- The keyboard is unable to affect the Input Mode on boot. The Input Mode must either be set using `Web Configurator > Settings` or an additional switch on the GP2040-CE device using the add-on.
+- 键盘仅限于上述列出的输入数量。键盘上的其他按键将无法使用，并且不会向系统发送任何输入信号。
+- 键盘受限于 6 键无冲（6 key rollover），这意味着最多只能同时激活 6 个键盘按键。即使所使用的键盘通常支持全键无冲（NKRO），此限制仍然适用。
+- 键盘无法在启动时影响输入模式。输入模式必须通过 `Web Configurator > Settings` 或 GP2040-CE 设备上的额外开关进行设置。
