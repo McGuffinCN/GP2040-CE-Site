@@ -1,5 +1,5 @@
 ---
-title: Settings
+title: 设置
 # tags:
 # -
 # pagination_next: null
@@ -10,205 +10,205 @@ description: "Select the input mode, DPad Mode, SOCD Cleaning Mode, etc. and con
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-# Settings
+# 设置
 
-## Input Mode Settings
+## 输入模式设置
 
-![GP2040-CE Configurator - Input Mode Settings](../../assets/images/gpc-settings-input-mode.png)
+![GP2040-CE Configurator - 输入模式设置](../../assets/images/gpc-settings-input-mode.png)
 
-- `Current Input Mode` - Choose the main input mode (XINPUT, DINPUT, Switch, PS4, HID-Keyboard, etc.) this connected device will boot into when powered on. This selection will persist through unplug and plugging back in the controller.
-- `Authentication Settings` - Choose a method of authentication if needed for the mode.
+- `当前输入模式` - 选择此连接设备在通电时启动的主要输入模式（XINPUT、DINPUT、Switch、PS4、HID-Keyboard 等）。此选择将在断开连接并重新插入控制器后保持不变。
+- `认证设置` - 如果模式需要认证，请选择一种认证方法。
 
 :::note
 
-Xinput will work on a PC without any authentication. If you would like to on a Xbox 360 please choose USB authentication and attach an appropriate dongle.
+Xinput 在 PC 上无需任何认证即可工作。如果您希望在 Xbox 360 上使用，请选择 USB 认证并连接适当的认证设备。
 
 :::
 
-![GP2040-CE Configurator - USB Override](../../assets/images/gpc-settings-usboverride.png)
+![GP2040-CE Configurator - USB覆盖](../../assets/images/gpc-settings-usboverride.png)
 
-GP2040-CE allows you to override some of the USB descriptor information.  These settings should only be changed if you know what you are doing.
+GP2040-CE允许您覆盖部分USB描述符信息。这些设置仅在您明确知道自己在做什么时进行更改。
 
-- 'Product Name` - How you would like the name of the device to come up in your device list
-- 'Manufacturer` - How you would like the manufacturer to come up in the device details
-- `Version` - What version you would like to assign to the device details
+- `产品名称` - 您希望设备在设备列表中显示的名称
+- `制造商` - 您希望设备详情中显示的制造商名称
+- `版本` - 您希望分配给设备详情的版本
 
-There is an additional layer of USB device information that can be changed under `Override Physical IDs`.  
+在 `覆盖物理ID` 下还有一层额外的 USB 设备信息可以更改。
 
-- `Vendor ID` - A vendor ID descriptor
-- `Product ID` - A product ID descriptor
+- `供应商ID` - 供应商ID描述符
+- `产品ID` - 产品ID描述符
 
 :::warning
 
-Please note that changing and of the options in either the `Advanced USB Override` or the `Override Physical IDs` may cause the input mode to no longer function.  
+请注意，更改 `高级USB覆盖` 或 `覆盖物理ID` 中的任何选项可能会导致输入模式无法正常工作。
 
-The GP2040-CE team offers no support on issues that arrise from changing these settings.  
+GP2040-CE团队不对因更改这些设置而引发的问题提供支持。
 
 :::
 
-### Keyboard Mapping
+### 键盘映射
 
-Here you can remap the GP2040-CE buttons to different keyboard keycodes that will be sent to the PC or game console when pressed in Keyboard Mode.
+在此，您可以将 GP2040-CE 按钮重新映射为不同的键盘键码，当按下键盘模式时，这些键码会发送到 PC 或游戏主机。
 
-![GP2040-CE Configurator - Keyboard Mapping](../../assets/images/gpc-settings-keyboard-mapping.png)
+![GP2040-CE Configurator - 键盘映射](../../assets/images/gpc-settings-keyboard-mapping.png)
 
-### Additional PS4 Settings
+### 额外的PS4设置
 
-![GP2040-CE Configurator - Additional PS4 Settings](../../assets/images/gpc-settings-ps4.png)
+![GP2040-CE Configurator - 额外的PS4设置](../../assets/images/gpc-settings-ps4.png)
 
-- `Switch Touchpad and Share` - Share will now be mapped to A2 rather than S1, Touchpad will be now mapped to S1 rather than A2
-- `Identification Mode` is an option to allow for situations where a true DualShock 4 would be required. This doesn't make it a real DS4 for technical reasons, but it does make the firmware behave more like one.  
-  - `Console` - This is what everyone is used to. It works on PS4/PS5 with the same restrictions you would expect for authorization.
-  - `Remote/Emulation` - This is used in situations where the only controller you can use is a DualShock 4, but doesn't necessarily require any sort of passthrough authorization.  PS Remote Play only allows "authentic" DualShock 4/DualSense controllers, but does not (currently) seem to require auth.  Open PS2 Loader (OPL) versions with the PADEMU USB controller driver will only look for "authentic" DualShock 3/4 controllers, but do not require auth to function.
-When playing directly on a PS4/PS5 console, using Console mode will allow the controller to behave as expected.  This is the default.  When using Remote/Emulation directly on a console, the controller will not be detected for technical reasons.
-When playing via PS Remote Play specifically, since Console mode does not appear as an authentic DualShock 4 controller, it will not be detected.  Using an alternate Remote Play client, such as Chiaki, does not have this limitation.
-Unless something changes specifically in PS Remote Play, authorization is not required in Remote/Emulation mode.
-- `Authentication Settings`
-  - `Uploaded Key File` - Upload key files obtained from a Dualshock 4 to authenticate and bypass the PS4's 8-minute time out
-  - `Host USB` - Use a dongle, converter, or licensed PS4 controller to authenticate your GP2040-CE device
+- `切换触摸板和分享键` - 分享键现在将映射到 A2 而不是 S1，触摸板现在将映射到 S1 而不是 A2。
+- `识别模式` 是一种允许在需要真正 DualShock 4 的情况下使用的选项。由于技术原因，这并不会使设备成为真正的 DS4，但它确实使固件行为更像 DS4。
+  - `主机模式` - 这是大家熟悉的模式。它在 PS4/PS5 上工作，并具有您期望的授权限制。
+  - `远程/模拟模式` - 用于只能使用 DualShock 4 的情况，但不一定需要任何形式的透传授权。PS Remote Play 仅允许“真实”的 DualShock 4/DualSense 控制器，但目前似乎不需要授权。带有 PADEMU USB 控制器驱动程序的 Open PS2 Loader (OPL) 版本仅寻找“真实”的 DualShock 3/4 控制器，但不需要授权即可工作。
+在直接使用 PS4/PS5 主机时，使用主机模式将允许控制器按预期运行。这是默认模式。在直接使用远程/模拟模式时，由于技术原因，控制器不会被检测到。
+在通过 PS Remote Play 游戏时，由于主机模式无法显示为真实的 DualShock 4 控制器，因此不会被检测到。使用替代的远程播放客户端（如 Chiaki）则没有此限制。
+除非 PS Remote Play 有具体变化，否则远程/模拟模式不需要授权。
+- `认证设置`
+  - `上传密钥文件` - 上传从 DualShock 4 获取的密钥文件以认证并绕过 PS4 的 8 分钟超时限制
+  - `主机USB` - 使用加密狗、转换器或授权的 PS4 控制器认证您的 GP2040-CE 设备
 
 <Tabs groupId="authentication-settings" defaultValue="host-usb">
 
-<TabItem value="upload-key-file" label="Uploaded Key File" default>
+<TabItem value="upload-key-file" label="上传密钥文件" default>
 
-![GP2040-CE Configurator - Additional PS4 Settings](../../assets/images/gpc-settings-ps4-upload-key-files.png)
+![GP2040-CE Configurator - 额外的PS4设置](../../assets/images/gpc-settings-ps4-upload-key-files.png)
 
-- `Uploaded Key File`
-  - `Private Key (PEM)` - Choose your PEM file.
-  - `Serial Number (16 Bytes in Hex Ascii)` - Choose your serial number file.
-  - `Signature (256 Bytes in Binary)` - Choose your signature file.
+- `上传密钥文件`
+  - `私钥 (PEM)` - 选择您的 PEM 文件
+  - `序列号 (16 字节的十六进制 ASCII)` - 选择您的序列号文件
+  - `签名 (256 字节的二进制)` - 选择您的签名文件
 
-:::danger Warning
+:::danger 警告
 
-The GP2040-CE project will not provide any files or information related to acquiring these keys and files under any circumstances.
+GP2040-CE 项目在任何情况下都不会提供任何与获取这些密钥和文件相关的文件或信息。
 
-Do not ask via any of communication channels (e.g. social media, direct messages, Github Issues, GP2040-CE Discord) as this will result in a permanent blacklist/ban.
+请勿通过任何通信渠道（如社交媒体、直接消息、Github Issues、GP2040-CE Discord）询问，否则将导致永久黑名单/封禁。
 
 :::
 
 </TabItem>
 
-<TabItem value="host-usb" label="Host USB" default>
+<TabItem value="host-usb" label="主机USB" default>
 
-![GP2040-CE Configurator - Additional PS4 Settings](../../assets/images/gpc-settings-ps4-host-usb.png)
+![GP2040-CE Configurator - 额外的PS4设置](../../assets/images/gpc-settings-ps4-host-usb.png)
 
-In order to use this setting, a USB Peripheral must be configured in [Web Configurator > Peripheral Mapping > USB Host](./03-peripheral-mapping.mdx#usb-host)
+要使用此设置，必须在 [Web 配置器 > 外围设备映射 > USB 主机](./03-peripheral-mapping.mdx#usb-host) 中配置 USB 外围设备。
 
 </TabItem>
 </Tabs>
 
-### Additional PS5 Settings
+### 额外的PS5设置
 
-![GP2040-CE Configurator - Additional PS5 Settings](../../assets/images/gpc-settings-ps5.png)
+![GP2040-CE Configurator - 额外的PS5设置](../../assets/images/gpc-settings-ps5.png)
 
-- `Switch Touchpad and Share` - Share will now be mapped to A2 rather than S1, Touchpad will be now mapped to S1 rather than A2
-- `Identification Mode` is an option to allow for situations where a true DualShock 4 would be required. This doesn't make it a real DS4 for technical reasons, but it does make the firmware behave more like one.  
-  - `Console` - This is what everyone is used to. It works on PS4/PS5 with the same restrictions you would expect for authorization.
-  - `Remote/Emulation` - This is used in situations where the only controller you can use is a DualShock 4, but doesn't necessarily require any sort of passthrough authorization.  PS Remote Play only allows "authentic" DualShock 4/DualSense controllers, but does not (currently) seem to require auth.  Open PS2 Loader (OPL) versions with the PADEMU USB controller driver will only look for "authentic" DualShock 3/4 controllers, but do not require auth to function.
-When playing directly on a PS4/PS5 console, using Console mode will allow the controller to behave as expected.  This is the default.  When using Remote/Emulation directly on a console, the controller will not be detected for technical reasons.
-When playing via PS Remote Play specifically, since Console mode does not appear as an authentic DualShock 4 controller, it will not be detected.  Using an alternate Remote Play client, such as Chiaki, does not have this limitation.
-Unless something changes specifically in PS Remote Play, authorization is not required in Remote/Emulation mode.
-- `Authentication Settings`
-  - `Host USB` - Use a dongle, converter, or licensed PS4 controller to authenticate your GP2040-CE device
+- `切换触摸板和分享键` - 分享键现在将映射到 A2 而不是 S1，触摸板现在将映射到 S1 而不是 A2。
+- `识别模式` 是一种允许在需要真正 DualShock 4 的情况下使用的选项。由于技术原因，这并不会使设备成为真正的 DS4，但它确实使固件行为更像 DS4。
+  - `主机模式` - 这是大家熟悉的模式。它在 PS4/PS5 上工作，并具有您期望的授权限制。
+  - `远程/模拟模式` - 用于只能使用 DualShock 4 的情况，但不一定需要任何形式的透传授权。PS Remote Play 仅允许“真实”的 DualShock 4/DualSense 控制器，但目前似乎不需要授权。带有 PADEMU USB 控制器驱动程序的 Open PS2 Loader (OPL) 版本仅寻找“真实”的 DualShock 3/4 控制器，但不需要授权即可工作。
+在直接使用 PS4/PS5 主机时，使用主机模式将允许控制器按预期运行。这是默认模式。在直接使用远程/模拟模式时，由于技术原因，控制器不会被检测到。
+在通过 PS Remote Play 游戏时，由于主机模式无法显示为真实的 DualShock 4 控制器，因此不会被检测到。使用替代的远程播放客户端（如 Chiaki）则没有此限制。
+除非 PS Remote Play 有具体变化，否则远程/模拟模式不需要授权。
+- `认证设置`
+  - `主机USB` - 使用加密狗、转换器或授权的 PS4 控制器认证您的 GP2040-CE 设备
 
 <Tabs groupId="authentication-settings" defaultValue="host-usb">
-<TabItem value="host-usb" label="Host USB" default>
+<TabItem value="host-usb" label="主机USB" default>
 
-![GP2040-CE Configurator - Additional PS5 Settings](../../assets/images/gpc-settings-ps5-host-usb.png)
+![GP2040-CE Configurator - 额外的PS5设置](../../assets/images/gpc-settings-ps5-host-usb.png)
 
-In order to use this setting, a USB Peripheral must be configured in [Web Configurator > Peripheral Mapping > USB Host](./03-peripheral-mapping.mdx#usb-host)
+要使用此设置，必须在 [Web 配置器 > 外围设备映射 > USB 主机](./03-peripheral-mapping.mdx#usb-host) 中配置 USB 外围设备。
 
 </TabItem>
 </Tabs>
 
-### Additional Xbox One Settings
+### 额外的Xbox One设置
 
-![GP2040-CE Configurator - Additional PS5 Settings](../../assets/images/gpc-settings-xbox-one.png)
+![GP2040-CE Configurator - 额外的Xbox One设置](../../assets/images/gpc-settings-xbox-one.png)
 
-In order to use this setting, a USB Peripheral must be configured in [Web Configurator > Peripheral Mapping > USB Host](./03-peripheral-mapping.mdx#usb-host)
+要使用此设置，必须在 [Web 配置器 > 外围设备映射 > USB 主机](./03-peripheral-mapping.mdx#usb-host) 中配置 USB 外围设备。
 
-### Experimental USB Hub Support
+### 实验性USB集线器支持
 
-GP2040-CE now has experimental support for USB hubs.  A USB hub will now let you connect multiple authentication dongles as well as a keyboard.
+GP2040-CE现在支持实验性的USB集线器。使用USB集线器可以连接多个认证加密狗以及键盘。
 
-There are no settings to change for USB hub support, it is simply plug and play.  
+USB集线器支持无需更改任何设置，只需插入即可使用。
 
-As an example, you could have the following connected to a USB hub:
-1 - USB keyboard
-2 - Mayflash MagicBoots PS4 v1.1 dongle
-3 - Mayflash MagicBoots Xbox 1 dongle
-4 - Mayflash MagicBoots Xbox 360 dongle
+例如，您可以将以下设备连接到USB集线器：
+1 - USB键盘  
+2 - Mayflash MagicBoots PS4 v1.1加密狗  
+3 - Mayflash MagicBoots Xbox 1加密狗  
+4 - Mayflash MagicBoots Xbox 360加密狗  
 
-So long as the USB hub is compatible this combination should let switch between PS5 / Xbox / Xbox360 mode without physically switching the dongles around.
+只要USB集线器兼容，这种组合应该允许您在PS5 / Xbox / Xbox360模式之间切换，而无需物理更换加密狗。
 
-This will also, for the first time, allow you to use a keyboard in PS5 / Xbox / Xbox360 mode (without authentication issues so long as an appropriate dongle is used).
+这也是首次允许您在PS5 / Xbox / Xbox360模式下使用键盘（只要使用了适当的加密狗，就不会出现认证问题）。
 
 :::caution
 
-USB Hub Support is currently experimental.  We do not recommend that it be used for commercial applications.
+USB集线器支持目前仍是实验性的。我们不建议将其用于商业应用。
 
-We do not guarantee that any combination of devices and hubs will work and we will not accept support tickets or GitHub issues about combinations that do not work at this time.
+我们不保证任何设备和集线器的组合能够正常工作，目前也不会接受关于不兼容组合的支持请求或GitHub问题。
 
-We have seen issues with some USB hubs.  We do not guarantee that any single hub will or will not work and we have no plans to introduce a list of known good hubs.
+我们发现某些USB集线器存在问题。我们不保证任何单个集线器是否会正常工作，也没有计划引入已知良好集线器列表。
 
-We have also seen issues with some dongles when added to a USB hub setup like the Mayflash Magic-X.  When the Mayflash Magic-X is added to a USB hub it may not work as intended and also may cause other dongles not to work as intended. 
+我们还发现某些加密狗在添加到USB集线器设置时可能会出现问题，例如Mayflash Magic-X。当Mayflash Magic-X添加到USB集线器时，它可能无法正常工作，还可能导致其他加密狗无法正常工作。
 
-We leave it to the user to explore various combinations and see what works and does not work for them.
+我们留给用户探索各种组合，看看哪些能正常工作，哪些不能。
 
-Please be mindful of power draw if you are adding multiple dongles and a USB hub to devices and setups that use LEDs.  If you are finding issues with your setup try turning off LEDs.
+如果您添加多个加密狗和USB集线器到设备和设置中，并且这些设备使用LED，请注意电源消耗问题。如果您的设置出现问题，请尝试关闭LED。
 
 :::
 
-## Gamepad Settings
+## 游戏手柄设置
 
-![GP2040-CE Configurator - Gamepad Settings](../../assets/images/gpc-settings-gamepad.png)
+![GP2040-CE Configurator - 游戏手柄设置](../../assets/images/gpc-settings-gamepad.png)
 
-- `D-Pad Mode` - Choose the default D-Pad mode (D-Pad, Left Stick or Right Stick).
-- `SOCD Cleaning Mode` - Choose the default SOCD Cleaning Mode (Neutral, Last Win, First Win, OFF). Please note that PS4, PS3 and Nintendo Switch modes do not support setting SOCD to off and will default to Neutral SOCD.
-- `Forced Setup Mode` - Allows you to lock out Input Mode, the ability to enter Web-Config or both. Enabling a web-config lockout will require you to nuke and reload the firmware if you wish to make further changes.
-- `4-Way Joystick Mode` - Enables 4-Way Joystick mode which will prevent non-cardinal directions from registering. When a second cardinal direction input is received, the gamepad direction will change to the newest cardinal direction, similar to [SOCD Last Win](../../hotkeys.mdx#socd-last-win).
-- `Profile Number` - Enables different GPIO pin mappings per profile. Changeable through the Web-Config or [hotkeys](../../hotkeys.mdx#load-profile-1-4).
-- `Debounce Delay in milliseconds` - Timeframe where the firmware will ignore additional inputs to prevent switch noise from accidentally triggering unintended inputs.
-- `Use Gamepad Input for Display Mini Menu` - Allows direction inputs as well as buttons to control the `Mini Menu`.
+- `方向键模式` - 选择默认的方向键模式（方向键、左摇杆或右摇杆）。
+- `SOCD清理模式` - 选择默认的SOCD清理模式（回中、后输入优先、前输入优先、关闭）。请注意，PS4、PS3和Nintendo Switch模式不支持关闭SOCD设置，将默认使用回中SOCD。
+- `强制设置模式` - 允许您锁定输入模式、进入Web配置器的能力或两者。启用Web配置器锁定后，如果您希望进行进一步更改，则需要重新刷写固件。
+- `四向摇杆模式` - 启用四向摇杆模式，将防止非主方向输入被注册。当接收到第二个主方向输入时，游戏手柄方向将切换到最新的主方向，类似于[SOCD后输入优先](../../hotkeys.mdx#socd-last-win)。
+- `配置文件编号` - 启用不同的GPIO引脚映射配置文件。可通过Web配置器或[快捷键](../../hotkeys.mdx#load-profile-1-4)进行更改。
+- `去抖延迟（毫秒）` - 固件忽略额外输入以防止开关噪音意外触发非预期输入的时间帧。
+- `使用游戏手柄输入控制显示迷你菜单` - 允许方向输入和按钮控制 `迷你菜单`。
 
 :::note
 
-Please note that if `Use Gamepad Input for Display Mini Menu` is enabled inputs will still be sent to the device while navigating the `Mini Menu`.
+请注意，如果启用了 `使用游戏手柄输入控制显示迷你菜单`，在导航 `迷你菜单` 时输入仍会发送到设备。
 
-As an example, pressing down to go to the next `Mini Menu` item will also send the down input in-game.
+例如，按下方向键向下以切换到下一个 `迷你菜单` 项目，同时也会在游戏中发送向下输入。
 
 :::
 
-## Boot Input Modes
+## 启动输入模式
 
-![GP2040-CE Configurator - Boot Input Modes](../../assets/images/gpc-settings-boot-input-modes.png)
+![GP2040-CE Configurator - 启动输入模式](../../assets/images/gpc-settings-boot-input-modes.png)
 
-For each of the buttons listed in the menu, you can assign a different input mode to enter while holding that button during boot (e.g. when plugging in the controller or immediately after resetting the controller).
+对于菜单中列出的每个按钮，您可以分配一个不同的输入模式，在启动时按住该按钮进入（例如插入控制器时或重置控制器后立即）。
 
-For the list of input modes to select from, see [Input Modes](../../usage.mdx#input-modes).
+要选择的输入模式列表，请参阅[输入模式](../../usage.mdx#input-modes)。
 
-## Hotkey Settings
+## 快捷键设置
 
-![GP2040-CE Configurator - Boot Input Modes](../../assets/images/gpc-settings-hotkey.png)
+![GP2040-CE Configurator - 启动输入模式](../../assets/images/gpc-settings-hotkey.png)
 
-Hotkeys allow for combinations of buttons to be pressed to produce other actions or inputs.
+快捷键允许通过按下按钮组合来触发其他动作或输入。
 
-By default, 16 total `Hotkeys` can be assigned.
+默认情况下，可以分配16个 `快捷键`。
 
-Although there are 7 default `Hotkeys` in the firmware, individual board configurations may have more or less and the standard `Hotkeys` may be different. 
+虽然固件中有7个默认 `快捷键`，但单个板配置可能有更多或更少，标准 `快捷键` 可能会有所不同。
 
-When the `FN` key is not mapped you will not be able to enable the `FN` slider.  The `FN` slider will require the `FN` button to be pressed along with the other specified buttons to trigger the `Hotkey`.
+当 `FN` 键未映射时，您将无法启用 `FN` 滑块。`FN` 滑块需要按下 `FN` 按钮以及其他指定按钮才能触发 `快捷键`。
 
 :::note
 
-Please note that a greyed out `FN` slider does not mean a `Hotkey` is not active.  A greyed out `FN` slider means that an `FN` button has not been assigned.  
+请注意，灰色的 `FN` 滑块并不意味着 `快捷键` 未激活。灰色的 `FN` 滑块表示未分配 `FN` 按钮。
 
-You will see a warning at the top of the page if no `FN` button has been assigned.
+如果未分配 `FN` 按钮，您将在页面顶部看到警告。
 
 :::
 
-The available hotkey actions will expand over time. We may also expand the number of hotkeys available to configure in the future. For a list of the available hotkey actions, see [Hotkeys](../../hotkeys.mdx).
+可用的快捷键操作将随着时间的推移而扩展。我们也可能会在未来扩展可配置的快捷键数量。有关可用快捷键操作的列表，请参阅[快捷键](../../hotkeys.mdx)。
 
-At the end of each set `Hotkey` line you will see a `X` button.  Pressing this will remove the `Hotkey`.  You are free to remove the default `Hotkeys` if you do not wish to have them as well.
+在每行 `快捷键` 的末尾，您将看到一个 `X` 按钮。按下此按钮将删除该 `快捷键`。如果您不希望保留默认 `快捷键`，也可以自由删除它们。
 
-There is also an option at the bottom to `Lock Hotkeys` which will cause all `Hotkeys` to stop working.
+底部还有一个选项 `锁定快捷键`，启用后所有 `快捷键` 将停止工作。
