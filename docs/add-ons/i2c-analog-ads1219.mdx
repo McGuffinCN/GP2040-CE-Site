@@ -1,5 +1,5 @@
 ---
-title: I2C Analog ADS1219
+title: I2C 模拟 ADS1219
 # tags:
 # -
 pagination_next: null
@@ -9,60 +9,59 @@ description: "Add-on to use an ADS1219 ADC for Left and Right analog joysticks o
 
 import I2CTable from "../snippets/_i2c-block-table.mdx";
 
-# I2C Analog ADS1219
+# I2C 模拟 ADS1219
 
-Purpose: This add-on is intended to allow you to add Left and Right analog joystick functionality using the ADS1219 24-bit, analog-to-digital
-converter (ADC).
+用途：此附加功能旨在使用 ADS1219 24 位模拟-数字转换器（ADC）添加左右模拟摇杆功能。
 
-![GP2040-CE Configurator - Add-Ons ADS1219](../assets/images/gpc-add-ons-ads1219.png)
+![GP2040-CE 配置器 - 附加功能 ADS1219](../assets/images/gpc-add-ons-ads1219.png)
 
-## Web Configurator Options
+## Web 配置器选项
 
-:::info GPIO Pin Assignment
+:::info GPIO 引脚分配
 
-The SDA and SCL pins for I2C and speed are now configured in [`Configuration > Peripheral Mapping - I2C`](../web-configurator/menu-pages/03-peripheral-mapping.mdx#i2c).
+I2C 的 SDA 和 SCL 引脚以及速度现在可以在 [`配置 > 外设映射 - I2C`](../web-configurator/menu-pages/03-peripheral-mapping.mdx#i2c) 中进行配置。
 
 :::
 
-- `I2C Analog ADS1219 Block` - The block of I2C to use (i2c0 or i2c1).
-- `I2C Analog ADS1219 Address` - Sets the address for the I2C Analog ADS1219 based on the pins used for SDA and SCL according to the table below.
+- `I2C 模拟 ADS1219 块` - 要使用的 I2C 块（i2c0 或 i2c1）。
+- `I2C 模拟 ADS1219 地址` - 根据 SDA 和 SCL 引脚的使用情况设置 I2C 模拟 ADS1219 的地址，详见以下表格。
 
-| A0  | A1  | I2C Address |
+| A0  | A1  | I2C 地址   |
 | :-: | --- | :---------: |
 | SDA | SCL |   1001110   |
 | SCL | SDA |   1001011   |
 
-## Hardware
+## 硬件
 
-### Requirements
+### 要求
 
-This add-on requires an ADS1219 analog-to-digital converter (ADC) to function properly.
+此附加功能需要 ADS1219 模拟-数字转换器（ADC）才能正常工作。
 
-### Installation
+### 安装
 
-Connect the pins on the ADS1219 according to the table below
+根据以下表格连接 ADS1219 的引脚：
 
-| ADS1219 Pin | Function                     |
-| :---------: | ---------------------------- |
-|     A0      | SDA or SCL                   |
-|     A1      | SDA or SCL                   |
-|    AIN0     | Left analog joystick X-Axis  |
-|    AIN1     | Left analog joystick Y-Axis  |
-|    AIN2     | Right analog joystick X-Axis |
-|    AIN3     | Right analog joystick Y-Axis |
+| ADS1219 引脚 | 功能                     |
+| :----------: | ------------------------ |
+|     A0       | SDA 或 SCL               |
+|     A1       | SDA 或 SCL               |
+|    AIN0      | 左模拟摇杆 X 轴          |
+|    AIN1      | 左模拟摇杆 Y 轴          |
+|    AIN2      | 右模拟摇杆 X 轴          |
+|    AIN3      | 右模拟摇杆 Y 轴          |
 
 <br />
 
-:::info A0/A1 GPIO Assignment
+:::info A0/A1 GPIO 分配
 
-These pins will need to be wired to the appropriate SDA/SCL pins on the RP2040 and set the correct I2C block in Web Configurator.
+这些引脚需要连接到 RP2040 上的适当 SDA/SCL 引脚，并在 Web 配置器中设置正确的 I2C 块。
 
-See [Peripheral Mapping](../web-configurator/menu-pages/03-peripheral-mapping.mdx#i2c) for more information on setting up I2C.
+有关设置 I2C 的更多信息，请参阅 [外设映射](../web-configurator/menu-pages/03-peripheral-mapping.mdx#i2c)。
 
 :::
 
-## Miscellaneous Notes
+## 其他注意事项
 
-These installation instructions do not cover the additional circuitry required for the use of the ADS1219 ADC, only the wiring to the RP2040.
+这些安装说明仅涵盖 ADS1219 ADC 的连接，不包括使用 ADS1219 ADC 所需的额外电路。
 
-[ADS1219 Product Sheet](https://www.ti.com/lit/ds/symlink/ads1219.pdf)
+[ADS1219 产品说明](https://www.ti.com/lit/ds/symlink/ads1219.pdf)
