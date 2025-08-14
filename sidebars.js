@@ -30,7 +30,7 @@ const sidebars = {
         "hotkeys",
         {
           type: "ref",
-          label: "网页设置",
+          label: "网页配置器",
           id: "web-configurator/web-configurator",
         },
         "rgb-leds",
