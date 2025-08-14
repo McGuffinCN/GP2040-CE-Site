@@ -1,5 +1,5 @@
 ---
-title: Peripheral Mapping
+title: 外围设备映射
 # tags:
 # -
 # pagination_next: null
@@ -10,40 +10,40 @@ description: "Map GPIO pins from RP2040 and configure settings for peripherals i
 import I2CTable from "../../snippets/_i2c-block-table.mdx";
 import SPITable from "../../snippets/_spi-block-table.mdx";
 
-# Peripheral Mapping
+# 外围设备映射
 
-![GP2040-CE Configurator - Peripheral Mapping](../../assets/images/gpc-peripheral-mapping.png)
+![GP2040-CE Configurator - 外围设备映射](../../assets/images/gpc-peripheral-mapping.png)
 
-Here you can assign the GPIO pins necessary for using input modes, peripherals, and add-ons that require I2C and a USB host port. These include, but are not limited to
+在这里，您可以分配使用输入模式、外围设备和需要 I2C 及 USB 主机端口的附加功能所需的 GPIO 引脚。这些功能包括但不限于：
 
-- [PS4 Input Mode](./01-settings.mdx#additional-ps4-settings)
-- [PS5 Input Mode](./01-settings.mdx#additional-ps5-settings)
-- [OLED Display](./07-display-configuration.mdx)
-- [I2C Analog ADS1219](../../add-ons/i2c-analog-ads1219.mdx)
-- [Xbox One Input Mode](./01-settings.mdx#additional-xbox-one-settings)
-- [Keyboard Host Add-on](../../add-ons/keyboard-host.mdx)
+- [PS4 输入模式](./01-settings.mdx#additional-ps4-settings)
+- [PS5 输入模式](./01-settings.mdx#additional-ps5-settings)
+- [OLED 显示屏](./07-display-configuration.mdx)
+- [I2C 模拟 ADS1219](../../add-ons/i2c-analog-ads1219.mdx)
+- [Xbox One 输入模式](./01-settings.mdx#additional-xbox-one-settings)
+- [键盘主机附加功能](../../add-ons/keyboard-host.mdx)
 
 :::info
 
-Click on the (i) tool tip in the Web Configurator for more information on the various settings
+点击 Web 配置器中的 (i) 工具提示以获取有关各种设置的更多信息。
 
 :::
 
 ## I2C
 
-Each I2C block, `I2C0` and `I2C1`, has separate settings and each must be configured before using the respective I2C block. These must be configured properly before any feature or add-on that uses I2C can be used.
+每个 I2C 模块（`I2C0` 和 `I2C1`）都有独立的设置，在使用相应的 I2C 模块之前必须正确配置。这些设置必须正确完成，才能使用任何依赖 I2C 的功能或附加功能。
 
-- `Toggle` - This will toggle a specific I2C block on and off
-- `SDA` - The GPIO pin used for Serial Data (SDA).
-- `SCL` - The GPIO pin used for Serial clock (SCL).
-- `Speed` - Sets the speed of I2C communication.
-  - `Normal - 100000`
-  - `Fast - 400000`
-  - `Fast Plus - 800000`
+- `切换` - 开启或关闭指定的 I2C 模块。
+- `SDA` - 用于串行数据 (SDA) 的 GPIO 引脚。
+- `SCL` - 用于串行时钟 (SCL) 的 GPIO 引脚。
+- `速度` - 设置 I2C 通信的速度。
+  - `普通 - 100000`
+  - `快速 - 400000`
+  - `快速增强 - 800000`
 
 :::caution
 
-The SDA and SCL pins must match a pair found on the table below for each I2C block. If this is not configured correctly, your I2C devices will not function properly.
+SDA 和 SCL 引脚必须与下表中为每个 I2C 模块列出的引脚对之一匹配。如果未正确配置，您的 I2C 设备将无法正常工作。
 
 :::
 
@@ -51,35 +51,35 @@ The SDA and SCL pins must match a pair found on the table below for each I2C blo
 
 ## SPI
 
-Each SPI block, SPI0 and SPI1, has separate settings and must be configured before using the respective SPI block. These must be configured properly before any feature or add-on that uses SPI can be used.
+每个 SPI 模块（SPI0 和 SPI1）都有独立的设置，在使用相应的 SPI 模块之前必须正确配置。这些设置必须正确完成，才能使用任何依赖 SPI 的功能或附加功能。
 
-- `Toggle` - This will toggle a specific SPI block on and off
-- `RX` - The GPIO pin used for MISO, to receive data.
-- `CS` - The GPIO pin used for Chip Select (CS).
-- `SCK` - The GPIO pin used for Serial Clock (SCK).
-- `TX` - The GPIO pin used for MOSI, to send data.
+- `切换` - 开启或关闭指定的 SPI 模块。
+- `RX` - 用于接收数据的 GPIO 引脚 (MISO)。
+- `CS` - 用于芯片选择 (CS) 的 GPIO 引脚。
+- `SCK` - 用于串行时钟 (SCK) 的 GPIO 引脚。
+- `TX` - 用于发送数据的 GPIO 引脚 (MOSI)。
 
 :::caution
 
-The pins must match a set found on the table below for each SPI block. If this is not configured correctly, your SPI devices will not function properly.
+引脚必须与下表中为每个 SPI 模块列出的引脚集之一匹配。如果未正确配置，您的 SPI 设备将无法正常工作。
 
 :::
 
 <SPITable />
 
-## USB Host
+## USB 主机
 
-There are not restrictions on which GPIO pins can be used for setting up a USB host port. You can pick any GPIO pin as long as it is available (not being used by any other feature) and the GPIO pin selected for `D+` has a GPIO pin immediately following or preceding it that can be used for `D-` (e.g. GPIO X and GPIO X+/-1).
+设置 USB 主机端口时，选择的 GPIO 引脚没有限制。您可以选择任何可用的 GPIO 引脚（未被其他功能占用），并确保为 `D+` 选择的 GPIO 引脚在物理上紧邻一个可用于 `D-` 的 GPIO 引脚（例如，GPIO X 和 GPIO X+/-1）。
 
-- `Toggle` - This will toggle the USB Host Port on and off
-- `D+` - The GPIO Pin used to carry Data Plus between the USB Host Port and RP2040
-- `Enable 5V` - The GPIO Pin used to enable 5V power to the host port on the board.
-- `Pin Order` - This setting is based on the order that the Data pins are connected to sequential GPIO pins
-  - `D+/D-` - The GPIO pins are set such that, sequentially, `D+` is immediately followed by `D-` (e.g. D+ = 0. D- = 1)
-  - `D-/D+` -The GPIO pins are set such that, sequentially, `D+` is immediately preceded by `D-` (e.g. D+ = 29, D- = 28)
+- `切换` - 开启或关闭 USB 主机端口。
+- `D+` - 用于在 USB 主机端口和 RP2040 之间传输正向数据的 GPIO 引脚。
+- `启用 5V` - 用于为主机端口提供 5V 电源的 GPIO 引脚。
+- `引脚顺序` - 此设置基于数据引脚连接到连续 GPIO 引脚的顺序。
+  - `D+/D-` - GPIO 引脚按顺序设置为 `D+` 紧跟 `D-`（例如，D+ = 0，D- = 1）。
+  - `D-/D+` - GPIO 引脚按顺序设置为 `D+` 紧接在 `D-` 之后（例如，D+ = 29，D- = 28）。
 
-:::note Enable 5V
+:::note 启用 5V
 
-Most boards do not require this to be set. This is only applicable to a small number of boards (e.g. Adafruit RP2040 Feather USB Host) as they possess pins for enabling and disabling 5V port on the USB host port.
+大多数板不需要设置此项。这仅适用于少数板（例如 Adafruit RP2040 Feather USB Host），因为它们具有用于启用和禁用 USB 主机端口 5V 电源的引脚。
 
 :::
