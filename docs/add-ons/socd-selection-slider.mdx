@@ -1,5 +1,5 @@
 ---
-title: SOCD Selection Slider
+title: SOCD 选择滑块
 # tags:
 # -
 pagination_next: null
@@ -7,45 +7,45 @@ pagination_prev: null
 description: "Add-on to select SOCD cleaning modes with toggle or slide switch"
 ---
 
-# SOCD Selection Slider
+# SOCD 选择滑块
 
-Purpose: This add-on is intended to allow users change the method of SOCD cleaning using a two/three position toggle switch or slide toggle.
+用途：此附加功能旨在允许用户通过两档或三档拨动开关或滑动开关切换 SOCD 清理模式。
 
-![GP2040-CE Configurator - SOCD Selection Slider](../assets/images/gpc-add-ons-socd-slider.png)
+![GP2040-CE 配置器 - SOCD 选择滑块](../assets/images/gpc-add-ons-socd-slider.png)
 
-## Web Configurator Options
+## Web 配置器选项
 
-- `SOCD Slider Mode Default` - The default SOCD mode to be used when the slider pin is not activated.
+- `SOCD Slider Mode Default` - 在滑块引脚未激活时使用的默认 SOCD 模式。
 
-:::info GPIO Pin Mapping Moved
+:::info GPIO 引脚映射已移动
 
-The pin(s) are now configured on the [GPIO Pin Mapping page](../web-configurator/menu-pages/02-gpio-pin-mapping.mdx) by choosing the correct option for the selected pin.
+引脚现在可以在 [GPIO 引脚映射页面](../web-configurator/menu-pages/02-gpio-pin-mapping.mdx) 中配置，通过选择所需引脚的正确选项来完成。
 
-- [Up Priority SOCD Cleaning](../hotkeys.mdx#socd-up-priority)
-- [Neutral SOCD Cleaning](../hotkeys.mdx#socd-neutral)
-- [Last Win SOCD Cleaning](../hotkeys.mdx#socd-last-win)
-- [First Wins SOCD Cleaning](../hotkeys.mdx#socd-first-wins)
-- [SOCD Cleaning Off](../hotkeys.mdx#socd-cleaning-off)
+- [优先向上 SOCD 清理](../hotkeys.mdx#socd-up-priority)
+- [中立 SOCD 清理](../hotkeys.mdx#socd-neutral)
+- [最后胜出 SOCD 清理](../hotkeys.mdx#socd-last-win)
+- [先胜出 SOCD 清理](../hotkeys.mdx#socd-first-wins)
+- [关闭 SOCD 清理](../hotkeys.mdx#socd-cleaning-off)
 
 :::
 
-- `SOCD Slider Mode Default` - The SOCD cleaning mode that is active when no `SOCD Cleaning Mode` pins are held.
-  - [Up Priority](../hotkeys.mdx#socd-up-priority)
-  - [Neutral](../hotkeys.mdx#socd-neutral)
-  - [Last Win](../hotkeys.mdx#socd-last-win)
-  - [First Wins](../hotkeys.mdx#socd-first-wins)
-  - [SOCD Cleaning Off](../hotkeys.mdx#socd-cleaning-off)
+- `SOCD Slider Mode Default` - 当没有 `SOCD Cleaning Mode` 引脚被保持时激活的 SOCD 清理模式。
+  - [优先向上](../hotkeys.mdx#socd-up-priority)
+  - [中立](../hotkeys.mdx#socd-neutral)
+  - [最后胜出](../hotkeys.mdx#socd-last-win)
+  - [先胜出](../hotkeys.mdx#socd-first-wins)
+  - [关闭 SOCD 清理](../hotkeys.mdx#socd-cleaning-off)
 
-## Hardware
+## 硬件
 
-### Requirements
+### 要求
 
-The GPIO pins set on the Pin Mappings page will each need to be brought and kept low to remain active to use that mode and when using the default mode, none of the pins can be brought low. Therefore, a 2 or 3 position toggle switch or slide toggle is necessary for proper use of this add-on.
+在引脚映射页面设置的 GPIO 引脚需要保持低电平以激活对应模式，而使用默认模式时，所有引脚不能保持低电平。因此，正确使用此附加功能需要一个两档或三档拨动开关或滑动开关。
 
-### Installation
+### 安装
 
-Installation will depend on whether a toggle switch or slide toggle is used. In general, on one side of the switch, connect the selection pin(s) to the GPIO pin(s) set. On the center pin, connect it to any GND pin.
+安装方法取决于使用拨动开关还是滑动开关。通常情况下，在开关的一侧，将选择引脚连接到设置的 GPIO 引脚。在开关的中心引脚，将其连接到任意 GND 引脚。
 
-## Miscellaneous Notes
+## 其他备注
 
-Enabling this add-on will disable the use of the SOCD cleaning [Hotkey Shortcuts](../hotkeys.mdx), resulting in the toggle switch or slide toggle set up with this add-on being the only method to set the SOCD cleaning mode.
+启用此附加功能后，将禁用使用 SOCD 清理的 [快捷键](../hotkeys.mdx)，因此通过此附加功能设置的拨动开关或滑动开关将成为设置 SOCD 清理模式的唯一方法。
