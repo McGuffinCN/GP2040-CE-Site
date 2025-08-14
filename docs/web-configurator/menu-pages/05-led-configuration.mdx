@@ -1,5 +1,5 @@
 ---
-title: LED Configuration
+title: LED 配置
 # tags:
 # -
 # pagination_next: null
@@ -12,93 +12,93 @@ import InputLabelSelector, {
 } from "@site/src/components/LabelSelector.tsx";
 import { ColorBlock } from "@site/src/components/LEDColors";
 
-# LED Configuration
+# LED 配置
 
-If you have a setup with per-button RGB LEDs, they can be configured here.
+如果您使用了每个按钮的 RGB LED 设置，可以在此处进行配置。
 
-## RGB LED Configuration
+## RGB LED 配置
 
-![GP2040-CE Configurator - LED Configuration](../../assets/images/gpc-rgb-led-config.png)
+![GP2040-CE Configurator - LED 配置](../../assets/images/gpc-rgb-led-config.png)
 
-- `Data Pin` - The GPIO pin that will drive the data line for your RGB LED chain. Set to `-1` to disable RGB LEDs.
-- `LED Format` - The data format used to communicate with your RGB LEDs. If unsure the default `GRB` value is usually safe.
-- `LED Layout` - Select the layout for your controls/buttons. This is used for static themes and some per-button animations.
-- `LEDs Per Button` - Set the number of LEDs in each button on your chain.
-- `Max Brightness` - Set the maximum brightness for the LEDs. Ranges from 0-255.
-- `Brightness Steps` - The number of levels of brightness to cycle through when turning brightness up and down.
+- `数据引脚` - 驱动 RGB LED 数据线的 GPIO 引脚。设置为 `-1` 可禁用 RGB LED。
+- `LED 格式` - 与 RGB LED 通信使用的数据格式。如果不确定，默认的 `GRB` 通常是安全的选择。
+- `LED 布局` - 选择控制器/按钮的布局。这用于静态主题和某些每按钮动画。
+- `每按钮 LED 数量` - 设置链中每个按钮的 LED 数量。
+- `最大亮度` - 设置 LED 的最大亮度，范围为 0-255。
+- `亮度级别` - 调整亮度时的循环级别数量。
 
-## RGB LED Button Order
-
-:::note
-
-Please note that RGB Button LEDs must be the first LEDs configured. They will start at index 0 on the RGB LED strip.
-
-Also, at the current time, each button can only have one instance in the LED chain. This is the case even if multiple LEDs are assigned per button and multiple buttons are assigned to different GPIO pins.
-
-:::
-
-![GP2040-CE Configurator - RGB LED Button Order](../../assets/images/gpc-rgb-led-button-order.png)
-
-Rearrange the Buttons in the order of the LED Chain. This is different between devices and is determined by manufacturer of the board and LEDs.
-
-## Player LEDs (XInput)
-
-Available selections for `Player LED Type` are `None`, `PWM` or `RGB`.
-
-### PWM Player LEDs
-
-![GP2040-CE Configurator - PWM Player LEDs](../../assets/images/gpc-pled-pwm.png)
-
-- `PLED #[1-4] Pin` - The GPIO pin the standard LED is connected to.
-
-### RGB Player LEDs
+## RGB LED 按钮顺序
 
 :::note
 
-Please note that RGB Player LEDs must be located at an index after the RGB LED Buttons on the LED strip! The Web Config interface will suggest a starting index based on the number of LED buttons mapped in [RGB LED Button Order](#rgb-led-button-order) and the select `LEDs Per Button` value. We hope to remove this limitation in the future.
+请注意，RGB 按钮 LED 必须是链中配置的第一个 LED。它们将在 RGB LED 灯条的索引 0 开始。
+
+此外，目前每个按钮在 LED 链中只能有一个实例。即使为每个按钮分配了多个 LED，并且多个按钮分配到不同的 GPIO 引脚，这种限制仍然适用。
 
 :::
 
-![GP2040-CE Configurator - PWM Player LEDs](../../assets/images/gpc-pled-rgb.png)
+![GP2040-CE Configurator - RGB LED 按钮顺序](../../assets/images/gpc-rgb-led-button-order.png)
 
-- `PLED #[1-4] Index` - The index of the LED module on the RGB strip.
-- `RGB PLED Color` - Click the box to reveal a color picker, or manually enter the color.
+根据 LED 链的顺序重新排列按钮。这因设备不同而异，由板和 LED 的制造商决定。
 
-### Case RGB LEDs
+## 玩家 LED (XInput)
 
-![GP2040-CE Configurator - RGB Case LEDs](../../assets/images/gpc-rgb-case-leds.png)
+`玩家 LED 类型` 可选择 `无`、`PWM` 或 `RGB`。
 
-Case RGB LEDs allow you to add additional RGB LEDs inside of your case or on your device for more RGB goodness.
+### PWM 玩家 LED
 
-There are several options for `Color Type`:
-- `Off` - No case RGB LEDs
-- `Ambient` - Case RGB LEDs will operate independently of your button LED settings.
-- `Linked` - Case RGB LEDs will match the button LED settings.
+![GP2040-CE Configurator - PWM 玩家 LED](../../assets/images/gpc-pled-pwm.png)
+
+- `PLED #[1-4] 引脚` - 标准 LED 连接的 GPIO 引脚。
+
+### RGB 玩家 LED
 
 :::note
 
-When in `Ambient` case RGB LED mode you will have access to some additional shortcuts to change the LEDs.
-
-| Hotkey                                 | Description                                        |
-| -------------------------------------- | -------------------------------------------------- |
-| <Hotkey buttons={["S2", "B3", "B1"]}/> | Cycle between `Ambient`, `Linked`, and `Off` mode. |
-| <Hotkey buttons={["S2", "B4"]}/>       | Increase brightness of case LEDs                   |
-| <Hotkey buttons={["S2", "B2"]}/>       | Decrease brightness of case LEDs                   |
-| <Hotkey buttons={["S2", "R1"]}/>       | Next color for static colors in case LEDs          |
-| <Hotkey buttons={["S2", "R2"]}/>       | Previous color for static colors in case LEDs      |
-| <Hotkey buttons={["S2", "L1"]}/>       | Next Effect in Ambient mode                        |
-| <Hotkey buttons={["S2", "L2"]}/>       | Previous Effect in Ambient mode                    |
+请注意，RGB 玩家 LED 必须位于 LED 灯条上 RGB LED 按钮之后的索引位置！Web 配置界面会根据 [RGB LED 按钮顺序](#rgb-led-button-order) 中映射的按钮数量和选择的 `每按钮 LED 数量` 值建议起始索引。我们希望未来能移除此限制。
 
 :::
 
-![GP2040-CE Configurator - RGB Case LEDs Settings](../../assets/images/gpc-rgb-case-leds-settings.png)
+![GP2040-CE Configurator - PWM 玩家 LED](../../assets/images/gpc-pled-rgb.png)
 
-When choosing `Ambient` or `Linked` modes you will also need to specify where the case LEDs start in the index as well as how many LEDs are to be used for case LEDs.
-- `RGB LED Index` - The LED position in the chain to start case RGB LEDs at.
-- `RGB LED Count` - The number of LEDs that will be used for case RGB LEDs.
+- `PLED #[1-4] 索引` - RGB 灯条上 LED 模块的索引。
+- `RGB PLED 颜色` - 点击框以显示颜色选择器，或手动输入颜色。
+
+### 机壳 RGB LED
+
+![GP2040-CE Configurator - RGB 机壳 LED](../../assets/images/gpc-rgb-case-leds.png)
+
+机壳 RGB LED 允许您在设备内部或外部添加额外的 RGB LED，以增强 RGB 效果。
+
+`颜色类型` 有以下选项：
+- `关闭` - 无机壳 RGB LED。
+- `环境` - 机壳 RGB LED 将独立于按钮 LED 设置运行。
+- `关联` - 机壳 RGB LED 将匹配按钮 LED 设置。
 
 :::note
 
-The index must be after the last LED button defined but can be before or after the player LEDs and turbo LED.
+在 `环境` 模式下，您可以使用以下快捷键更改 LED 设置。
+
+| 快捷键                                  | 描述                                               |
+| --------------------------------------- | ------------------------------------------------- |
+| <Hotkey buttons={["S2", "B3", "B1"]}/>  | 在 `环境`、`关联` 和 `关闭` 模式之间切换。          |
+| <Hotkey buttons={["S2", "B4"]}/>        | 增加机壳 LED 的亮度。                              |
+| <Hotkey buttons={["S2", "B2"]}/>        | 减少机壳 LED 的亮度。                              |
+| <Hotkey buttons={["S2", "R1"]}/>        | 切换机壳 LED 的静态颜色到下一个颜色。              |
+| <Hotkey buttons={["S2", "R2"]}/>        | 切换机壳 LED 的静态颜色到上一个颜色。              |
+| <Hotkey buttons={["S2", "L1"]}/>        | 切换到环境模式下的下一个效果。                      |
+| <Hotkey buttons={["S2", "L2"]}/>        | 切换到环境模式下的上一个效果。                      |
 
 :::
+
+![GP2040-CE Configurator - RGB 机壳 LED 设置](../../assets/images/gpc-rgb-case-leds-settings.png)
+
+选择 `环境` 或 `关联` 模式时，您还需要指定机壳 LED 的起始索引以及机壳 LED 的数量。
+- `RGB LED 索引` - 机壳 RGB LED 在链中的起始位置。
+- `RGB LED 数量` - 用于机壳 RGB LED 的 LED 数量。
+
+:::note
+
+索引必须位于定义的最后一个按钮 LED 之后，但可以在玩家 LED 和涡轮 LED 的前后。
+
+::: 
