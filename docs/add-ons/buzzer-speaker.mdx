@@ -1,5 +1,5 @@
 ---
-title: Buzzer Speaker
+title: 蜂鸣器扬声器
 # tags:
 # -
 pagination_next: null
@@ -7,31 +7,31 @@ pagination_prev: null
 description: "Add-on to add a buzzer to your controller"
 ---
 
-# Buzzer Speaker
+# 蜂鸣器扬声器
 
-Purpose: This add-on is intended to allow you to add a buzzer to your GP2040-CE device and play sounds.
+用途：此附加功能旨在允许您为 GP2040-CE 设备添加蜂鸣器并播放声音。
 
-![GP2040-CE Configurator - Add-Ons Buzzer](../assets/images/gpc-add-ons-buzzer.png)
+![GP2040-CE 配置器 - 附加功能 蜂鸣器](../assets/images/gpc-add-ons-buzzer.png)
 
-## Web Configurator Options
+## Web 配置器选项
 
-- `Use buzzer` - Turns on/off the buzzer module.
-- `Buzzer Pin` - The GPIO pin used for the buzzer.
-- `Buzzer Volume` - Audio volume of buzzer. Ranges from 0-100.
+- `Use buzzer` - 开启/关闭蜂鸣器模块。
+- `Buzzer Pin` - 用于蜂鸣器的 GPIO 引脚。
+- `Buzzer Volume` - 蜂鸣器的音量，范围为 0-100。
 
-## Hardware
+## 硬件
 
-### Requirements
+### 要求
 
-- 3-3.3V Piezo speaker
+- 3-3.3V 压电扬声器
 
-The speaker only needs to have pins for power (VCC) and ground (GND). If there is an I/O pin on speaker, you can jump the pins and use only the VCC connected to RP2040 GPIO pin.
+扬声器只需要电源 (VCC) 和接地 (GND) 引脚。如果扬声器上有 I/O 引脚，可以将引脚跳线，只使用连接到 RP2040 GPIO 引脚的 VCC。
 
-### Installation
+### 安装
 
-- Plug into GPIO pin on board to VCC on speaker
-- Enter GPIO pin into web config
+- 将开发板上的 GPIO 引脚连接到扬声器的 VCC。
+- 在 Web 配置器中输入 GPIO 引脚。
 
-## Miscellaneous Notes
+## 其他注意事项
 
-None
+无
