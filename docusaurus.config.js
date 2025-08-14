@@ -15,8 +15,8 @@ const config = {
   url: "https://gp2040-ce.info",
   baseUrl: "/",
 
-  organizationName: "OpenStickCommunity",
-  projectName: "GP2040-CE",
+  organizationName: "McGuffinCN",
+  projectName: "GP2040-CE-Site",
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
