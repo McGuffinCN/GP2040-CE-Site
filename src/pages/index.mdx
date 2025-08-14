@@ -8,13 +8,13 @@ description: "GP2040-CE (Community Edition) is a gamepad firmware for the Raspbe
 ---
 
 <p align="center">
-  <a href="https://gp2040-ce.info">
+  <a>
     <img alt="GP2040-CE" src="https://raw.githubusercontent.com/OpenStickCommunity/Site/main/docs/assets/images/gp2040-ce-logo.png" />
   </a>
 </p>
 
 <p align="center">
-  基于RP2040的多平台游戏手柄固件
+  基于RP2040的多平台游戏控制器固件
 </p>
 
 <p align="center">
@@ -35,9 +35,7 @@ description: "GP2040-CE (Community Edition) is a gamepad firmware for the Raspbe
 
 ## 链接
 
-[下载](https://gp2040-ce.info/downloads) | [安装](https://gp2040-ce.info/installation) | [接线](https://gp2040-ce.info/controller-build/wiring) | [使用](https://gp2040-ce.info/usage) | [常见问题](https://gp2040-ce.info/faq/faq-general) | [GitHub](https://github.com/OpenStickCommunity/GP2040-CE)
-
-完整文档请访问 [https://gp2040-ce.info](https://gp2040-ce.info)
+[下载](./pages/downloads.mdx) | [安装](./installation.mdx) | [接线](./controller-build/wiring.mdx) | [使用](./usage.mdx) | [常见问题](./faq/faq-general.mdx) | [GitHub](https://github.com/OpenStickCommunity/GP2040-CE)
 
 ## 功能
 
@@ -47,22 +45,22 @@ description: "GP2040-CE (Community Edition) is a gamepad firmware for the Raspbe
 - 通过方向键输入模拟左摇杆和右摇杆，以及专用切换开关
 - 方向键 + LS/RS 双方向输入支持
 - 按钮反转输入支持
-- [Turbo（连发）和 Turbo LED](https://gp2040-ce.info/add-ons/turbo)，支持速度选择
+- [Turbo（连发）和 Turbo LED](./add-ons/turbo.mdx)，支持速度选择
 - 每个按钮支持 RGB LED
 - PWM 玩家指示灯 LED 支持（仅限 XInput）
 - 支持多种 LED 配置文件
 - 支持 128x64 单色 I2C 显示屏 - 兼容 SSD1306、SH1106 和 SH1107
 - 自定义启动画面，支持通过网页配置轻松上传图像
 - 支持被动蜂鸣器扬声器（3V 或 5V）
-- [内置嵌入式网页配置器](https://gp2040-ce.info/web-configurator) - 无需下载！
+- [内置嵌入式网页配置器](./web-configurator/web-configurator.mdx) - 无需下载！
 
-访问 [GP2040-CE 使用说明](https://gp2040-ce.info/usage) 页面了解更多详情。
+访问 [GP2040-CE 使用说明](./usage.mdx) 页面了解更多详情。
 
 ## 性能
 
 输入延迟使用 [WydD 的 inputlag.science 网站](https://inputlag.science/controller/methodology) 中描述的方法进行测试，固件使用默认的 1000 Hz（1ms）轮询率。您可以阅读我们用于延迟测试的设置 [这里](https://github.com/OpenStickCommunity/Site/blob/main/latency_testing/README.md)，以便自行测试或了解用于测试的设备。
 
-| 版本    | 模式      | 轮询率   | 最小值   | 最大值   | 平均值   | 标准差   | 准时百分比 | 1帧跳过百分比 | 2帧跳过百分比 |
+| 版本    | 模式      | 轮询率   | 最小值   | 最大值   | 平均值   | 标准差   | 准时概率 | 1帧跳过概率 | 2帧跳过概率 |
 | ------- | --------- | -------- | -------- | -------- | -------- | -------- | ---------- | ------------- | ------------- |
 | v0.7.11 | Xinput    | 1 ms     | 0.45 ms  | 1.28 ms  | 0.76 ms  | 0.24 ms  | 98.48%     | 1.52%         | 0%            |
 | v0.7.11 | Switch    | 1 ms     | 0.41 ms  | 1.23 ms  | 0.72 ms  | 0.24 ms  | 98.53%     | 1.47%         | 0%            |
@@ -71,7 +69,7 @@ description: "GP2040-CE (Community Edition) is a gamepad firmware for the Raspbe
 | v0.7.11 | PS4       | 1 ms     | 0.55 ms  | 2.37 ms  | 0.90 ms  | 0.32 ms  | 98.19%     | 1.81%         | 0%            |
 | v0.7.11 | PS5       | 1 ms     | 0.55 ms  | 2.37 ms  | 0.91 ms  | 0.33 ms  | 98.17%     | 1.83%         | 0%            |
 
-完整测试结果可在 [GP2040-CE v0.7.10 固件延迟测试结果](https://github.com/OpenStickCommunity/Site/raw/main/latency_testing/GP2040-CE_Firmware_Latency_Test_Results_v0.7.11.xlsx) .xlsx 表中找到。
+完整测试结果可在 [GP2040-CE v0.7.10 固件延迟测试结果.xlsx](https://github.com/OpenStickCommunity/Site/raw/main/latency_testing/GP2040-CE_Firmware_Latency_Test_Results_v0.7.11.xlsx) 表中找到。
 
 v0.7.10 的结果可在 [这里](https://github.com/OpenStickCommunity/Site/raw/main/latency_testing/GP2040-CE_Firmware_Latency_Test_Results_v0.7.10.xlsx) 找到。之前的测试结果可在 `latency_testing` 文件夹中找到。
 
