@@ -1,5 +1,5 @@
 ---
-title: GPIO Pin Mapping
+title: GPIO 引脚映射
 # tags:
 # -
 # pagination_next: null
@@ -7,75 +7,72 @@ title: GPIO Pin Mapping
 description: "Map GPIO pins from RP2040 to gamepad inputs in GP2040-CE"
 ---
 
-# GPIO Pin Mapping
+# GPIO 引脚映射
 
-![GP2040-CE Configurator - GPIO Pin Mapping](../../assets/images/gpc-pin-mapping.png)
+![GP2040-CE Configurator - GPIO 引脚映射](../../assets/images/gpc-pin-mapping.png)
 
-Here you can remap the GP2040-CE buttons to different GPIO pins on the RP2040 chip. This can be used to simply remap buttons or bypass a GPIO pin that may have issues on your device.
+在这里，您可以将 GP2040-CE 按钮重新映射到 RP2040 芯片上的不同 GPIO 引脚。这可以用于简单地重新映射按钮或绕过设备上可能有问题的 GPIO 引脚。
 
-The following options are available for assignment to each GPIO Pin.
+以下选项可用于分配给每个 GPIO 引脚：
 
-- Standard Gamepad inputs found in [Buttons](../../usage.mdx#buttons)
-- D-Pad Mode: Digital, Left Stick, and Right Stick
-- [Dual Direction Input](../../add-ons/dual-direction-input.mdx) Up, Down, Left and Right
-- [Up Priority SOCD Cleaning](../../hotkeys.mdx#socd-up-priority)
-- [Neutral SOCD Cleaning](../../hotkeys.mdx#socd-neutral)
-- [Last Win SOCD Cleaning](../../hotkeys.mdx#socd-last-win)
-- [First Wins SOCD Cleaning](../../hotkeys.mdx#socd-first-wins)
-- [SOCD Cleaning Off](../../hotkeys.mdx#socd-cleaning-off)
+- 在 [Buttons](../../usage.mdx#buttons) 中找到的标准游戏手柄输入
+- D-Pad 模式：数字模式、左摇杆和右摇杆
+- [双方向输入](../../add-ons/dual-direction-input.mdx)：上、下、左、右
+- [SOCD 上优先](../../hotkeys.mdx#socd-up-priority)
+- [SOCD 回中](../../hotkeys.mdx#socd-neutral)
+- [SOCD 后输入优先](../../hotkeys.mdx#socd-last-win)
+- [SOCD 先输入优先](../../hotkeys.mdx#socd-first-wins)
+- [关闭 SOCD Cleaning](../../hotkeys.mdx#socd-cleaning-off)
 - [Turbo](../../add-ons/turbo.mdx)
-- [Macro](./09-macros.mdx)
-- Function
-- Extras
+- [宏](./09-macros.mdx)
+- 功能
+- 额外功能
 
 :::note
-- Multiple [Buttons](../../usage.mdx#buttons) can be assigned to a single GPIO pin (SOCD Cleaning, [Hotkeys](../../hotkeys.mdx), can both be activated).
-- Options are not limited to a single GPIO pin assignment and can be assigned multiple times (e.g. GPIO pins 0-29 can all be assigned to Up, if desired).
+- 多个 [Buttons](../../usage.mdx#buttons) 可以分配到单个 GPIO 引脚（例如 SOCD 清理和 [热键](../../hotkeys.mdx) 都可以激活）。
+- 选项不限于单个 GPIO 引脚分配，可以多次分配（例如，GPIO 引脚 0-29 都可以分配为“向上”输入，如果需要）。
 
 :::
 
-## Pin Viewer :video_game:
+## 引脚查看器 :video_game:
 
-This tool is available to see what GPIO pin is physically wired to a button. Click on the button and follow the prompt. It will ask you to press the button and then display a "Pressed pin".
+此工具可用于查看哪个 GPIO 引脚物理连接到某个按钮。点击按钮并按照提示操作。系统会要求您按下按钮，并显示“按下的引脚”。
 
-## Map Buttons With :video_game:
+## 使用 :video_game: 映射按钮
 
-![GP2040-CE Configurator - GPIO Pin Mapping - "Map buttons with..." ](../../assets/images/gpc-pin-mapping-map-buttons.png)
+![GP2040-CE Configurator - GPIO 引脚映射 - "使用...映射按钮"](../../assets/images/gpc-pin-mapping-map-buttons.png)
 
-If you do not know what pins are mapped to which button on your device, there is a tool available to help. Click on the button shown above and follow the prompt. It will ask you to press each standard gamepad input found in [Buttons](../../usage.mdx#buttons) one at a time.
+如果您不知道设备上的哪些引脚映射到哪些按钮，可以使用一个工具来帮助您。点击上图中的按钮并按照提示操作。系统会要求您依次按下在 [Buttons](../../usage.mdx#buttons) 中找到的每个标准游戏手柄输入。
 
-![GP2040-CE Configurator - GPIO Pin Mapping - Prompt](../../assets/images/gpc-pin-mapping-map-buttons-prompt.png)
+![GP2040-CE Configurator - GPIO 引脚映射 - 提示](../../assets/images/gpc-pin-mapping-map-buttons-prompt.png)
 
-- If you do not wish to map a specific input, you can click `Skip Button` and proceed.
-- If you do not need to map any more inputs, click `Stop Capture`.
+- 如果您不希望映射特定输入，可以点击 `跳过按钮` 并继续操作。
+- 如果您不需要映射更多输入，可以点击 `停止捕获`。
 
-## Profiles
+## 配置文件
 
-You can configure profiles that will change the GPIO to GP2040-CE button mappings based on what profile number you have set. This means that you can have button layouts for different use cases and change between them without the need to enter the Web Configurator and remap GPIO pins.
+您可以配置配置文件，根据设置的配置文件编号更改 GPIO 到 GP2040-CE 按钮的映射。这意味着您可以为不同的使用场景设置按钮布局，并在无需进入 Web 配置器重新映射 GPIO 引脚的情况下切换它们。
 
-The profile number can be changed by either using the Web Configurator on the [Settings page](../../web-configurator/menu-pages/01-settings.mdx) or using a [hotkey shortcut](../../hotkeys.mdx#load-profile-1-4). There is not a default input combination associated with these `Load Profile #1-4`, `Next Profile`, or `Previous Profile` hotkey shortcuts so you will likely need to set them up in the Settings page under [Hotkey Settings](../../web-configurator/menu-pages/01-settings.mdx#hotkey-settings). The default is profile #1 on first boot, but will remember the last set profile between boots.
+可以通过 Web 配置器的 [设置页面](../../web-configurator/menu-pages/01-settings.mdx) 或使用 [热键快捷键](../../hotkeys.mdx#load-profile-1-4) 更改配置文件编号。这些 `加载配置文件 #1-4`、`下一个配置文件` 或 `上一个配置文件` 热键快捷键没有默认输入组合，因此您可能需要在设置页面的 [热键设置](../../web-configurator/menu-pages/01-settings.mdx#hotkey-settings) 中设置它们。首次启动时默认使用配置文件 #1，但会在重启后记住上次设置的配置文件。
 
-### Profile Name
-Profile name can be set to help identify what the profile is used for. This is especially useful if you have multiple profiles set up for different use cases.
-If a profile name is not set, the profile will be displayed as `Profile #` where `#` is the profile number.
-A connected display will show the profile name when the profile is changed.
+### 配置文件名称
+可以设置配置文件名称以帮助识别配置文件的用途。如果您为不同使用场景设置了多个配置文件，这会非常有用。如果未设置配置文件名称，则配置文件会显示为 `配置文件 #`，其中 `#` 是配置文件编号。连接的显示器会在配置文件更改时显示配置文件名称。
 
-### Profile Enabled/Disabled
-Profiles can be enabled or disabled. If a profile is disabled, it will not be available when using [Hotkeys](../../hotkeys.mdx "GP2040-CE | Hotkeys") to change profile.
-The first profile cannot be disabled.
+### 配置文件启用/禁用
+配置文件可以启用或禁用。如果配置文件被禁用，则使用 [热键](../../hotkeys.mdx "GP2040-CE | Hotkeys") 更改配置文件时不会显示该配置文件。第一个配置文件无法禁用。
 
 :::info
 
-At this time, profiles are limited to changing GPIO pin assignment and cannot be used to change other settings and add-ons that are not directly related to GPIO pin assignments available to set. This includes, but is not limited to, settings and add-ons such as
+目前，配置文件仅限于更改 GPIO 引脚分配，无法用于更改其他设置或与 GPIO 引脚分配无直接关系的附加功能。这包括但不限于以下设置和附加功能：
 
-- Boot Input Modes
-- Hotkeys
-- Peripheral Mapping
-- Keyboard Mapping Assignments
-- Tilt Input
-- Wii Extension
-- SNES Extension
-- Focus Mode
-- Keyboard Host Button-to-Key mapping
+- 启动输入模式
+- 热键
+- 外围设备映射
+- 键盘映射分配
+- 倾斜输入
+- Wii 扩展
+- SNES 扩展
+- 聚焦模式
+- 键盘主机按钮到键映射
 
 :::
