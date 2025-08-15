@@ -11,7 +11,7 @@ import InputLabelSelector, {
   Hotkey,
 } from "@site/src/components/LabelSelector.tsx";
 
-# GP2040-CE 迷你菜单
+# 迷你菜单
 
 选择按钮标签以在使用指南中显示：
 
@@ -20,37 +20,37 @@ import InputLabelSelector, {
 
 :::note
 
-要使用迷你菜单，必须连接一个 OLED 显示屏。大多数设备需要在 web-config 中进行特殊配置以允许使用迷你菜单。
+要使用迷你菜单，必须连接一个 OLED 显示屏。大多数设备需要在[网页配置器](/web-configurator)中进行特殊配置以允许使用迷你菜单。
 
 :::
 
 ## 设置迷你菜单
 
-要设置迷你菜单，您需要备用的 GPIO 引脚用于专用迷你菜单控制，或通过热键添加控制的能力。
+要设置迷你菜单，您需要备用的 GPIO 引脚用于专用迷你菜单控制，或通过快捷键添加控制的能力。
 
 迷你菜单中有 7 个可分配的输入：
 
-- `Menu Up` - 在迷你菜单中向上导航。
-- `Menu Down` - 在迷你菜单中向下导航。
-- `Menu Left` - 在迷你菜单中向左导航。
-- `Menu Right` - 在迷你菜单中向右导航。
-- `Menu Select` - 在迷你菜单中选择或前进。
-- `Menu Back` - 在迷你菜单中后退。
-- `Menu Toggle` - 切换迷你菜单的开启或关闭。
+- `菜单上键` - 在迷你菜单中向上导航。
+- `菜单下键` - 在迷你菜单中向下导航。
+- `菜单左键` - 在迷你菜单中向左导航。
+- `菜单右键` - 在迷你菜单中向右导航。
+- `菜单选择键` - 在迷你菜单中选择或前进。
+- `菜单返回键` - 在迷你菜单中后退。
+- `菜单开关` - 切换迷你菜单的开启或关闭。
 
 在大多数情况下，建议添加一个 `FN` 按钮，并使用功能层来导航迷你菜单。
 
 ![GP2040-CE Mini Menu](./assets/images/gpc-mini-menu.png)
 
-或者，以下配置需要将 `Menu Toggle` 分配到一个引脚，并使用游戏手柄设置启用游戏手柄输入到迷你菜单。
+或者，以下配置需要将`菜单开关`分配到一个引脚，并使用游戏手柄设置启用游戏手柄输入到迷你菜单。
 
 ![GP2040-CE Mini Menu Pins](./assets/images/gpc-mini-menu-pins.png)
 
-将 `Menu Toggle` 分配到一个引脚后，转到游戏手柄设置，启用 `Use Gamepad Input for Display Mini Menu`。请注意，在选择此选项时，Mini 菜单的输入也会输出到您的控制器。
+将`菜单开关`分配到一个引脚后，转到游戏手柄设置，启用`使用手柄输入控制迷你菜单`。请注意，在选择此选项时，迷你菜单的输入也会输出到您的控制器。
 
 ![GP2040-CE Mini Menu Gamepad Setting](./assets/images/gpc-mini-menu-gamepad.png)
 
-设置 `Menu Toggle` 和 `Use Gamepad Input for Display Mini Menu` 选项后，Mini 菜单现在只需要一个引脚分配即可操作。在此模式中，可以使用 <Hotkey buttons={["B1"]}/> 用于 `Menu Select`，<Hotkey buttons={["B2"]}/> 用于 `Menu Back`，方向键用于 `Menu Up`，`Menu Down`，`Menu Left` 和 `Menu Right`。
+设置`菜单开关`和`使用手柄输入控制迷你菜单`选项后，迷你菜单现在只需要一个引脚分配即可操作。在此模式中，可以使用 <Hotkey buttons={["B1"]}/> 用于`菜单选择键`，<Hotkey buttons={["B2"]}/> 用于`菜单返回键`，方向键用于`菜单上建`，`菜单下键`，`菜单左键`和`菜单右键`。
 
 ## 迷你菜单中的选项
 
