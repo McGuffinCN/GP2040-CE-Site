@@ -24,7 +24,7 @@ import InputTableMiniClassic from "./snippets/_input-table-mini-classic.mdx";
 
 :::caution
 
-v0.5+ 版本对除 Raspberry Pi Pico 以外的其他板子有重大更改。如果您使用的是这些板子，请勿从旧版本更新，除非您有已知正常版本的 .uf2 备份，或您清楚自己在做什么。
+v0.5+ 版本对除 Raspberry Pi Pico 以外的其他电路板有重大更改。如果您使用的是这些电路板，请勿从旧版本更新，除非您有已知正常版本的 .uf2 备份，或您清楚自己在做什么。
 
 :::
 
@@ -52,7 +52,7 @@ GP2040-CE 使用通用按钮标记来表示游戏手柄状态，然后在发送�
 
 :::note
 
-与其他控制器不同，键盘的方向按钮对应不同的键。您可以在[Web配置模式 > 配置 > 键盘映射](./web-configurator/menu-pages/01-settings.mdx#keyboard-mapping)中更改键盘模式的键映射。
+与其他控制器不同，键盘的方向按钮对应不同的键。您可以在[网页配置模式 > 配置 > 键盘映射](./web-configurator/menu-pages/01-settings.mdx#keyboard-mapping)中更改键盘模式的键映射。
 
 :::
 
@@ -77,15 +77,15 @@ Bootsel 模式是板进入可刷入固件的状态。每当进行更新或排查
 
 :::
 
-## WebConfig 模式
+## 网页配置模式
 
-WebConfig 模式是板启动内置网页浏览器配置应用程序的状态。在此，您可以根据需要自定义和配置控制器。更多信息请点击[这里](./web-configurator/web-configurator.mdx)。
+网页配置模式是板启动内置网页浏览器配置应用程序的状态。在此，您可以根据需要自定义和配置控制器。更多信息请点击[这里](./web-configurator/web-configurator.mdx)。
 
-您可以通过以下方式进入 WebConfig 模式：在插入控制器时按住 <Hotkey buttons={["S2"]}/> 按钮，或在控制器插入状态下按住 <Hotkey buttons={["S2", "B3", "B4"]}/> 五秒钟。再次按住这个组合五秒钟，即可将设备切换回先前使用的控制器模式。
+您可以通过以下方式进入网页配置模式：在插入控制器时按住 <Hotkey buttons={["S2"]}/> 按钮，或在控制器插入状态下按住 <Hotkey buttons={["S2", "B3", "B4"]}/> 五秒钟。再次按住这个组合五秒钟，即可将设备切换回先前使用的控制器模式。
 
 ## 输入模式
 
-GP2040-CE兼容多个系统和输入模式。可以在Web Configurator中设置按住八个按钮时分配的特定输入模式，配置路径为[设置](./web-configurator/menu-pages/01-settings.mdx#boot-input-modes)。
+GP2040-CE兼容多个系统和输入模式。可以在网页配置器中设置按住八个按钮时分配的特定输入模式，配置路径为[设置](./web-configurator/menu-pages/01-settings.mdx#boot-input-modes)。
 
 不过，预编译固件中有默认输入模式。要更改输入模式，**在插入控制器时按住以下按钮之一：**
 
@@ -116,9 +116,9 @@ GP2040-CE兼容多个系统和输入模式。可以在Web Configurator中设置�
 
 ## 快捷键
 
-GP2040设有多个快捷键，无需访问Web Configurator即可更改功能。所有快捷键和快捷键绑定可以在Web Configurator的[快捷键设置](./web-configurator/menu-pages/01-settings.mdx#hotkey-settings)中更改或分配为不同的按钮组合。
+GP2040设有多个快捷键，无需访问网页配置器即可更改功能。所有快捷键和快捷键绑定可以在网页配置器的[快捷键设置](./web-configurator/menu-pages/01-settings.mdx#hotkey-settings)中更改或分配为不同的按钮组合。
 
-常用快捷键包括将方向更改为模拟数字DPad、左模拟摇杆、右模拟摇杆或更改[SOCD（同时相反方向）](https://glossary.infil.net/?t=SOCD)清理模式。不同的SOCD清理模式将确保控制器在发送输入时遵循特定的方向输入规则。
+常用快捷键包括将方向更改为模拟数字DPad、左模拟摇杆、右模拟摇杆或更改[SOCD（同时相反方向）](https://glossary.infil.net/?t=SOCD)清理模式。不同的 SOCD Cleaning 模式将确保控制器在发送输入时遵循特定的方向输入规则。
 
 许多快捷键默认启用，如果控制器出现意外行为，请确保未意外触发快捷键。
 
@@ -134,10 +134,10 @@ GP2040设有多个快捷键，无需访问Web Configurator即可更改功能。�
 
 :::note
 
-选定的DPad模式和SOCD Cleaning模式在重启后会被保留。
+选定的DPad模式和 SOCD Cleaning 模式在重启后会被保留。
 
 :::
 
 ## 附加功能和额外功能
 
-GP2040-CE有许多扩展功能的附加组件，例如[模拟摇杆模拟](./add-ons/analog.mdx)和[涡轮功能](./add-ons/turbo.mdx)。由于社区创建了大量附加组件，它们位于单独的文档页面。请导航到附加组件页面以获取更多信息。
+GP2040-CE有许多扩展功能的附加组件，例如[模拟摇杆模拟](./add-ons/analog.mdx)和 [Turbo 功能](./add-ons/turbo.mdx)。由于社区创建了大量附加组件，它们位于单独的文档页面。请导航到附加组件页面以获取更多信息。
