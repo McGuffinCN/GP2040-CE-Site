@@ -22,7 +22,7 @@ const config = {
   onBrokenMarkdownLinks: "warn",
 
   i18n: {
-    defaultLocale: "en",
+    defaultLocale: "zh",
     locales: ['en', 'zh'],
   },
   markdown: {
