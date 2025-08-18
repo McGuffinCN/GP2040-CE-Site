@@ -23,7 +23,7 @@ const config = {
 
   i18n: {
     defaultLocale: "en",
-    locales: ["en"],
+    locales: ['en', 'zh'],
   },
   markdown: {
     mermaid: true,
@@ -107,6 +107,10 @@ const config = {
           //   position: "left",
           //   dropdownActiveClassDisabled: true,
           // },
+          {
+          type: 'localeDropdown',
+          position: 'right',
+          },
           {
             "aria-label": "Discord Invite",
             className: "navbar-discord-link",
