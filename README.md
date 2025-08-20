@@ -1,4 +1,4 @@
-# GP2040-CE网站文档
+# GP2040-CE 网站文档
 
 这是 GP2040-CE 游戏控制器固件的文档库。它由 [Docusaurus](https://docusaurus.io/) 提供支持，可以在 [这里](https://gp2040-ce.info) 找到。
 
