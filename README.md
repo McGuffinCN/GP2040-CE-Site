@@ -1,33 +1,35 @@
-# GP2040-CE Site Documentation
+# GP2040-CE网站文档
 
-This is the documentation repository for the GP2040-CE Gamepad Firmware. It is powered by [Docusaurus](https://docusaurus.io/) and can found [here](https://gp2040-ce.info).
+这是GP2040-CE游戏手柄固件的文档库。它由[Docusaurus](https://docusaurus.io/)提供支持，可以在[这里](https://gp2040-ce.info)找到。
 
-## Building the site
+此仓库为由 ChatGPT-4O 翻译的 fork，其中 main 分支为 [中文镜像站](https://gp2040.guff.in/) 的源码；i18n-zh-CN 分支为（准备）推送到 [OpenStickCommunity 官方仓库](https://github.com/OpenStickCommunity/Site) 的分支。区别在于 main 分支默认语言为中文，且默认按键标签为 XInput。
 
-The site is built automatically with every push and merge, using the [Github Action](https://github.com/OpenStickCommunity/Site/blob/main/.github/workflows/deploy.yml).
+## 构建网站
 
-NOTE: You need to have Node.js (>= 16.14) installed on your system to build this site. Node.js can be found [here](https://nodejs.org/en/download/package-manager)
+每次推送和合并时，网站会自动使用[Github Action](https://github.com/OpenStickCommunity/Site/blob/main/.github/workflows/deploy.yml)进行构建。
 
-1. Clone the repository
+注意：您需要在系统上安装Node.js (>= 16.14)才能构建此网站。Node.js可以在[这里](https://nodejs.org/en/download/package-manager)找到。
+
+1. 克隆仓库
 
 `git clone https://github.com/OpenStickCommunity/Site.git`
 
-2. Move to the folder where the repository is cloned
+2. 进入克隆的仓库文件夹
 
 `cd Site`
 
-3. Install the dependencies
+3. 安装依赖
 
 `npm install`
 
-4. Start the website
+4. 启动网站
 
 `npm start`
 
-The website will be running at <http://localhost:port> (i.e. <http://127.0.0.1:3000/> )
+网站将运行在<http://localhost:port>（即<http://127.0.0.1:3000/>）
 
-You can now edit the files in the docs folder and the site will reflect the changes immediately thanks to live reloading.
+您现在可以编辑docs文件夹中的文件，网站将立即反映更改，因为有实时重新加载。
 
-## Contributing
+## 贡献
 
-We appreciate all contributions to this repository. Please make a Pull Request, no matter how small, all contributions are valuable!
+我们欢迎对本仓库的所有贡献。请提交一个Pull Request，无论多么小，所有贡献都很有价值！
