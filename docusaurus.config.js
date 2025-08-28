@@ -52,6 +52,7 @@ const config = {
         highlightSearchTermsOnTargetPage: true,
         docsRouteBasePath: "/",
         indexBlog: false,
+        language: ["en", "zh"],
       },
     ],
     "@docusaurus/theme-mermaid",
