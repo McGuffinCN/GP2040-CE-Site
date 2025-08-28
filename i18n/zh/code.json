@@ -340,5 +340,425 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
+  },
+  "GP2040.name": {
+    "message": "GP2040"
+  },
+  "GP2040.Up": {
+    "message": "上"
+  },
+  "GP2040.Down": {
+    "message": "下"
+  },
+  "GP2040.Left": {
+    "message": "左"
+  },
+  "GP2040.Right": {
+    "message": "右"
+  },
+  "GP2040.B1": {
+    "message": "B1"
+  },
+  "GP2040.B2": {
+    "message": "B2"
+  },
+  "GP2040.B3": {
+    "message": "B3"
+  },
+  "GP2040.B4": {
+    "message": "B4"
+  },
+  "GP2040.L1": {
+    "message": "L1"
+  },
+  "GP2040.R1": {
+    "message": "R1"
+  },
+  "GP2040.L2": {
+    "message": "L2"
+  },
+  "GP2040.R2": {
+    "message": "R2"
+  },
+  "GP2040.S1": {
+    "message": "S1"
+  },
+  "GP2040.S2": {
+    "message": "S2"
+  },
+  "GP2040.L3": {
+    "message": "L3"
+  },
+  "GP2040.R3": {
+    "message": "R3"
+  },
+  "GP2040.A1": {
+    "message": "A1"
+  },
+  "GP2040.A2": {
+    "message": "A2"
+  },
+  "GP2040.Function": {
+    "message": "Function"
+  },
+  "XInput.name": {
+    "message": "XInput"
+  },
+  "XInput.Up": {
+    "message": "上"
+  },
+  "XInput.Down": {
+    "message": "下"
+  },
+  "XInput.Left": {
+    "message": "左"
+  },
+  "XInput.Right": {
+    "message": "右"
+  },
+  "XInput.B1": {
+    "message": "A"
+  },
+  "XInput.B2": {
+    "message": "B"
+  },
+  "XInput.B3": {
+    "message": "X"
+  },
+  "XInput.B4": {
+    "message": "Y"
+  },
+  "XInput.L1": {
+    "message": "LB"
+  },
+  "XInput.R1": {
+    "message": "RB"
+  },
+  "XInput.L2": {
+    "message": "LT"
+  },
+  "XInput.R2": {
+    "message": "RT"
+  },
+  "XInput.S1": {
+    "message": "Back"
+  },
+  "XInput.S2": {
+    "message": "Start"
+  },
+  "XInput.L3": {
+    "message": "LS"
+  },
+  "XInput.R3": {
+    "message": "RS"
+  },
+  "XInput.A1": {
+    "message": "Home"
+  },
+  "XInput.A2": {
+    "message": "(A2)"
+  },
+  "XInput.Function": {
+    "message": "Function"
+  },
+  "DirectInput.name": {
+    "message": "DirectInput"
+  },
+  "DirectInput.Up": {
+    "message": "上"
+  },
+  "DirectInput.Down": {
+    "message": "下"
+  },
+  "DirectInput.Left": {
+    "message": "左"
+  },
+  "DirectInput.Right": {
+    "message": "右"
+  },
+  "DirectInput.B1": {
+    "message": "2"
+  },
+  "DirectInput.B2": {
+    "message": "3"
+  },
+  "DirectInput.B3": {
+    "message": "1"
+  },
+  "DirectInput.B4": {
+    "message": "4"
+  },
+  "DirectInput.L1": {
+    "message": "5"
+  },
+  "DirectInput.R1": {
+    "message": "6"
+  },
+  "DirectInput.L2": {
+    "message": "7"
+  },
+  "DirectInput.R2": {
+    "message": "8"
+  },
+  "DirectInput.S1": {
+    "message": "9"
+  },
+  "DirectInput.S2": {
+    "message": "10"
+  },
+  "DirectInput.L3": {
+    "message": "11"
+  },
+  "DirectInput.R3": {
+    "message": "12"
+  },
+  "DirectInput.A1": {
+    "message": "13"
+  },
+  "DirectInput.A2": {
+    "message": "14"
+  },
+  "DirectInput.Function": {
+    "message": "Function"
+  },
+  "NintendoSwitch.name": {
+    "message": "Nintendo Switch"
+  },
+  "NintendoSwitch.Up": {
+    "message": "上"
+  },
+  "NintendoSwitch.Down": {
+    "message": "下"
+  },
+  "NintendoSwitch.Left": {
+    "message": "左"
+  },
+  "NintendoSwitch.Right": {
+    "message": "右"
+  },
+  "NintendoSwitch.B1": {
+    "message": "B"
+  },
+  "NintendoSwitch.B2": {
+    "message": "A"
+  },
+  "NintendoSwitch.B3": {
+    "message": "Y"
+  },
+  "NintendoSwitch.B4": {
+    "message": "X"
+  },
+  "NintendoSwitch.L1": {
+    "message": "L"
+  },
+  "NintendoSwitch.R1": {
+    "message": "R"
+  },
+  "NintendoSwitch.L2": {
+    "message": "ZL"
+  },
+  "NintendoSwitch.R2": {
+    "message": "ZR"
+  },
+  "NintendoSwitch.S1": {
+    "message": "减号"
+  },
+  "NintendoSwitch.S2": {
+    "message": "加号"
+  },
+  "NintendoSwitch.L3": {
+    "message": "LS"
+  },
+  "NintendoSwitch.R3": {
+    "message": "RS"
+  },
+  "NintendoSwitch.A1": {
+    "message": "Home"
+  },
+  "NintendoSwitch.A2": {
+    "message": "截屏"
+  },
+  "NintendoSwitch.Function": {
+    "message": "Function"
+  },
+  "PS4.name": {
+    "message": "PS4"
+  },
+  "PS4.Up": {
+    "message": "上"
+  },
+  "PS4.Down": {
+    "message": "下"
+  },
+  "PS4.Left": {
+    "message": "左"
+  },
+  "PS4.Right": {
+    "message": "右"
+  },
+  "PS4.B1": {
+    "message": "交叉"
+  },
+  "PS4.B2": {
+    "message": "圆圈"
+  },
+  "PS4.B3": {
+    "message": "四方"
+  },
+  "PS4.B4": {
+    "message": "三角"
+  },
+  "PS4.L1": {
+    "message": "L1"
+  },
+  "PS4.R1": {
+    "message": "R1"
+  },
+  "PS4.L2": {
+    "message": "L2"
+  },
+  "PS4.R2": {
+    "message": "R2"
+  },
+  "PS4.S1": {
+    "message": "分享"
+  },
+  "PS4.S2": {
+    "message": "选项"
+  },
+  "PS4.L3": {
+    "message": "L3"
+  },
+  "PS4.R3": {
+    "message": "R3"
+  },
+  "PS4.A1": {
+    "message": "PS"
+  },
+  "PS4.A2": {
+    "message": "触摸板按下"
+  },
+  "PS4.Function": {
+    "message": "Function"
+  },
+  "PS3.name": {
+    "message": "PS3"
+  },
+  "PS3.Up": {
+    "message": "上"
+  },
+  "PS3.Down": {
+    "message": "下"
+  },
+  "PS3.Left": {
+    "message": "左"
+  },
+  "PS3.Right": {
+    "message": "右"
+  },
+  "PS3.B1": {
+    "message": "交叉"
+  },
+  "PS3.B2": {
+    "message": "圆圈"
+  },
+  "PS3.B3": {
+    "message": "四方"
+  },
+  "PS3.B4": {
+    "message": "三角"
+  },
+  "PS3.L1": {
+    "message": "L1"
+  },
+  "PS3.R1": {
+    "message": "R1"
+  },
+  "PS3.L2": {
+    "message": "L2"
+  },
+  "PS3.R2": {
+    "message": "R2"
+  },
+  "PS3.S1": {
+    "message": "Select"
+  },
+  "PS3.S2": {
+    "message": "Start"
+  },
+  "PS3.L3": {
+    "message": "L3"
+  },
+  "PS3.R3": {
+    "message": "R3"
+  },
+  "PS3.A1": {
+    "message": "PS"
+  },
+  "PS3.A2": {
+    "message": "(A2)"
+  },
+  "PS3.Function": {
+    "message": "Function"
+  },
+  "Arcade.name": {
+    "message": "Arcade"
+  },
+  "Arcade.Up": {
+    "message": "上"
+  },
+  "Arcade.Down": {
+    "message": "下"
+  },
+  "Arcade.Left": {
+    "message": "左"
+  },
+  "Arcade.Right": {
+    "message": "右"
+  },
+  "Arcade.B1": {
+    "message": "K1"
+  },
+  "Arcade.B2": {
+    "message": "K2"
+  },
+  "Arcade.B3": {
+    "message": "P1"
+  },
+  "Arcade.B4": {
+    "message": "P2"
+  },
+  "Arcade.L1": {
+    "message": "P4"
+  },
+  "Arcade.R1": {
+    "message": "P3"
+  },
+  "Arcade.L2": {
+    "message": "K4"
+  },
+  "Arcade.R2": {
+    "message": "K3"
+  },
+  "Arcade.S1": {
+    "message": "Select"
+  },
+  "Arcade.S2": {
+    "message": "Start"
+  },
+  "Arcade.L3": {
+    "message": "LS"
+  },
+  "Arcade.R3": {
+    "message": "RS"
+  },
+  "Arcade.A1": {
+    "message": "Home"
+  },
+  "Arcade.A2": {
+    "message": "(A2)"
+  },
+  "Arcade.Function": {
+    "message": "Function"
   }
 }
