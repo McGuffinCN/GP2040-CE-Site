@@ -19,13 +19,13 @@ import InputLabelSelector, {
 
 ## 常规流程
 
-> 如果设备先前安装过除 GP2040-CE 外的其它固件，您需要按照下面的 [闪存清除流程](#闪存清除流程) 进行操作，以完全清除内存以准备安装 GP2040-CE。
+> 如果设备先前安装过除 GP2040-CE 外的其它固件，您需要按照下面的 [闪存清除流程](#闪存清除流程) 进行操作，完全清除内存之后就可以准备安装 GP2040-CE 了。
 
 1. 下载适用于您的设备的已编译固件 (.uf2 文件)
 2. 拔掉您的设备。
 3. 将您的设备置于 BOOTSEL/USB 模式。如果成功，在文件浏览器中将出现名为 `RPI-RP2` 的新的可移动驱动器。
 
-:::info 如何进入 BOOTSEL 模式
+:::info 如何进入 BOOTSEL 模式（选其一）
 
 - 插入时按住 BOOTSEL 按钮
 - 插入时按住 <Hotkey buttons={["S1", "S2", "Up"]} />
@@ -36,7 +36,7 @@ import InputLabelSelector, {
 4. 拖放在步骤 1 中下载的已编译固件 (.uf2 文件) 到可移动驱动器
 5. 等待设备自动断开连接。
 
-恭喜！电路板现在正在运行 GP2040-CE 固件，并将在您的计算机上显示为控制器。您可以在游戏中测试它，使用网站如 [Gamepad Tester](https://gamepad-tester.com/)，或者在其他应用中如 Steam 输入叠加。
+恭喜！开发板现在正在运行 GP2040-CE 固件，并将在您的计算机上显示为控制器。您可以在游戏中测试它，使用网站如 [Gamepad Tester](https://gamepad-tester.com/)，或者在其他应用中如 Steam 输入叠加。
 
 如果您想定制您的设备，请查看内置的 [网页配置器](./web-configurator/web-configurator.mdx)。
 
@@ -48,7 +48,7 @@ import InputLabelSelector, {
 2. 拔掉您的 Pico。
 3. 将您的设备置于 BOOTSEL/USB 模式。如果成功，在文件浏览器中将出现名为 `RPI-RP2` 的新的可移动驱动器。
 
-:::info 如何进入 BOOTSEL 模式
+:::info 如何进入 BOOTSEL 模式（选其一）
 
 - 插入时按住 BOOTSEL 按钮
 - 插入时按住 <Hotkey buttons={["S1", "S2", "Up"]} />
@@ -70,7 +70,7 @@ _警告_ - 闪存清除 将清除板上所有的 GPIO 引脚映射和附加功�
 1. 下载 [flash_nuke.uf2 文件](/assets/flash_nuke.uf2)
 2. 将您的设备置于 BOOTSEL/USB 模式。如果成功，在文件浏览器中将出现名为 `RPI-RP2` 的新的可移动驱动器。
 
-:::info 如何进入 BOOTSEL 模式
+:::info 如何进入 BOOTSEL 模式（选其一）
 
 - 插入时按住 BOOTSEL 按钮
 - 插入时按住 <Hotkey buttons={["S1", "S2", "Up"]} />
@@ -79,6 +79,6 @@ _警告_ - 闪存清除 将清除板上所有的 GPIO 引脚映射和附加功�
 :::
 
 3. 将 [flash_nuke.uf2 文件](/assets/flash_nuke.uf2) 拖放到驱动器上
-4. **_不要拔掉连接，等待驱动器断开并重新连接_**
+4. **_不要拔掉连接，等待驱动器自动断开并重新连接_**
 5. 将固件拖放到 RPI 驱动器上并等待断开连接
 6. 使用 [游戏手柄测试器](https://hardwaretester.com/gamepad) 检查控制器是否连接并按下按钮。
