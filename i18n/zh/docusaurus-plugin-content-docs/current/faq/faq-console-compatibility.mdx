@@ -28,7 +28,7 @@ GP2040-CE 支持多种主机，以下列出关于主机兼容性的常见问题�
 
 ```mermaid
 graph LR
-Converter/Adapter/Dongle -- USB Port <br> on controller --> Controller([Controller]) -- USB Port <br> on console --> Console{{Console}}
+转换器/适配器/加密狗 -- 控制器上的 <br> USB 接口 --> 控制器([控制器]) -- 主机上的 <br> USB接口 --> 主机{{主机}}
 ```
 
 <br />
@@ -41,7 +41,7 @@ Converter/Adapter/Dongle -- USB Port <br> on controller --> Controller([Controll
 
 ```mermaid
 graph LR
-Controller([Controller]) -- USB Port <br> on Converter --> Converter/Adapter/Dongle -- USB Port <br> on console --> Console{{Console}}
+控制器([控制器]) -- 转换器上的 <br> USB接口 --> 转换器/适配器/加密狗 -- 主机上的 <br> USB接口 --> 主机{{主机}}
 ```
 
 :::
