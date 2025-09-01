@@ -22,7 +22,7 @@ import { ColorBlock } from "@site/src/components/LEDColors";
 
 - `数据引脚` - 驱动 RGB LED 数据线的 GPIO 引脚。设置为 `-1` 可禁用 RGB LED。
 - `LED 格式` - 与 RGB LED 通信使用的数据格式。如果不确定，默认的 `GRB` 通常是安全的选择。
-- `LED 布局` - 选择控制器/按键的布局。这用于静态主题和某些每按键动画。
+- `LED 布局` - 选择游戏控制器/按键的布局。这用于静态主题和某些每按键动画。
 - `每按键 LED 数量` - 设置链中每个按键的 LED 数量。
 - `最大亮度` - 设置 LED 的最大亮度，范围为 0-255。
 - `亮度级别` - 调整亮度时的循环级别数量。
@@ -64,16 +64,16 @@ import { ColorBlock } from "@site/src/components/LEDColors";
 - `PLED #[1-4] 索引` - RGB 灯条上 LED 模块的索引。
 - `RGB PLED 颜色` - 点击框以显示颜色选择器，或手动输入颜色。
 
-### 机壳 RGB LED
+### Case RGB LED
 
-![GP2040-CE 配置器 - RGB 机壳 LED](../../assets/images/gpc-rgb-case-leds.png)
+![GP2040-CE 配置器 - RGB Case LED](../../assets/images/gpc-rgb-case-leds.png)
 
-机壳 RGB LED 允许您在设备内部或外部添加额外的 RGB LED，以增强 RGB 效果。
+Case RGB LED 允许您在设备内部或外部添加额外的 RGB LED，以增强 RGB 效果。
 
 `颜色类型` 有以下选项：
-- `关闭` - 无机壳 RGB LED。
-- `环境` - 机壳 RGB LED 将独立于按键 LED 设置运行。
-- `关联` - 机壳 RGB LED 将匹配按键 LED 设置。
+- `关闭` - 无 Case RGB LED。
+- `环境` - Case RGB LED 将独立于按键 LED 设置运行。
+- `关联` - Case RGB LED 将匹配按键 LED 设置。
 
 :::note
 
@@ -82,20 +82,20 @@ import { ColorBlock } from "@site/src/components/LEDColors";
 | 快捷键                                  | 描述                                               |
 | --------------------------------------- | ------------------------------------------------- |
 | <Hotkey buttons={["S2", "B3", "B1"]}/>  | 在 `环境`、`关联` 和 `关闭` 模式之间切换。          |
-| <Hotkey buttons={["S2", "B4"]}/>        | 增加机壳 LED 的亮度。                              |
-| <Hotkey buttons={["S2", "B2"]}/>        | 减少机壳 LED 的亮度。                              |
-| <Hotkey buttons={["S2", "R1"]}/>        | 切换机壳 LED 的静态颜色到下一个颜色。              |
-| <Hotkey buttons={["S2", "R2"]}/>        | 切换机壳 LED 的静态颜色到上一个颜色。              |
+| <Hotkey buttons={["S2", "B4"]}/>        | 增加 Case LED 的亮度。                              |
+| <Hotkey buttons={["S2", "B2"]}/>        | 减少 Case LED 的亮度。                              |
+| <Hotkey buttons={["S2", "R1"]}/>        | 切换 Case LED 的静态颜色到下一个颜色。              |
+| <Hotkey buttons={["S2", "R2"]}/>        | 切换 Case LED 的静态颜色到上一个颜色。              |
 | <Hotkey buttons={["S2", "L1"]}/>        | 切换到环境模式下的下一个效果。                      |
 | <Hotkey buttons={["S2", "L2"]}/>        | 切换到环境模式下的上一个效果。                      |
 
 :::
 
-![GP2040-CE 配置器 - RGB 机壳 LED 设置](../../assets/images/gpc-rgb-case-leds-settings.png)
+![GP2040-CE 配置器 - RGB Case LED 设置](../../assets/images/gpc-rgb-case-leds-settings.png)
 
-选择 `环境` 或 `关联` 模式时，您还需要指定机壳 LED 的起始索引以及机壳 LED 的数量。
-- `RGB LED 索引` - 机壳 RGB LED 在链中的起始位置。
-- `RGB LED 数量` - 用于机壳 RGB LED 的 LED 数量。
+选择 `环境` 或 `关联` 模式时，您还需要指定 Case LED 的起始索引以及 Case LED 的数量。
+- `RGB LED 索引` - Case RGB LED 在链中的起始位置。
+- `RGB LED 数量` - 用于 Case RGB LED 的 LED 数量。
 
 :::note
 

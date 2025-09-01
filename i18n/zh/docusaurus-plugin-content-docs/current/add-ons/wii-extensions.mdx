@@ -13,7 +13,7 @@ import InputTable from "../snippets/_input-table.mdx";
 
 # Wii 扩展
 
-用途：此插件旨在允许您使用各种 Wii 控制器（例如 Nunchuck、经典 Wii 控制器、吉他、鼓、转盘和太鼓）与 GP2040-CE 配合使用，以支持 GP2040-CE 支持的系统。
+用途：此插件旨在允许您使用各种 Wii 游戏控制器（例如 Nunchuck、经典 Wii 游戏控制器、吉他、鼓、转盘和太鼓）与 GP2040-CE 配合使用，以支持 GP2040-CE 支持的系统。
 
 :::note
 
@@ -33,28 +33,28 @@ I2C 的 SDA 和 SCL 引脚及其速度现在在 [`功能配置 > 外围设备映
 
 - `I2C Block` - 要使用的 I2C 块（i2c0 或 i2c1）。
 
-### 控制器特定选项
+### 游戏控制器特定选项
 
 <Tabs groupId="wii-extenstions" defaultValue="Nunchuck">
 <TabItem value="Nunchuck" label="Nunchuck" default>
 
 ![GP2040-CE 配置器 - Wii Nunchuck 设置](../assets/images/gpc-add-ons-wii-extensions-nunchuck.png)
 
-![GP2040-CE 配置器 - Wii Nunchuck 控制器](../assets/images/wii-extension-controllers/nunchuck.svg)
+![GP2040-CE 配置器 - Wii Nunchuck 游戏控制器](../assets/images/wii-extension-controllers/nunchuck.svg)
 
 </TabItem>
 <TabItem value="Classic" label="Classic" default>
 
 :::note
 
-- 经典控制器支持包括经典、经典 Pro 和 NES/SNES Mini 控制器。
-- 原版经典控制器的 L 和 R 触发器为模拟敏感型，而 Pro 型触发器则不是。
+- 经典游戏控制器支持包括经典、经典 Pro 和 NES/SNES Mini 游戏控制器。
+- 原版经典游戏控制器的 L 和 R 触发器为模拟敏感型，而 Pro 型触发器则不是。
 
 :::
 
-![GP2040-CE 配置器 - Wii 经典控制器设置](../assets/images/gpc-add-ons-wii-extensions-classic.png)
+![GP2040-CE 配置器 - Wii 经典游戏控制器设置](../assets/images/gpc-add-ons-wii-extensions-classic.png)
 
-![GP2040-CE 配置器 - Wii 经典控制器](../assets/images/wii-extension-controllers/classic.svg)
+![GP2040-CE 配置器 - Wii 经典游戏控制器](../assets/images/wii-extension-controllers/classic.svg)
 
 </TabItem>
 <TabItem value="Guitar" label="Guitar" default>
@@ -68,7 +68,7 @@ I2C 的 SDA 和 SCL 引脚及其速度现在在 [`功能配置 > 外围设备映
 
 :::note
 
-由于配件硬件问题，鼓和 DJ 转盘控制器可能需要从 Nunchuk 或经典控制器热插拔后才能使用。
+由于配件硬件问题，鼓和 DJ 转盘游戏控制器可能需要从 Nunchuk 或经典游戏控制器热插拔后才能使用。
 
 :::
 
@@ -93,13 +93,13 @@ I2C 的 SDA 和 SCL 引脚及其速度现在在 [`功能配置 > 外围设备映
 </TabItem>
 </Tabs>
 
-上述每个选项均使用以下 GP2040 输入标签，用于从控制器映射到 GP2040-CE 的输入。
+上述每个选项均使用以下 GP2040 输入标签，用于从游戏控制器映射到 GP2040-CE 的输入。
 
 <InputTable />
 
 ### 要求
 
-此插件需要某种方式将控制器连接到 GP2040-CE 设备的以下引脚。
+此插件需要某种方式将游戏控制器连接到 GP2040-CE 设备的以下引脚。
 
 - `PWR` - 3.3V 电源供给（可能也标记为 `+` 或 `VIN`）
 - `GND` - 地线（可能也标记为 `-`）
@@ -116,7 +116,7 @@ I2C 的 SDA 和 SCL 引脚及其速度现在在 [`功能配置 > 外围设备映
 
 ### 安装
 
-根据网页配置器中设置的 GPIO 引脚，将 Wii 控制器/适配器连接到 GP2040-CE 板。
+根据网页配置器中设置的 GPIO 引脚，将 Wii 游戏控制器/适配器连接到 GP2040-CE 板。
 
 - `PWR` - 3.3V 电源供给（可能也标记为 `+` 或 `VIN`）
 - `GND` - 地线（可能也标记为 `-`）
