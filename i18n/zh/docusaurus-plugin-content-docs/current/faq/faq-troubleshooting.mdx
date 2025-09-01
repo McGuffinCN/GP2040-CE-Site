@@ -24,7 +24,7 @@ Select the button labels to be displayed in the usage guide:
 
 #### **1. Steam 中的映射不正确**
 
-检查 Steam 中的控制器设置是否正确，包括全局设置和每个游戏的设置。有关解决此问题的更多信息，请参阅 [Steam 支持](https://partner.steamgames.com/doc/features/steam_controller/getting_started_for_players)。
+检查 Steam 中的游戏控制器设置是否正确，包括全局设置和每个游戏的设置。有关解决此问题的更多信息，请参阅 [Steam 支持](https://partner.steamgames.com/doc/features/steam_controller/getting_started_for_players)。
 
 #### **2. 输入模式不正确**
 
@@ -32,7 +32,7 @@ Select the button labels to be displayed in the usage guide:
 
 #### **3. 按键接线错误**
 
-检查您的按键是否根据控制器主板供应商提供的 GPIO 引脚映射正确连接到控制器主板。
+检查您的按键是否根据游戏控制器主板供应商提供的 GPIO 引脚映射正确连接到游戏控制器主板。
 
 #### **4. 固件不正确**
 
@@ -52,13 +52,13 @@ Select the button labels to be displayed in the usage guide:
 
 ### **上下或左右方向颠倒了，如何修复此问题？**
 
-可能是您在控制器上启动了 [反转 Y 轴](../hotkeys.mdx#反转-y-轴) 或 [反转 X 轴](../hotkeys.mdx#反转-x-轴) 的快捷键功能。再次激活相应快捷键以关闭该功能。
+可能是您在游戏控制器上启动了 [反转 Y 轴](../hotkeys.mdx#反转-y-轴) 或 [反转 X 轴](../hotkeys.mdx#反转-x-轴) 的快捷键功能。再次激活相应快捷键以关闭该功能。
 
 <HotkeyNote />
 
 ### **我的 SOCD 覆盖模式更改了，该如何恢复为 X 覆盖模式？**
 
-可能是您在控制器上激活了以下 SOCD 覆盖模式快捷键之一，再次激活快捷键可以关闭此功能：
+可能是您在游戏控制器上激活了以下 SOCD 覆盖模式快捷键之一，再次激活快捷键可以关闭此功能：
 
 - [SOCD 上优先](../hotkeys.mdx#socd-上优先)
 - [SOCD 回中](../hotkeys.mdx#socd-回中)
@@ -70,7 +70,7 @@ Select the button labels to be displayed in the usage guide:
 
 ### **为什么方向键会卡在输出方向到左/右摇杆？**
 
-可能是您在控制器上启用了 [方向键左摇杆模式](../hotkeys.mdx#左摇杆模式) 或 [方向键右摇杆模式](../hotkeys.mdx#右摇杆模式) 的快捷键功能。再次激活对应快捷键可以关闭功能。
+可能是您在游戏控制器上启用了 [方向键左摇杆模式](../hotkeys.mdx#左摇杆模式) 或 [方向键右摇杆模式](../hotkeys.mdx#右摇杆模式) 的快捷键功能。再次激活对应快捷键可以关闭功能。
 
 <HotkeyNote />
 
@@ -78,23 +78,23 @@ Select the button labels to be displayed in the usage guide:
 
 ## 连接问题
 
-### **为什么连接到 PC/主机的控制器无法识别？**
+### **为什么连接到 PC/主机的游戏控制器无法识别？**
 
 这可能有多种原因。检查以下问题：
 
 #### **1. 键盘模式**
 
-检查设备的输入模式是否设置为键盘模式。这会导致您的电脑仅识别控制器作为键盘，而不是游戏手柄。
+检查设备的输入模式是否设置为键盘模式。这会导致您的电脑仅识别游戏控制器作为键盘，而不是游戏控制器。
 
 #### **2. 网页配置器**
 
-使用网页配置器时，控制器会初始化为 RNDIS 设备，PC/主机会无法将其识别为控制器。检查控制器是否已启动到网页配置模式，并确保开机时未触发快捷键 <Hotkey buttons={["S2"]}/>。
+使用网页配置器时，游戏控制器会初始化为 RNDIS 设备，PC/主机会无法将其识别为游戏控制器。检查游戏控制器是否已启动到网页配置模式，并确保开机时未触发快捷键 <Hotkey buttons={["S2"]}/>。
 
 ### **为什么使用 USB Type-C 转 Type-C 无法连接到 PC/主机？**
 
 由于设备硬件设计的原因，可能无法使用可逆的 USB Type-C。尝试翻转电缆方向。如果仍然不起作用，尝试使用 USB 2.0 Type-C 转 Type-C 电缆或带适配器的 USB 2.0 Type-C 转 Type-A 电缆。
 
-### **为什么我的控制器在 PS4 或 PS5 上无响应？**
+### **为什么我的游戏控制器在 PS4 或 PS5 上无响应？**
 
 - **针对 PS4 的问题**：确认已启用 [PS4 输入模式](../web-configurator/menu-pages/01-settings.mdx#额外的-ps4-设置) 并上传密钥文件，或通过 USB 主机使用有效的认证设备。
 - **针对 PS5 的问题**：确认已启用 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#额外的-ps5-设置)，并通过 USB 主机使用有效的认证设备。
@@ -103,9 +103,9 @@ Select the button labels to be displayed in the usage guide:
 
 ### **为什么我无法访问网页配置器？**
 
-#### **1. 控制器未启动到网页配置模式**
+#### **1. 游戏控制器未启动到网页配置模式**
 
-如果网页配置器页面超时，请确认控制器是否已启动到网页配置模式。
+如果网页配置器页面超时，请确认游戏控制器是否已启动到网页配置模式。
 
 :::info 如何进入网页配置器配置模式
 
@@ -128,11 +128,11 @@ Select the button labels to be displayed in the usage guide:
 
 ### **为什么我的设备上的 PS4 或 PS5 输入模式无法正常工作？**
 
-#### **1. 连接控制器后未按下 A1 键**
+#### **1. 连接游戏控制器后未按下 A1 键**
 
-在连接已正确配置为 PS4 或 PS5 输入模式的控制器后，您需要按下快捷键 <Hotkey buttons={["A1"]} />，以便 PS4 或 PS5 识别控制器。操作后，游戏机应能正常接收控制器输入。
+在连接已正确配置为 PS4 或 PS5 输入模式的游戏控制器后，您需要按下快捷键 <Hotkey buttons={["A1"]} />，以便 PS4 或 PS5 识别游戏控制器。操作后，游戏机应能正常接收游戏控制器输入。
 
-#### **2. 控制器模式配置错误**
+#### **2. 游戏控制器模式配置错误**
 
 确保在“设置”部分中已上传 PS4 的密钥文件或选择了 PS4/PS5 的 USB 主机模式。
 
@@ -142,9 +142,9 @@ Select the button labels to be displayed in the usage guide:
 
 在配置器的 [外围设备映射](../web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-主机) 中，确认您的 USB 主机端口配置正确。不同设备制造商提供的 Data+ 和 Data- 的特定引脚可能会有所不同，请参考供应商的文档。
 
-#### **4. 使用的控制器或适配器不兼容**
+#### **4. 使用的游戏控制器或适配器不兼容**
 
-只有兼容的设备才能使 GP2040-CE 控制器通过 PS Passthrough 功能在 PS4 上正常工作，而并非所有设备都支持 PS5。
+只有兼容的设备才能使 GP2040-CE 游戏控制器通过 PS Passthrough 功能在 PS4 上正常工作，而并非所有设备都支持 PS5。
 
 有关更多信息，请参阅 [PS4/PS5 兼容性常见问题](../faq/faq-console-compatibility.mdx)。
 
@@ -167,7 +167,7 @@ RGB LED 的顺序可以在网页配置器中设置，正确的配置取决于硬
 
 有关更多信息，请参阅网页配置器菜单中的 [RGB LED 按键顺序](../web-configurator/menu-pages/05-led-configuration.mdx#rgb-led-按键顺序) 部分。
 
-### **更新设备后，为什么我的控制器停止工作了？**
+### **更新设备后，为什么我的游戏控制器停止工作了？**
 
 更新设备后，输入设置突然异常，OLED 显示屏或 RGB LED 停止工作，很可能是因为您为设备安装了错误的固件，或者设备不受支持，因此 [下载页面](/downloads) 上的预编译版本可能无法正常运行。
 
@@ -184,7 +184,7 @@ RGB LED 的顺序可以在网页配置器中设置，正确的配置取决于硬
 1. 从下载页面获取 **Pico GP2040 固件** 并按照 [固件安装说明](../installation.mdx) 操作刷入设备。
 2. 不擦除设备固件，刷入 [强制 WebConfig 固件文件](/assets/force_webconfig.uf2)，强制设备以网页配置模式启动。
 3. 进入网页配置器，转到“配置 > GPIO 引脚映射”。
-4. 对于每个游戏手柄输入，使用“按键映射功能”将输入映射到连接按钮的 GPIO 引脚，重复进行所有输入的映射操作。
+4. 对于每个游戏控制器输入，使用“按键映射功能”将输入映射到连接按钮的 GPIO 引脚，重复进行所有输入的映射操作。
 5. 对于任何插件（如 RGB LED、OLED 显示屏、USB 主机端口等），需要确定其关联的 GPIO 引脚。这可以通过追踪 PCB 上的物理铜箔路径找到。
 
 由于上述步骤完全取决于 PCB 制造商的设计，无法提供进一步的支持。

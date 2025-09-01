@@ -1,5 +1,5 @@
 ---
-title: 键盘主机配置
+title: 键盘/鼠标主机配置
 # tags:
 # -
 pagination_next: null
@@ -19,7 +19,15 @@ import InstallUSBHostPort from "../snippets/_add-usb-host-port.mdx";
 
 用途：此插件旨在允许用户将键盘与 GP2040-CE 配合使用，并与 GP2040-CE 支持的系统兼容。
 
-![GP2040-CE 配置器 - 键盘主机配置](../assets/images/gpc-add-ons-keyboard-host-configuration.png)
+:::info 此页面并非键盘输入模式设置
+
+此插件的用法是将键盘插入游戏控制器的 USB 接口上，通过按下键盘上的按键，由 GP2040-CE 将键盘信号转换为其它支持的输入模式信号。
+
+如果您想让游戏控制器输出键盘信号，请前往 [`系统设置 > 输入模式设置`](../web-configurator/menu-pages/01-settings.mdx#键盘映射)。
+
+:::
+
+![GP2040-CE 配置器 - 键盘/鼠标主机配置](../assets/images/gpc-add-ons-keyboard-host-configuration.png)
 
 ## 网页配置器选项
 
@@ -59,7 +67,7 @@ USB 主机端口的 Data、5V Enable 和 Pin Orientation 选项现在在 [`功�
 
 此插件需要设备上有一个 USB 主机端口，并且该端口连接到 RP2040 板上的 GPIO 引脚。实现此功能有多种方法。
 
-请参阅 [USB 主机端口安装](../controller-build/usb-host.mdx) 了解有关将 USB 主机端口添加到控制器的详细要求。
+请参阅 [USB 主机端口安装](../controller-build/usb-host.mdx) 了解有关将 USB 主机端口添加到游戏控制器的详细要求。
 
 ### 安装
 
@@ -73,4 +81,4 @@ USB 主机端口的 Data、5V Enable 和 Pin Orientation 选项现在在 [`功�
 
 - 键盘仅限于上述列出的输入数量。键盘上的其他按键将无法使用，并且不会向系统发送任何输入信号。
 - 键盘受限于 6 键无冲（6 key rollover），这意味着最多只能同时激活 6 个键盘按键。即使所使用的键盘通常支持全键无冲（NKRO），此限制仍然适用。
-- 键盘无法在启动时影响输入模式。输入模式必须通过 `Web Configurator > Settings` 或 GP2040-CE 设备上的额外开关进行设置。
+- 键盘无法在启动时影响输入模式。输入模式必须通过 `网页配置器 > 系统设置` 或 GP2040-CE 设备上的额外开关进行设置。
