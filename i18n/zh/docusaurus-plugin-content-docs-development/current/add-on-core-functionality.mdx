@@ -1,0 +1,205 @@
+---
+title: 核心功能
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Documentation on the minimum requirements for a GP2040-CE add-on to function. Note: This does not include web configuration functionality and saving post-compile options to protobuf."
+---
+
+# 核心功能
+
+### CMAKE
+
+首先要确保 CMAKE 能够看到并添加你的附加组件源文件，链接你创建的任何库，并包含你为附加组件功能添加的头文件子文件夹。
+
+```cpp
+add_executable(${PROJECT_NAME}
+...
+src/addons/addon_name.h
+...
+)
+
+target_link_libraries(${PROJECT_NAME}
+...
+AdditionalLibraryName
+...
+)
+
+target_include_directories(${PROJECT_NAME} PUBLIC
+...
+headers/folder/subfolder
+...
+)
+```
+
+#### 附加组件
+
+将所有必要文件包含到 `/CMakeLists.txt`
+
+1. 在 `add_executable(${PROJECT_NAME}` 下添加附加组件可执行文件（例如 `src/addons/addon_name.cpp`）
+   - 如果在 `src/addons/` 之外的文件夹中创建了任何用于操作附加组件的 .cpp 文件，它们也必须包含在 `add_executable(${PROJECT_NAME}` 下。
+2. 将任何附加组件头文件和 `/headers/addons` 之外的文件夹（例如 `/headers/folder/subfolder/addonHeader.h`）添加到 `target_include_directories(${PROJECT_NAME} PUBLIC`
+
+#### 附加库
+
+1. 将库添加到 `CMakeLists.txt`
+2. 将库添加到 `lib/CMakeLists.txt`
+3. 创建 `lib/AdditionalLibrary/CMakeLists.txt`
+4. 将必要的源文件和头文件添加到 `lib/AdditionalLibrary/`
+
+### 主程序 (gp2040.cpp)
+
+#### 添加附加组件包含
+
+```cpp
+#include "addons/addon_name.cpp"
+```
+
+#### 加载附加组件
+
+```cpp
+addons.LoadAddon(new AddonName(), CORE0_Input)
+```
+
+:::info CORE0_Input vs CORE1_Input
+
+- `CORE0_Input` 通常是输入或与输入相关的任务
+- `CORE1_Input` 主要是辅助输出过程（显示、RGB LED 等）和包含额外 USB 处理的输入。
+
+:::
+
+### 头文件
+
+需要在 `/headers/addons/ADDON_NAME.h` 中为附加组件创建一个头文件
+
+```cpp
+#ifndef ADDON_NAME_H
+#define ADDON_NAME_H
+
+#include "gpaddon.h"
+#include "GamepadEnums.h"
+#include "BoardConfig.h"
+#include "enums.pb.h"
+
+#ifndef ADDON_NAME_ENABLED
+#define ADDON_NAME_ENABLED 0
+#endif
+
+#define ADDON_PIN -1
+
+// IO 模块名称
+#define AddonName "Add-on Name"
+
+class AddonNameAddon : public GPAddon
+{
+public:
+    virtual void bootProcess() {}
+    virtual bool available();
+    virtual void setup();
+    virtual void preprocess();
+    virtual void process();
+    virtual std::string name() { return AddonName; }
+
+private:
+    
+};
+
+```
+
+### 源文件
+
+需要在 `/src/addons/ADDON_NAME.cpp` 中为附加组件创建一个源文件。这将是附加组件功能的主要部分。
+
+```cpp
+#include "addons/ADDON_NAME.h"
+#include "storagemanager.h"
+#include "config.pb.h"
+
+bool AddonNameAddon::available()
+{
+	return Storage::getInstance().getAddonOptions().addonNameOptions.enabled;
+}
+
+void AddonNameAddon::setup()
+{
+}
+
+void AddonNameAddon::preprocess()
+{
+}
+
+void AddonNameAddon::process()
+{
+}
+```
+
+#### `available()`
+
+此函数在创建时调用一次，以确定附加组件是否会包含在处理循环中。通常会检查选项中附加组件的启用标志是否已切换，然后返回该布尔标志。可能还需要查看其他选项，但这取决于在打开附加组件之前需要了解的重要事项（例如，首先检查 GPIO 引脚是否正确设置）。
+
+#### `setup()`
+
+如果 `available()` 返回 true，则此函数会调用一次，以设置主循环之前需要的任何对象/变量。在这里需要准备任何 GPIO 引脚分配或创建处理循环在调用 `preprocess()` 和 `process()` 时需要的对象。
+
+#### `preprocess()`
+
+此函数在处理游戏手柄状态之前在 `GP2040::run()` 循环中调用。这是根据附加组件的预期功能更改和修改游戏手柄状态的地方。
+
+#### `process()`
+
+此函数在处理游戏手柄状态之后在 `GP2040::run()` 或 `GP2040Aux::run()` 循环中调用。这是根据附加组件的预期功能更改和修改游戏手柄状态的地方。
+
+### Protobuf
+
+:::warning
+
+除非绝对必要，否则不要重命名或重新排列 `config.proto` 和 `enums.proto` 中的枚举。这样做会破坏与以前版本固件的兼容性。如果需要更多枚举，只需追加新的枚举。
+
+:::
+
+#### `config.proto`
+
+一旦使用直接硬编码的 `#define` 宏在 `addonName.h` 中使附加组件工作，就需要将选项添加到 `/proto/config.proto` 中，以便这些选项在 protobuf 中正确分配内存空间。通过这样做，可以稍后使用 Web 配置器和网络接口读取和写入保存到 protobuf 的值。
+
+除了开发附加组件的特定选项之外，还需要为新的附加组件添加一个枚举到 `AddonOptions`。
+
+```cpp
+message AddOnNameOptions {
+	optional bool enabled = 1;
+	optional uint32 addonSetting = 2;
+}
+
+message AddonOptions {
+	...
+    optional AddonOptions addonNameOptions = XX;
+}
+```
+
+#### `enums.proto` 
+
+当变量可以取某些值时，使用枚举是有用的。它封装了特定组中的所有可能值。为了使用枚举，需要将这些枚举添加到 `proto/enums.proto` 中，以便在附加组件以及固件的其他部分中使用。
+
+```cpp
+enum AddonEnum
+{
+	options (nanopb_enumopt).long_names = false;
+
+	ENUM_OPTION_1 = 0;
+	ENUM_OPTION_2 = 1;
+	...
+}
+```
+
+#### `configs_utils.cpp`
+
+- 将设置属性添加到 `src/configs_utils.cpp`
+	- 记得将所有属性添加到 `config.proto`
+
+```cpp
+#include "addons/addon_name.h"
+
+// addonOptions.addonNameOptions
+INIT_UNSET_PROPERTY(config.addonOptions.addonNameOptions, enabled, ADDON_NAME_ENABLED);
+
+```

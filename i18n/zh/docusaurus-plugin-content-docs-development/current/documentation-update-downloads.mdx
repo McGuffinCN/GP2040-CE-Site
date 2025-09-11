@@ -1,0 +1,46 @@
+---
+title: 更新下载页面
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "How to update the Downloads Page to add a new microcontroller board or controller"
+---
+
+# 更新下载页面
+
+要将微控制器板或设备添加到 [下载](/downloads) 页面，需要更新 `src/config/boards.tsx` 文件。所需信息取决于您是添加微控制器板还是控制器。
+
+| 键           | 值                                                                                                                |
+| ------------ | ---------------------------------------------------------------------------------------------------------------- |
+| `name`       | 将在下载页面列出的设备名称                                                                                        |
+| `configName` | 用于生成 .uf2 文件并用于生成固件链接的设备名称                                                                   |
+| `pinout`     | 设备引脚图的链接                                                                                                  |
+| `website`    | 包含设备信息的网站链接                                                                                            |
+| `image`      | 设备使用的资源的绝对链接，仅更改 `BoardName` 以匹配 `static/img/boards/` 中的文件名                              |
+| `supported`  | （仅限微控制器板）设备当前是否被项目支持                                                                         |
+| `category`   | （仅限游戏控制器）遵循以下约定的类别分类                                                                              |
+| `desc`       | 设备和制造商的简短描述，将显示在下载页面上                                                                        |
+
+## 微控制器板
+
+微控制器板的模板可以在 [模板 - 微控制器板](./templates.mdx#微控制器板) 找到。
+
+要将微控制器板添加到下载列表中，请填写模板中的所有信息，并将其添加到数组 `boards['Microcontroller Boards']` 中。板列出的顺序决定了它们在页面上的显示顺序，因此请注意以下板的顺序。
+
+- Raspberry Pi Pico
+- Raspberry Pi Pico W
+- 其他微控制器板按字母顺序排列
+
+## 游戏控制器
+
+游戏控制器的模板可以在 [模板 - 游戏控制器](./templates.mdx#游戏控制器) 找到。
+
+要将游戏控制器添加到下载列表中，请填写模板中的所有信息，并将其添加到数组 `boards['Controllers']` 中。此数组中游戏控制器的顺序应按字母顺序排列。
+
+类别的约定如下：
+
+- `official` - 项目的官方板
+- `open` - 开源设备
+- `closed` - 闭源设备
+- `legacy` - 不支持或不再受项目支持的设备
