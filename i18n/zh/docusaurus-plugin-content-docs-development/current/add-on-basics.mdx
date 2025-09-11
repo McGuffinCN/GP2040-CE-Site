@@ -1,0 +1,17 @@
+---
+title: 基础知识
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Documentation on the minimum requirements for a GP2040-CE add-on."
+---
+
+# 基础知识
+
+## 一般流程
+
+1. 在源文件中使用基于附加功能头文件中的 `#define` 宏的直接硬编码值完成核心附加功能。
+2. 确认基本附加功能后，在 `config.proto` 中创建必要的枚举，用于将附加选项保存到 protobuf，然后在 `config_utils.cpp` 中设置它们。
+3. 使用在 `config_utils.cpp` 中设置的值替换源文件中直接硬编码的 `#define` 宏值。
+4. 创建 Web 配置器页面、组件和接口，以操作和保存用户设置的值到 protobuf。

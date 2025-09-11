@@ -1,0 +1,547 @@
+---
+title: 样式指南
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+toc_max_heading_level: 4
+description: "A style guide on how to write documentation for GP2040-CE using Docusaurus"
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import InputLabelSelector, {
+  Hotkey,
+} from "@site/src/components/LabelSelector.tsx";
+
+# 样式指南
+
+GP2040-CE 欢迎您为我们的文档做出贡献。本文件描述了创建网站内容的可用选项，以及指南和惯例。
+
+## Markdown
+
+本网站使用 Docusaurus 版本 2。Docusaurus 使用 MDX 作为解析引擎，可以解析标准的 Markdown 语法并在文档中渲染 React 组件。
+
+[Docusaurus Markdown](https://docusaurus.io/docs/markdown-features) 支持 [基本 Markdown 语法](https://www.markdownguide.org/basic-syntax) 和大多数 [扩展语法](https://www.markdownguide.org/extended-syntax)。您可以在 [这里](https://www.markdownguide.org/tools/docusaurus/) 查看支持的功能。
+
+## Frontmatter
+
+在每个文档页面的顶部，您需要包含以下内容：
+
+| 变量                             | 描述                                                                                             |
+| :------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `title`                          | 页面主要标题。此值将出现在页面的左侧导航树中。                                                   |
+| `pagination_prev` (可选)         | 您希望“上一页”分页链接到的文档 ID。使用 null 来禁用此页面的“上一页”显示。                        |
+| `pagination_next` (可选)         | 您希望“下一页”分页链接到的文档 ID。使用 null 来禁用此页面的“下一页”显示。                        |
+| `toc_min_heading_level` (可选)   | 目录中显示的最低标题级别。必须在 2 到 6 之间，并小于或等于最大值。                               |
+| `toc_max_heading_level` (可选)   | 目录中显示的最高标题级别。必须在 2 到 6 之间。                                                   |
+| `description`                    | 当页面在 Google 搜索结果中引用时显示的内容，以及当页面嵌入到其他地方时显示的内容。               |
+| `keywords` (可选)                | 有助于为 SEO 目的对页面进行分类的术语列表。                                                      |
+
+以上字段对于大多数文档页面来说已经足够。然而，其他 Frontmatter 字段可以在 Docusaurus [plugin-content-docs 文档](https://docusaurus.io/docs/2.x/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter)中找到。
+
+Frontmatter 在文档开头看起来像这样：
+
+```
+---
+title: Documentation Style Guide
+pagination_next: null
+pagination_prev: null
+description: "A style guide on how to write documentation for GP2040-CE using Docusaurus"
+---
+```
+
+## 介绍
+
+文档的第一段应设置用户对页面内容的期望。描述对用户的主要好处，但不要包含链接。
+
+## 标题
+
+出于可访问性和 SEO 的原因，H4 标题不能在 H3 标题之外，H3 标题不能在 H2 标题之外。
+
+- 文档中不应使用 H1 标题，因为标题会自动生成为 H1。
+- H2 标题用于 SEO，因此请确保它们简洁地代表用户在该部分页面中会找到的内容。
+- H3 标题包含在页面右侧的目录中，因此请确保标题描述了用户可能希望直接导航到的内容。
+- H4 标题用于强调页面子部分内的内容；如果需要，它们可以比其他标题更长，因为它们不包含在目录中。
+
+Markdown 代码：
+
+```
+## H2 Header
+
+### H3 Header
+
+#### H4 Header
+```
+
+## 内容
+
+### 换行
+
+即使有换行符，只要没有空行，所有单词都会在同一段中渲染。因此，最好每行少于 120 个字符，以提高可读性。
+
+如果文本包含在 Markdown 表格单元格中，则需要使用 `<br/>`。
+
+<table class="code">
+  <tbody>
+    <tr>
+      <td>
+
+**Markdown**
+
+</td>
+      <td>
+
+```markdown
+This
+will
+all
+be
+on
+one
+line.
+
+The empty line above creates a new paragraph.
+
+This forces a soft return<br />
+rather than creating a new paragraph
+
+| Column1 | Column2                               |
+| ------- | ------------------------------------- |
+| Row 1   | - Line 1 <br/> - Line 2 <br/> - Line3 |
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**显示**
+
+</td>
+      <td>
+
+This
+will
+all
+be
+on
+one
+line.
+
+The empty line above creates a new paragraph.
+
+This forces a soft return<br />
+rather than creating a new paragraph
+
+| Column1 | Column2                               |
+| ------- | ------------------------------------- |
+| Row 1   | - Line 1 <br/> - Line 2 <br/> - Line3 |
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+### 链接
+
+#### 页面和资源
+
+链接到页面或资源时，您需要使用相对链接来导航到所需的页面和资源。
+
+:::caution
+
+将文件移动到不同的子目录时，请确保更新该页面内对其他页面/资源的引用，以及任何引用移动页面的其他页面。如果不这样做，将导致链接断裂和构建过程中的错误。
+
+:::
+
+<table class="componentLinks">
+  <tbody>
+    <tr>
+      <td>
+
+**Markdown**
+
+</td>
+      <td>
+
+```markdown
+![GP2040-CE Placeholder Image](/img/gp2040-ce-placeholder.png)
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**显示**
+
+</td>
+<td>
+
+![GP2040-CE Placeholder Image](/img/gp2040-ce-placeholder.png)
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+如果 Markdown 语法不够，可以在 JSX 图像标签中使用内联 CommonJS require 或 ES import 语法和 JSX 图像标签。有关更多信息，请参阅 [Docusaurus 文档](https://docusaurus.io/docs/2.x/markdown-features/assets#images)。
+
+#### 组件
+
+链接到组件时，您需要使用绝对链接来导航到所需的页面和资源。通过在任何子目录中的任何页面中使用 `@site`，它将定位到 repo 的根目录（即“/”）。
+
+:::caution
+
+将组件移动到不同的子目录时，请确保更新任何使用该组件的页面。如果不这样做，可能会导致页面断裂和构建过程中的错误，或者可能无法呈现。
+
+:::
+
+```md
+import Component from "@site/src/components/ComponentName.tsx";
+```
+
+### 热键组合
+
+当您需要向用户展示单个输入或输入组合时，您需要在屏幕顶部包含一个标签选择器，并使用 Hotkey 组件来显示输入或输入组合。通过使用此组件，用户将能够选择相关的输入模式标签来呈现标签。
+
+要使用热键组合，您需要在 [Frontmatter](#frontmatter) 下方但在 [Introduction](#introduction) 上方导入两个组件：
+
+```typescript
+import InputLabelSelector, {
+  Hotkey,
+} from "@site/src/components/LabelSelector.tsx";
+```
+
+在页面的顶部标题下方，包含此标签选择器以允许用户选择热键组合标签的输入模式。
+
+<table class="componentLinks">
+  <tbody>
+    <tr>
+      <td>
+
+**Markdown**
+
+</td>
+      <td>
+
+```markdown
+Select the button labels to be displayed in the usage guide:
+
+<InputLabelSelector/>
+<br/>
+
+Document Content
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**显示**
+
+</td>
+<td>
+
+Select the button labels to be displayed in the usage guide:
+
+<InputLabelSelector />
+<br />
+
+Document Content
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+### 选项卡
+
+当示例、说明或其他文本在不同上下文中会有所不同时，选项卡是一个很好的选择。本网站上选项卡的主要用途是展示在多种上下文中相似的内容。
+
+:::tip
+当页面包含多个选项卡集时，使用 `groupId`，以便用户选择特定选项卡时，所有具有该 ID 的选项卡将切换到选定的选项卡。
+:::
+
+要使用选项卡，您需要在 [Frontmatter](#frontmatter) 下方但在 [Introduction](#introduction) 上方导入两个特殊方法：
+
+```typescript
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+```
+
+然后按如下方式使用选项卡：
+
+<table class="tabs">
+  <tbody>
+    <tr>
+      <td>
+
+**Markdown**
+
+</td>
+      <td>
+
+```markdown
+<Tabs groupId="groupId">
+  <TabItem value="value1" label="Label 1" default>
+    This would include information or examples for context 1.
+  </TabItem>
+  <TabItem value="value2" label="Label 2">
+    This would include information or examples for context 2.
+  </TabItem>
+</Tabs>
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**显示**
+
+</td>
+      <td>
+
+<Tabs groupId="groupId">
+  <TabItem value="value1" label="Label 1" default>
+    This would include information or examples for context 1.
+  </TabItem>
+  <TabItem value="value2" label="Label 2">
+    This would include information or examples for context 2.
+  </TabItem>
+</Tabs>
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+### 内联代码
+
+要在句子中强调单个类、方法名称、变量、方向、文件名等，请在名称周围加上单引号。
+
+<table class="inlineCode">
+  <tbody>
+    <tr>
+      <td>
+
+**Markdown**
+
+</td>
+      <td>
+
+```markdown
+This comment refers to the `GP2040-CE_X.X.X_Pico.uf2` file.
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**显示**
+
+</td>
+      <td>
+
+This comment refers to the `GP2040-CE_X.X.X_Pico.uf2` file.
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+### 代码块
+
+显示代码或 Markdown 文本以供复制的最佳方式是使用代码块。Markdown 将对每种语言进行不同的高亮显示，因此指定您使用的语言很有帮助，并且最好在代码块中包含一个标题。
+
+<table class="codeblocks">
+  <tbody>
+    <tr>
+      <td>
+
+**Markdown**
+
+</td>
+      <td>
+
+        ```md title="Example Markdown Page"
+        ---
+        title: TITLE
+        # tags:
+        # -
+        pagination_next: null
+        pagination_prev: null
+        description: "PAGE DESCRIPTION"
+        ---
+
+        # Document Title
+
+        CONTENT
+        ```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**显示**
+
+</td>
+      <td>
+
+```md title="Example Markdown Page"
+---
+title: TITLE
+pagination_next: null
+pagination_prev: null
+description: "PAGE DESCRIPTION"
+---
+
+# Document Title
+
+CONTENT
+```
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+### 提示框
+
+有四种类型的 [Docusaurus 提示框](https://docusaurus.io/docs/markdown-features/admonitions)：
+
+- Note - 相关信息。
+- Tip - 用户应该这样做。
+- Caution - 用户应该注意这一点。
+- Warning - 用户可能会做一些危险的事情。
+
+<table class="code">
+  <tbody>
+    <tr>
+      <td>
+
+**Markdown**
+
+</td>
+      <td>
+
+```markdown
+:::note
+
+给您的相关信息。
+
+:::
+
+:::tip
+
+您应该这样做。
+
+:::
+
+:::caution
+
+您可能需要注意这些事。
+
+:::
+
+:::warning
+
+您可能会进行危险操作。
+
+:::
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**显示**
+
+</td>
+      <td>
+
+:::note
+
+给您的相关信息。
+
+:::
+
+:::tip
+
+您应该这样做。
+
+:::
+
+:::caution
+
+您可能需要注意这些事。
+
+:::
+
+:::warning
+
+您可能会进行危险操作。
+
+:::
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+您还可以通过在提示框类型旁边包含文本来更改提示框的文本。
+
+<table class="code">
+  <tbody>
+    <tr>
+      <td>
+
+**Markdown**
+
+</td>
+      <td>
+
+```markdown
+:::note 这是一个标记
+
+给您的相关信息。
+
+:::
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**显示**
+
+</td>
+      <td>
+
+:::note 这是一个标记
+
+给您的相关信息。
+
+:::
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+## 向仓库添加图像
+
+所有图像文件应包含在 `docs/assets` 目录中，在一个与内容类型对应的子目录中。
+
+| 子目录     | 内容                                                                                                                                                      |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `boards`   | RP2040 板的图像（商业可用或社区设计），将被引用在 `src/config/boards.tsx` 中以包含在下载页面中                                                         |
+| `images`   | 文档的通用图像类别<br/> - 附加组件：文件名以 `gpc-add-ons-` 开头<br/> - Web 配置页面：文件名以 `gpc-` 开头                                               |
+| `wiring`   | 包含在 `docs/controller-build/wiring.mdx` 中的微控制器板引脚图像                                                                                         |

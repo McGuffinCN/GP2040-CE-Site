@@ -1,0 +1,63 @@
+---
+title: 调试
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Documentation on how to set up a GP2040-CE device for debugging while developing firmware features and add-ons."
+---
+
+## 调试
+
+调试在固件开发中至关重要，因为它帮助识别和修复错误，确保代码正确运行。调试可以检测语法、逻辑和运行时问题，这些问题可能导致程序崩溃或行为异常。RP2040与各种外设（例如GPIO、I2C、SPI）交互，调试确保这些交互正常工作，特别是在处理时间敏感操作时。
+
+通过尽早解决问题，调试有助于构建更可靠和高效的代码，节省时间并防止后期出现复杂问题。
+
+## UART (TTL) 到 USB 串口监视器
+
+要设置RP2040微控制器在GPIO 00和01上通过USB进行UART通信，请按照以下步骤进行：
+
+### 引脚配置
+
+RP2040有两个UART外设（UART0和UART1）。要使用GPIO 00和01进行UART通信，请确保在所有GPIO分配中，包括I2C附加组件、显示器、USB主机分配或按钮分配中保持这些引脚空闲：
+
+- **GPIO 00:** UART0 TX（发送）
+- **GPIO 01:** UART0 RX（接收）
+
+### 电路设置
+
+![USB - UART 连接](https://hackster.imgix.net/uploads/attachments/1284607/image_eiE7x8afXR.png?auto=compress%2Cformat&w=740&h=555&fit=max)
+
+- 将USB主机连接到您的PC作为控制器。
+- 将GPIO 00 (TX)连接到USB到UART串口模块的RX引脚。
+- 将GPIO 01 (RX)连接到USB到UART串口模块的TX引脚。
+- 确保RP2040的地线（GND）连接到USB到UART串口模块的地线以建立共同参考。
+
+:::tip
+如果串口监视器中没有消息出现，请尝试反转引脚连接。
+:::
+
+### 软件配置
+
+在固件中，您需要：
+
+1. 在您的功能或附加组件的`process()`函数中添加`stdio_init_all();`。
+2. 在可执行文件中包含`iostream` C++库（例如`file.cpp`）。
+3. 使用`printf()`输出到您选择的串口监视器。
+
+有关串口消息格式，请参阅[printf文档](https://cplusplus.com/reference/cstdio/printf/)。
+
+### 通过串口监视器读取消息
+
+有多种串口监视器应用程序可以读取打印消息，包括：
+
+- [PuTTY](https://www.putty.org/)（Windows或Linux）
+- [iTerm2](https://iterm2.com/)（MacOS）
+- [picocom](https://github.com/npat-efault/picocom)（Linux）
+- [Serial Monitor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-serial-monitor) VS Code 扩展（Windows, MacOS, Linux）
+- [Windows Terminal](https://github.com/microsoft/terminal)（Windows）
+- 默认终端应用程序（Linux或MacOS）
+
+:::note 波特率
+默认波特率设置为115200Hz。
+:::

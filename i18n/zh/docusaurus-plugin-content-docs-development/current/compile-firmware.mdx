@@ -1,0 +1,113 @@
+---
+title: 编译固件
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Documentation on creating a board configuration for GP2040-CE Firmware"
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# 构建
+
+## 环境变量
+
+设置了一些新的环境变量来控制构建流程的各个部分。
+
+| 名称                | 默认值 | 描述                                                                                               |
+| ------------------ | ------- | ------------------------------------------------------------------------------------------------- |
+| GP2040_BOARDCONFIG | Pico    | 用于构建的 `boards.h` 配置文件。                                                                  |
+| SKIP_WEBBUILD      | FALSE   | 是否在 CMake 配置步骤中构建 web 配置器。                                                           |
+| SKIP_SUBMODULES    | FALSE   | 是否在 CMake 配置步骤中自动运行子模块初始化命令。                                                   |
+
+### SDK 变量
+
+我们利用了几个 SDK 变量来进行构建。
+
+| 名称       | 默认值 | 描述                                                                                                                                                                  |
+| ---------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| PICO_BOARD | pico    | RP2040 芯片所属的嵌入式板。默认情况下，它假设为 Pico。此变量应与板配置文件夹中的 `<boardname.h>` 文件匹配。                                                         |
+
+<Tabs groupId="operating-systems" defaultValue="Windows (Pico SDK)">
+<TabItem value="Windows (Pico SDK)" label="Windows (Pico SDK)" default>
+
+安装 Raspberry Pi Pico SDK 后，您应该有一个 "Pico-Visual Studio Code" 的快捷方式（可以通过 Windows 搜索找到）。这个快捷方式应该已经配置好，**允许您直接跳到步骤 7**。如果遇到编译问题，可以考虑按照这里的手动步骤进行操作。
+
+确保设置 `PICO_SDK_PATH` 环境变量：
+
+1. 在 Windows 中搜索 "Edit environment variables for your account"。
+2. 在 "用户变量" 下点击 "新建..."。
+3. 在出现的对话框中，输入 `PICO_SDK_PATH` 作为变量名。
+4. 点击 "浏览目录" 并导航到 `C:\Program Files\Raspberry Pi\Pico SDK v1.5.1\pico-sdk` 作为变量值。
+5. 创建另一个新变量。
+6. 输入 `GP2040_BOARDCONFIG` 作为变量名。
+7. 输入 `Pico`（或您编辑的配置文件夹名称）作为变量值。
+
+您也可以在 VSCode 中设置变量：
+
+1. 按 `Ctrl + ,` 打开设置。
+2. 使用搜索栏查找 "CMake"。
+3. 滚动直到看到 "CMake: Configure Environment"。
+4. 点击 "Add Item"。
+5. 键：`GP2040_BOARDCONFIG`
+6. 值：`Pico`（或您的工作文件夹名称）。
+
+当被提示时，选择 `GCC 10.3.1 ARM NONE EABI` 作为 "Select a kit for GP2040-CE"
+
+在 VSCode 中：
+
+1. 点击 VSCode 左侧栏的 CMake 图标。
+2. 您会看到 CMake 项目大纲右上角的三个图标。点击 "Configure All Projects" 图标（看起来像一个带箭头的页面）。
+3. 等待配置过程完成。如果进度不可见，点击 "终端" 菜单，然后选择 "新终端" 打开一个新终端窗口。在底部导航到 "输出" 选项卡。
+4. 在 CMake 项目大纲中点击 "Build All Projects"。
+5. 文件应该在 GP2040-CE 文件夹内的新文件夹 "build" 中。
+
+</TabItem>
+<TabItem value="Windows (Manual)" label="Windows (Manual)" default>
+
+从 GP2040-CE 文件夹开始。**从 Developer Powershell 或 Developer Command Command Prompt**：
+
+:::note
+
+设置环境变量后需要启动新的 Powershell 或命令提示符会话。
+
+:::
+
+1. 确保您已将 `PICO_SDK_PATH` 环境变量设置为 pico-sdk 文件夹的路径。
+2. （可选）设置 `GP2040_BOARDCONFIG` 环境变量为您的板配置文件夹名称。
+   - 默认值为 `Pico`
+
+3. 创建构建目录，配置构建并执行构建。
+
+   ```console
+   mkdir build
+   cd build
+   cmake -G "NMake Makefiles" ..
+   nmake
+   ```
+
+4. 您的 UF2 文件应该在构建目录中。
+
+</TabItem>
+<TabItem value="Linux" label="Linux" default>
+
+从 GP2040-CE 文件夹开始
+
+1. 确保您已将 `PICO_SDK_PATH` 环境变量设置为 pico-sdk 文件夹的路径。
+2. （可选）设置 `GP2040_BOARDCONFIG` 环境变量为您的板配置文件夹名称。
+   - 默认值为 `Pico`
+3. 创建构建目录，配置构建并执行构建。
+
+   ```bash
+   mkdir build
+   cd build
+   cmake ..
+   make
+   ```
+
+4. 您的 UF2 文件应该在构建目录中。
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,59 @@
+---
+title: 如何贡献
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "How to contribute to the GP2040-CE Project"
+---
+
+# 如何贡献
+
+感谢您抽出时间阅读本文并为项目做出贡献！
+
+第三方贡献帮助我们发展和改进 GP2040-CE。我们希望让拉取请求和贡献过程对贡献者和维护者都变得有用和简单。
+
+为此，我们制定了一些指南，帮助您的拉取请求在无需重大更改的情况下被接受。
+
+## 项目概览
+
+GP2040-CE 主要用 C/C++ 编写，Web 配置器的大部分是用 JavaScript 在 React 框架中编写的。
+
+## 如何进行贡献？
+
+从未进行过开源贡献？想知道在 GP2040-CE 中如何进行贡献？以下是快速概述！
+
+1. 注册一个 GitHub 账户。
+2. 找到您感兴趣的问题或想要添加的功能。
+3. 将与问题相关的仓库 fork 到您的 GitHub 账户。这意味着您将在 `your-GitHub-username/GP2040-CE` 下拥有一个仓库副本。
+4. 使用 `git clone https://github.com/your-GitHub-username/GP2040-CE` 将仓库克隆到您的本地机器。
+5. 如果您正在开发新功能，请考虑打开一个 issue，与我们讨论您将要进行的工作。
+6. 使用 `git checkout -b branch-name-here` 为您的修复创建一个新分支。
+7. 针对您要解决的问题或要添加的功能进行适当更改。
+8. 使用 `git add insert-paths-of-changed-files-here` 将更改文件的内容添加到 Git 用于管理项目状态的“快照”（也称为索引）。
+9. 使用 `git commit -m "Insert a short message of the changes made here"` 将索引内容与描述性消息一起存储。
+10. 使用 `git push origin branch-name-here` 将更改推送到您在 GitHub 上的仓库。
+11. 向 [OpenStickCommunity/GP2040-CE](https://github.com/OpenStickCommunity/GP2040-CE) 提交一个拉取请求。
+12. 用对所做更改的简短描述和与更改相关的问题或错误编号为拉取请求命名。例如，您可以这样命名问题：“Added more log outputting to resolve #4352”。
+13. 在拉取请求的描述中，解释您所做的更改、您认为存在的任何问题以及您对维护者的任何问题。如果您的拉取请求不完美（没有拉取请求是完美的），也没关系，审阅者会帮助您修复任何问题并改进它！
+14. 等待维护者审阅拉取请求。
+15. 如果审阅的维护者建议进行更改，请对拉取请求进行更改。
+16. 在您的拉取请求合并后庆祝成功！
+
+## 开发环境
+
+您可以在[此处](/development/build-environment)找到有关如何为 Windows 或 Linux 设置开发环境的详细指南。也有关于如何[编译固件](/development/compile-firmware)和如何[调试](/development/debugging)的指南。
+
+## 编码约定
+
+## 一般指南
+
+- **在您贡献之前**：请确保您的分叉与上游 `GP2040-CE` 仓库保持同步。这将有助于最小化在本地编译时可能不会发生的 CI 失败。
+- 将 PR 分成逻辑单元。例如，不要提交一个 PR 涵盖两个单独的功能，而是为每个功能提交一个单独的 PR。
+- 在提交之前使用 `git diff --check` 检查不必要的空白。
+- 确保您的代码更改实际可以编译。
+- 确保提交消息本身是可理解的。您应该在第一行放置简短描述（不超过 70 个字符），第二行应为空，如果需要，在第 3 行及以后详细描述您的提交。
+
+## 文档
+
+文档是开始为 GP2040-CE 贡献的最简单方法之一。找到文档错误或不完整的地方并修复它们是很容易的！我们也非常需要有人来编辑我们的文档，所以如果您有编辑技能但不确定从哪里或如何入手，请[联系我们寻求帮助](/getting-help-support)！

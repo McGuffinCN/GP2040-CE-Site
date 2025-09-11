@@ -1,0 +1,67 @@
+---
+title: 文档预览
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "How to preview documentation locally"
+---
+
+# 文档预览
+
+在撰写和开发文档时，您会希望在本地构建，以便在不更新主仓库的情况下查看更改。然而，当您准备好进行拉取请求测试时，请进行生产编译，因为这将构建用于实时网站的文件，并揭示在本地构建时可能不存在的问题。
+
+## 清除本地构建
+
+此过程将清除 docs 文件夹中生成的资产、缓存和构建工件。建议在本地构建或生产编译时遇到 Docusaurus 网站问题时进行清除。
+
+1. 在 GP2040-CE 项目的根目录中打开终端
+2. 运行以下命令
+
+```shell
+cd site/
+npm run docusaurus clear
+```
+
+## 本地构建
+
+这将在本地使用 [Webpack Dev Server](https://webpack.js.org/configuration/dev-server/) 构建并服务您的网站。
+
+:::note
+
+在开发服务器运行时对文档进行的更改将在保存时更新实时网站。
+
+:::
+
+1. 在 GP2040-CE 项目的根目录中打开终端
+2. 运行以下命令
+
+```shell
+cd site/
+npm install
+npm start
+```
+
+3. 在默认的网络浏览器中，`http://localhost:port` 应自动打开并允许您预览网站。
+
+## 生产预览
+
+这将为生产编译您的网站，创建一个用于静态网站的构建文件夹。
+
+:::note
+
+在开发服务器运行时对文档进行的更改将**不会**在保存时更新实时网站。
+
+:::
+
+1. 在 GP2040-CE 项目的根目录中打开终端
+2. 运行以下命令
+
+```shell
+cd site/
+npm install
+npm run build
+npm run serve
+```
+
+3. 在默认的网络浏览器中，`http://localhost:port` 应自动打开并允许您预览网站。

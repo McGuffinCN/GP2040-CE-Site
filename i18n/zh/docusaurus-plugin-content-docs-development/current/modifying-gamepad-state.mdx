@@ -1,0 +1,127 @@
+---
+title: 修改游戏控制器状态
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: Documentation on how to modify gamepad state when developing firmware features and add-ons"
+---
+
+# 修改游戏控制器状态
+
+在任何希望修改游戏控制器状态的函数中，都需要使用指向游戏控制器的指针。这是更改游戏控制器状态任何方面的绝对必要条件。
+
+```cpp
+Gamepad *gamepad = Storage::getInstance().GetGamepad();
+```
+
+可以在 `headers/gamepad/GamepadState.h` 中找到合适的游戏控制器宏和按钮掩码。
+
+## 方向键
+
+要修改游戏控制器的方向键（DPad）状态，使用按位或赋值和相应的 `GAMEPAD_MASK` 枚举来激活输入。
+
+```cpp
+Gamepad *gamepad = Storage::getInstance().GetGamepad();
+gamepad->state.dpad |= GAMEPAD_MASK_UP;
+gamepad->state.dpad |= GAMEPAD_MASK_DOWN;
+gamepad->state.dpad |= GAMEPAD_MASK_LEFT;
+gamepad->state.dpad |= GAMEPAD_MASK_RIGHT;
+```
+
+:::note 插件的 SOCD 覆盖
+
+所有插件都需要在插件中处理相对的同时方向，因为它们在标准 GPIO 输入已经被 SOCD 覆盖之后才出现。
+
+请考虑在 `src/gamepad/GamepadState.cpp` 中使用 `runSOCDCleaner(SOCDMode mode, uint8_t dpad)` 来接收方向键输入，然后在插件的 `process()` 函数中一次性解决它们。
+
+:::
+
+## 按钮
+
+要修改游戏控制器的按钮状态，使用按位或赋值和相应的 `GAMEPAD_MASK` 枚举来激活输入。
+
+```cpp
+Gamepad *gamepad = Storage::getInstance().GetGamepad();
+gamepad->state.buttons |= GAMEPAD_MASK_B1;
+gamepad->state.buttons |= GAMEPAD_MASK_B2;
+gamepad->state.buttons |= GAMEPAD_MASK_B3;
+gamepad->state.buttons |= GAMEPAD_MASK_B4;
+gamepad->state.buttons |= GAMEPAD_MASK_L1;
+gamepad->state.buttons |= GAMEPAD_MASK_R1;
+gamepad->state.buttons |= GAMEPAD_MASK_L2;
+gamepad->state.buttons |= GAMEPAD_MASK_R2;
+gamepad->state.buttons |= GAMEPAD_MASK_S1;
+gamepad->state.buttons |= GAMEPAD_MASK_S2;
+gamepad->state.buttons |= GAMEPAD_MASK_L3;
+gamepad->state.buttons |= GAMEPAD_MASK_R3;
+gamepad->state.buttons |= GAMEPAD_MASK_A1;
+gamepad->state.buttons |= GAMEPAD_MASK_A2;
+gamepad->state.buttons |= AUX_MASK_FUNCTION;
+```
+
+## 摇杆
+
+要修改游戏控制器的模拟摇杆状态，每个摇杆的 X 轴和 Y 轴必须设置为 0 到 65535 之间的无符号整数。
+
+```cpp
+GAMEPAD_JOYSTICK_MIN = 0
+GAMEPAD_JOYSTICK_MID = 0x7FFF
+GAMEPAD_JOYSTICK_MAX = 0xFFFF
+```
+
+| 轴     | 值范围         | 摇杆位置                 |
+| :----- | :------------- | :----------------------- |
+| X轴    | 0 - 32767      | 方向左 100% - 0%         |
+| X轴    | 32767          | 居中                    |
+| X轴    | 32767 - 65535  | 方向右 0% - 100%        |
+| Y轴    | 0 - 32767      | 方向上 100% - 0%         |
+| Y轴    | 32767          | 居中                    |
+| Y轴    | 32767 - 65535  | 方向下 0% - 100%        |
+
+```cpp
+Gamepad *gamepad = Storage::getInstance().GetGamepad();
+gamepad->state.ly = value;
+gamepad->state.lx = value;
+gamepad->state.ry = value;
+gamepad->state.rx = value;
+```
+
+:::note 模拟输入的 SOCD 覆盖
+
+所有插件需要处理模拟摇杆上的相对同时方向，因为固件中没有现有机制来解决此类问题。
+
+:::
+
+## 扳机
+
+对于 L2 和 R2 扳机，有两种不同的方法来设置扳机的值。可以使用数字方式或模拟值设置它们。
+
+### 数字扳机
+
+与其他数字输入类似，使用按位或赋值和相应的 `GAMEPAD_MASK` 枚举来激活输入。
+
+```cpp
+Gamepad *gamepad = Storage::getInstance().GetGamepad();
+gamepad->state.buttons |= GAMEPAD_MASK_L2;
+gamepad->state.buttons |= GAMEPAD_MASK_R2;
+```
+
+### 模拟扳机
+
+要将 L2 和 R2 扳机设置为模拟值，首先必须将游戏控制器的 `hasAnalogTriggers` 标志设置为 `true`，以指示游戏控制器是否具有模拟扳机。默认情况下，此标志设置为 `false`，建议在操作模拟扳机值时设置此标志。
+
+然后，应为每个模拟扳机设置适当的轴。模拟扳机的值范围为 0 到 255，其中 0 是完全释放，255 是完全按下。
+
+```cpp
+GAMEPAD_TRIGGER_MIN = 0;
+GAMEPAD_TRIGGER_MID = 0x7F;
+GAMEPAD_TRIGGER_MAX = 0xFF;
+```
+
+```cpp
+Gamepad *gamepad = Storage::getInstance().GetGamepad();
+gamepad->hasAnalogTriggers = true;
+gamepad->state.lt = value;
+gamepad->state.rt = value;
+```
