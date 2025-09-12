@@ -182,6 +182,13 @@ const config = {
         sidebarPath: "./sidebarsDevelopment.json",
       },
     ],
+    [
+      'vercel-analytics',
+      {
+        debug: true,
+        mode: 'auto',
+      },
+    ],
   ],
 };
 
