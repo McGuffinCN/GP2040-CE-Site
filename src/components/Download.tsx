@@ -32,11 +32,11 @@ const RenderDownloadBox = ({
 					<ul className={styles.downloadLinks}>
 						<LinkIcon
 							link={createDownloadLink({ releaseVersion, configName })}
-                            text={translate({
-                                id: 'downloads.link.download',
-                                message: 'Download',
-                                description: 'Download link text',
-                            })}
+							text={translate({
+								id: 'downloads.link.download',
+								message: 'Download',
+								description: 'Download link text',
+							}) as any}
 						/>
 						<LinkIcon
 							link={pinout}
@@ -44,7 +44,7 @@ const RenderDownloadBox = ({
 								id: 'downloads.link.pinout',
 								message: 'Pinout',
 								description: 'Pinout link text',
-							})}
+							}) as any}
 						/>
 						<LinkIcon
 							link={website}
@@ -52,7 +52,7 @@ const RenderDownloadBox = ({
 								id: 'downloads.link.website',
 								message: 'Website',
 								description: 'Website link text',
-							})}
+							}) as any}
 						/>
 					</ul>
 				</div>
