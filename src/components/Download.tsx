@@ -3,6 +3,7 @@ import styles from './download.module.css';
 import LinkIcon from './LinkIcon';
 import boards from '../config/boards';
 import { useGitHubInfo } from '../hooks/useGitHubInfo';
+import { translate } from '@docusaurus/Translate';
 
 const createDownloadLink = ({ releaseVersion, configName }) =>
 	releaseVersion
@@ -31,10 +32,28 @@ const RenderDownloadBox = ({
 					<ul className={styles.downloadLinks}>
 						<LinkIcon
 							link={createDownloadLink({ releaseVersion, configName })}
-							text={'Download'}
+                            text={translate({
+                                id: 'downloads.link.download',
+                                message: 'Download',
+                                description: 'Download link text',
+                            })}
 						/>
-						<LinkIcon link={pinout} text={'Pinout'} />
-						<LinkIcon link={website} text={'Website'} />
+						<LinkIcon
+							link={pinout}
+							text={translate({
+								id: 'downloads.link.pinout',
+								message: 'Pinout',
+								description: 'Pinout link text',
+							})}
+						/>
+						<LinkIcon
+							link={website}
+							text={translate({
+								id: 'downloads.link.website',
+								message: 'Website',
+								description: 'Website link text',
+							})}
+						/>
 					</ul>
 				</div>
 				<div className="download-desc">{desc()}</div>

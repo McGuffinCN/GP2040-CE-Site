@@ -760,5 +760,263 @@
   },
   "Arcade.Function": {
     "message": "Function"
+  },
+  "downloads.link.download": {
+    "message": "下载",
+    "description": "Download link text"
+  },
+  "downloads.link.pinout": {
+    "message": "引脚",
+    "description": "Pinout link text"
+  },
+  "downloads.link.website": {
+    "message": "网站",
+    "description": "Website link text"
+  },
+  "boards.microcontroller.pico.name": {
+    "message": "树莓派 Pico"
+  },
+  "boards.microcontroller.pico.desc": {
+    "message": "树莓派 Pico 是基于树莓派 RP2040 微控制器的功能强大且低成本的开发板。此构建为 GP2040-CE 的参考实现。"
+  },
+  "boards.microcontroller.pico_w.name": {
+    "message": "树莓派 Pico W"
+  },
+  "boards.microcontroller.pico_w.desc": {
+    "message": "树莓派 Pico W 是基于树莓派 RP2040 微控制器的功能强大且低成本的开发板。"
+  },
+  "boards.microcontroller.kb2040.name": {
+    "message": "Adafruit KB2040"
+  },
+  "boards.microcontroller.kb2040.desc": {
+    "message": "另一款采用 RP2040 的 Pro Micro 规格开发板，具有两个用于 USB 数据的额外引脚。该构建面向 DIY 游戏手柄改装。"
+  },
+  "boards.microcontroller.liatris.name": {
+    "message": "Liatris"
+  },
+  "boards.microcontroller.liatris.desc": {
+    "message": "由 {SplitKB} 提供的可直接替换 Pro Micro 的 RP2040 模块。"
+  },
+  "boards.microcontroller.seeed_xiao.name": {
+    "message": "Seeed XAIO RP2040"
+  },
+  "boards.microcontroller.seeed_xiao.desc": {
+    "message": "Seeed Studio 的 XIAO RP2040 是一款小型的 RP2040 开发板。"
+  },
+  "boards.microcontroller.sparkfun_pm.name": {
+    "message": "SparkFun Pro Micro"
+  },
+  "boards.microcontroller.sparkfun_pm.desc": {
+    "message": "一款 Pro Micro 规格的 RP2040 开发板。此构建可作为 Daemonbite Arcade Encoder 的直接替代。"
+  },
+  "boards.microcontroller.waveshare_zero.name": {
+    "message": "Waveshare RP2040-Zero"
+  },
+  "boards.microcontroller.waveshare_zero.desc": {
+    "message": "Waveshare RP2040-Zero 是一款小巧的开发板，具有包边引脚和 USB-C，适合在无需表面贴装组装的情况下用于定制 PCB。"
+  },
+  "boards.community.arc.name": {
+    "message": "ARC 无障碍控制器"
+  },
+  "boards.community.arc.desc": {
+    "message": "ARC 控制器是一款无障碍控制器。由 {TheTrain} 设计，借鉴了 {jfedor2} 的一些设计理念以及通用的无障碍控制器连接标准。"
+  },
+  "boards.community.flatbox_rev4.name": {
+    "message": "Flatbox Rev 4"
+  },
+  "boards.community.flatbox_rev4.desc": {
+    "message": "由 {jfedor2} 设计的无摇杆 PCB，采用嵌入式 RP2040 芯片。"
+  },
+  "boards.community.flatbox_rev5.name": {
+    "message": "Flatbox Rev 5"
+  },
+  "boards.community.flatbox_rev5.desc": {
+    "message": "由 {jfedor2} 设计的无摇杆 PCB，使用 Waveshare RP2040-Zero。"
+  },
+  "boards.community.flatbox_rev5_southpaw.name": {
+    "message": "Flatbox Rev 5 Southpaw"
+  },
+  "boards.community.flatbox_rev5_southpaw.desc": {
+    "message": "由 {SkylaHila} 制作的 Flatbox Rev 5 镜像版本。基于 {jfedor2} 的 Flatbox Rev 5。"
+  },
+  "boards.community.flatbox_rev5_rgb.name": {
+    "message": "Flatbox Rev 5 RGB"
+  },
+  "boards.community.flatbox_rev5_rgb.desc": {
+    "message": "由 {jfedor2} 和 {TheTrain} 设计的无摇杆 PCB，使用 Waveshare RP2040-Zero。"
+  },
+  "boards.community.flatbox_rev5_passthrough.name": {
+    "message": "Flatbox Rev 5 USB Passthrough"
+  },
+  "boards.community.flatbox_rev5_passthrough.desc": {
+    "message": "由 {jfedor2} 和 {TheTrain} 设计的无摇杆 PCB，使用 Waveshare RP2040-Zero。"
+  },
+  "boards.community.keyboard_converter.name": {
+    "message": "GP2040-CE 键盘转换器"
+  },
+  "boards.community.keyboard_converter.desc": {
+    "message": "GP2040-CE 键盘转换器盒子旨在作为 USB 主机设备，供 GP2040-CE 项目使用键盘。"
+  },
+  "boards.community.granola.name": {
+    "message": "Granola Summit"
+  },
+  "boards.community.granola.desc": {
+    "message": "用于 {granola} 的配置。PCB 和设计文件可在 {repo} 找到。"
+  },
+  "boards.community.haute42.name": {
+    "message": "Haute42 系列"
+  },
+  "boards.community.haute42.desc": {
+    "message": "适用于 Haute42 系列的配置。Haute42 产品均兼容相同的配置文件，包含 Haute42 Pad 的多个系列型号。"
+  },
+  "boards.community.hautepad_m_lite.name": {
+    "message": "HautePad M Lite"
+  },
+  "boards.community.hautepad_m_lite.desc": {
+    "message": "适用于 {site} 的配置。HautePad M Lite 包含针对 M-Lite 的特殊外壳 RGB 代码。固件 uf2 会自动设置外壳 RGB 和模式以启用全部 LED。"
+  },
+  "boards.community.hautepad_m_ultra.name": {
+    "message": "HautePad M Ultra"
+  },
+  "boards.community.hautepad_m_ultra.desc": {
+    "message": "适用于 {site} 的配置。HautePad M Ultra 包含针对 M Ultra 的特殊外壳 RGB 代码。固件 uf2 会自动设置外壳 RGB 和模式以启用全部 LED。"
+  },
+  "boards.community.hautepad_x_analog.name": {
+    "message": "HautePad X (Analog Configuration)"
+  },
+  "boards.community.hautepad_x_analog.desc": {
+    "message": "适用于 {site} 的配置。带模拟附件的 HautePad X 系列需要特殊配置文件才能立即工作。"
+  },
+  "boards.community.mavercade_rev1.name": {
+    "message": "Mavercade Rev1"
+  },
+  "boards.community.mavercade_rev1.desc": {
+    "message": "适用于 {site} 的配置。这些版本使用 Waveshare RP2040-Zero 板。"
+  },
+  "boards.community.mavercade_rev2.name": {
+    "message": "Mavercade Rev2"
+  },
+  "boards.community.mavercade_rev2.desc": {
+    "message": "适用于 {site} 的配置。这些版本使用 Waveshare RP2040-Zero 板。"
+  },
+  "boards.community.mistercade_v2.name": {
+    "message": "MiSTercadeV2"
+  },
+  "boards.community.mistercade_v2.desc": {
+    "message": "适用于 {site} 的配置。MiSTercade 是 MiSTer FPGA 的原始 JAMMA 扩展。"
+  },
+  "boards.community.opencore0.name": {
+    "message": "Open Core0"
+  },
+  "boards.community.opencore0.desc": {
+    "message": "由 {TheTrain} 设计的开源无摇杆控制器。"
+  },
+  "boards.community.opencore0_wasd.name": {
+    "message": "Open Core0 WASD"
+  },
+  "boards.community.opencore0_wasd.desc": {
+    "message": "由 {TheTrain} 设计的开源无摇杆 WASD 控制器。"
+  },
+  "boards.community.osumgp.name": {
+    "message": "OSUMGP-RP2040"
+  },
+  "boards.community.osumgp.desc": {
+    "message": "OSUMGP-RP2040：由 {NickGuyver} 制作的开源通用现代游戏手柄（RP2040 版本）。"
+  },
+  "boards.community.pico_fighting.name": {
+    "message": "Pico Fighting Board"
+  },
+  "boards.community.pico_fighting.desc": {
+    "message": "由 {FeralAI} 设计的街机编码器板，使用树莓派 Pico 或引脚等效的 RP2040 开发板。"
+  },
+  "boards.community.pxp_gamepad.name": {
+    "message": "PXP-Gamepad"
+  },
+  "boards.community.pxp_gamepad.desc": {
+    "message": "由 {MegaBitmap} 制作的 DIY 通用口袋游戏手柄，使用焊接在定制 PCB 上的 RP2040-Zero MCU。"
+  },
+  "boards.community.reflex_encode_v1_2.name": {
+    "message": "Reflex Encode v1.2"
+  },
+  "boards.community.reflex_encode_v1_2.desc": {
+    "message": "由 {MiSTerAddons} 设计并销售的街机编码器板，使用嵌入式 RP2040 芯片。"
+  },
+  "boards.community.reflex_encode_v2.name": {
+    "message": "Reflex Encode v2.0"
+  },
+  "boards.community.reflex_encode_v2.desc": {
+    "message": "由 MiSTerAddons 设计并销售的街机编码器板，使用嵌入式 RP2040 芯片。"
+  },
+  "boards.community.reflex_ctrl_genesis6.name": {
+    "message": "Reflex CTRL Genesis 6"
+  },
+  "boards.community.reflex_ctrl_genesis6.desc": {
+    "message": "Reflex 开源 PCB，用于 Sega Genesis 6 按钮控制器替换，由 MiSTerAddons 设计并销售，使用嵌入式 RP2040 芯片。"
+  },
+  "boards.community.reflex_ctrl_nes.name": {
+    "message": "Reflex CTRL NES"
+  },
+  "boards.community.reflex_ctrl_nes.desc": {
+    "message": "Reflex 开源 PCB，用于 NES 控制器替换，由 MiSTerAddons 设计并销售，使用嵌入式 RP2040 芯片。"
+  },
+  "boards.community.reflex_ctrl_snes.name": {
+    "message": "Reflex CTRL SNES"
+  },
+  "boards.community.reflex_ctrl_snes.desc": {
+    "message": "Reflex 开源 PCB，用于 SNES 控制器替换，由 MiSTerAddons 设计并销售，使用嵌入式 RP2040 芯片。"
+  },
+  "boards.community.reflex_ctrl_saturn.name": {
+    "message": "Reflex CTRL Saturn"
+  },
+  "boards.community.reflex_ctrl_saturn.desc": {
+    "message": "Reflex 开源 PCB，用于 Sega Saturn 控制器替换，由 MiSTerAddons 设计并销售，使用嵌入式 RP2040 芯片。"
+  },
+  "boards.community.reflex_ctrl_vb.name": {
+    "message": "Reflex CTRL Virtual Boy"
+  },
+  "boards.community.reflex_ctrl_vb.desc": {
+    "message": "Reflex 开源 PCB，用于 Virtual Boy 控制器替换，由 MiSTerAddons 设计并销售，使用嵌入式 RP2040 芯片。"
+  },
+  "boards.community.rp2040_advanced_breakout.name": {
+    "message": "RP2040 Advanced Breakout"
+  },
+  "boards.community.rp2040_advanced_breakout.desc": {
+    "message": "由 {TheTrain} 设计、使用嵌入式 RP2040 的街机编码器板，并且是 GP2040-CE 项目的官方板。"
+  },
+  "boards.community.rp2040_passthrough.name": {
+    "message": "RP2040 Advanced Breakout (USB Passthrough)"
+  },
+  "boards.community.rp2040_passthrough.desc": {
+    "message": "Open Stick 项目的官方 USB 透传板。更新版的 RP2040 Advanced Breakout Board，板上包含 USB 透传功能。"
+  },
+  "boards.community.rp2040_mini_breakout.name": {
+    "message": "RP2040 Mini Breakout Board"
+  },
+  "boards.community.rp2040_mini_breakout.desc": {
+    "message": "由 {TheTrain} 设计的精简版 RP2040 Advanced Breakout Board。"
+  },
+  "boards.community.bentobox.name": {
+    "message": "ScrubTier BentoBox"
+  },
+  "boards.community.bentobox.desc": {
+    "message": "适用于 {ScrubTier} 的配置。"
+  },
+  "boards.community.sgf_devices.name": {
+    "message": "SGF Devices"
+  },
+  "boards.community.sgf_devices.desc": {
+    "message": "SGF 无摇杆控制器的设计灵感来自 jfedor 的开源 Flatbox Rev4。"
+  },
+  "boards.community.stress.name": {
+    "message": "Stress"
+  },
+  "boards.community.stress.desc": {
+    "message": "由 {GroooveBob} 设计的小型便携式 PCB 控制器，使用 Waveshare RP-2040-Zero。"
+  },
+  "boards.community.zero_rhythm.name": {
+    "message": "Zero Rhythm"
+  },
+  "boards.community.zero_rhythm.desc": {
+    "message": "Zero Rhythm 是为 Nintendo Switch 上的 Theatrhythm 游戏设计的控制器。它支持节奏游戏和双摇杆游戏，采用双 WASD 布局。"
   }
 }

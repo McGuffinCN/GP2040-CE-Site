@@ -12,6 +12,9 @@ const icons = {
 	Download: faFileDownload,
 	Pinout: faGamepad,
 	Website: faGlobe,
+	下载: faFileDownload,
+	引脚: faGamepad,
+	网站: faGlobe,
 } as const;
 
 type LinkIconTypes = {
