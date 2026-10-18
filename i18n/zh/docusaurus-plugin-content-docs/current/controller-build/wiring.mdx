@@ -51,3 +51,21 @@ description: "Default pinouts for precompiled, common, commercially available mi
 ## Seeed XIAO RP2040
 
 ![Seeed XIAO RP2040 引脚分布图](../assets/wiring/SeeedXIAORP2040_Pinout.png)
+
+# 按键
+
+GP2040-CE 会将输入 GPIO 引脚配置为上拉模式，当按键按下时，引脚应被短接到地（GND）。
+
+您可以为每个按键使用两根导线进行连接（一根接 GPIO 引脚，另一根接地）：
+
+![按键分别连接到 GPIO 和地](../assets/wiring/Separate_buttons_schematic.png)
+
+也可以将地线在按键之间串联，例如将两根导线同时压接到一个 FASTON 端子上，或将两根导线焊接到同一个按键引脚上。每个按键的另一个触点必须连接到各自独立的 GPIO 引脚：
+
+![使用串联地线连接的按键](../assets/wiring/Chained_button_schematic.png)
+
+# PWM LED
+
+PWM 玩家 LED 引脚的配置方式类似：引脚在激活时短接到地，其他时候则被上拉。这意味着 LED 的阳极必须连接到微控制器的 +3.3V 输出，而每个阴极分别连接到对应的 GPIO 引脚，这种连接方式称为共阳极。电路中必须串入限流电阻以保护 GPIO 引脚；如不确定阻值，可使用在线计算器进行计算。最大安全电流约为 20mA。
+
+![如何将 LED 和按键连接到 GPIO](../assets/wiring/LEDs_schematic.png)

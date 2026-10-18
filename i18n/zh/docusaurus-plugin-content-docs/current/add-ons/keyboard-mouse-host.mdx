@@ -25,9 +25,9 @@ import InstallUSBHostPort from "../snippets/_add-usb-host-port.mdx";
 
 :::
 
-用途：此插件旨在允许用户将键盘与 GP2040-CE 配合使用，并与 GP2040-CE 支持的系统兼容。
+用途：此插件旨在允许将键盘和/或鼠标作为 GP2040-CE 的输入，并将其映射为其他输入，发送到受支持的系统。
 
-![GP2040-CE 配置器 - 键盘/鼠标主机配置](../assets/images/gpc-add-ons-keyboard-host-configuration.png)
+![GP2040-CE 配置器 - 键盘/鼠标主机配置](../assets/images/gpc-add-ons-keyboard-mouse-host-configuration.png)
 
 ## 网页配置器选项
 
@@ -36,6 +36,8 @@ import InstallUSBHostPort from "../snippets/_add-usb-host-port.mdx";
 USB 主机端口的 Data、5V Enable 和 Pin Orientation 选项现在在 [`功能配置 > 外围设备映射 - USB 主机`](../web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-主机) 中配置。
 
 :::
+
+## 键盘
 
 ### 默认按键绑定
 
@@ -60,6 +62,18 @@ USB 主机端口的 Data、5V Enable 和 Pin Orientation 选项现在在 [`功�
 | <Hotkey buttons={["A1"]}/>       | 9            |
 | <Hotkey buttons={["A2"]}/>       | F2           |
 | <Hotkey buttons={["Function"]}/> | 无           |
+
+## 鼠标
+
+鼠标移动默认未映射，可以映射到右摇杆或左摇杆。
+
+### 默认绑定
+
+| GP2040 | 鼠标 |
+| ------ | ---- |
+| 无     | 左键 |
+| 无     | 中键 |
+| 无     | 右键 |
 
 ## 硬件
 

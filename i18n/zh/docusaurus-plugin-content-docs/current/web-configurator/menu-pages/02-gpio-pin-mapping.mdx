@@ -27,6 +27,11 @@ description: "Map GPIO pins from RP2040 to gamepad inputs in GP2040-CE"
 - [宏](./09-macros.mdx)
 - Function
 - 额外功能
+- 模拟方向（模拟最大值输入 X[-/+] 和 Y[-/+]）
+- 迷你菜单交互与导航
+- 倾斜
+- 专注模式启用
+- 切换 4 向摇杆模式
 
 :::note
 - 多个 [按键](../../usage.mdx#按键) 可以分配到单个 GPIO 引脚（例如 SOCD 覆盖和 [快捷键](../../hotkeys.mdx) 都可以激活）。
@@ -53,7 +58,7 @@ description: "Map GPIO pins from RP2040 to gamepad inputs in GP2040-CE"
 
 您可以配置档案，根据设置的档案编号更改 GPIO 到 GP2040-CE 按钮的映射。这意味着您可以为不同的使用场景设置按钮布局，并在无需进入网页配置器重新映射 GPIO 引脚的情况下切换它们。
 
-可以通过网页配置器的 [设置页面](../../web-configurator/menu-pages/01-settings.mdx) 或使用 [快捷键](../../hotkeys.mdx#加载档案-1-4) 更改档案编号。这些 `加载 档案 #1-4`、`下一个档案` 或 `上一个档案` 快捷键快捷键没有默认输入组合，因此您可能需要在设置页面的 [快捷键设置](../../web-configurator/menu-pages/01-settings.mdx#快捷键设置) 中设置它们。首次启动时默认使用档案 #1，但会在重启后记住上次设置的档案。
+可以通过网页配置器的 [设置页面](../../web-configurator/menu-pages/01-settings.mdx) 或使用 [快捷键](../../hotkeys.mdx#加载档案-1-6) 更改档案编号。这些 `加载档案 #1-6`、`下一个档案` 或 `上一个档案` 快捷键没有默认输入组合，因此您可能需要在设置页面的 [快捷键设置](../../web-configurator/menu-pages/01-settings.mdx#快捷键设置) 中设置它们。首次启动时默认使用档案 #1，但会在重启后记住上次设置的档案。
 
 ### 档案名称
 可以设置档案名称以帮助识别档案的用途。如果您为不同使用场景设置了多个档案，这会非常有用。如果未设置档案名称，则档案会显示为 `档案 #`，其中 `#` 是档案编号。连接的显示屏会在档案更改时显示档案名称。
@@ -73,6 +78,6 @@ description: "Map GPIO pins from RP2040 to gamepad inputs in GP2040-CE"
 - Wii 扩展
 - SNES 扩展
 - 专注模式
-- 键盘主机按钮到键映射
+- 键盘/鼠标主机按钮到键映射
 
 :::

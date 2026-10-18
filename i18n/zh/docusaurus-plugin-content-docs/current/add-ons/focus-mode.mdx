@@ -24,8 +24,9 @@ description: "Add-on to disable functions and inputs while Focus Mode is enabled
 
 ### 要求
 
-设置为 `Focus Mode Pin` 的 GPIO 引脚需要保持低电平以保持专注模式的激活。需要使用拨动开关、滑动开关或锁定开关以正确使用此插件。
+设置为 `Focus Mode Pin` 的 GPIO 引脚需要保持低电平以保持专注模式的激活。需要使用拨动开关、滑动开关或锁定开关才能使用 `Focus Mode Pin`。
 
+也可以通过快捷键操作 [专注模式切换](../hotkeys.mdx#专注模式切换)（可在 [快捷键设置](../web-configurator/menu-pages/01-settings.mdx#快捷键设置) 中配置）启用或禁用专注模式。按下该快捷键将激活专注模式，按住该快捷键 3 秒将关闭专注模式。
 ### 安装
 
 安装方式取决于使用的是拨动开关、滑动开关还是锁定开关。通常情况下，将开关的一侧连接到设置为 `Focus Mode Pin` 的 GPIO 引脚。将开关的另一侧或如果有 3 个触点则连接中心触点到任何 GND 引脚。
