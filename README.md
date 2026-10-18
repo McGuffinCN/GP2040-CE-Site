@@ -2,7 +2,7 @@
 
 这是 GP2040-CE 游戏控制器固件的文档库。它由 [Docusaurus](https://docusaurus.io/) 提供支持，可以在 [这里](https://gp2040-ce.info) 找到。
 
-此仓库为由 ChatGPT-4O 翻译的 fork，其中 main 分支为 [中文镜像站](https://gp2040.guff.in/) 的源码；i18n-zh-CN 分支为（准备）推送到 [OpenStickCommunity 官方仓库](https://github.com/OpenStickCommunity/Site) 的分支。区别在于 main 分支默认语言为中文，且默认按键标签为 XInput。
+此仓库为添加了中文翻译的 fork，默认语言为中文，且默认按键标签为 `XInput`。
 
 ## 构建网站
 
