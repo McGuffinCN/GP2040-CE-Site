@@ -41,6 +41,24 @@ const boards = {
         },
         {
             name: translate({
+                id: 'boards.microcontroller.pico2.name',
+                message: 'Raspberry Pi Pico 2',
+            }),
+            configName: 'Pico2',
+            pinout: '/controller-build/wiring#raspberry-pi-pico',
+            website: 'https://www.raspberrypi.com/products/raspberry-pi-pico-2/',
+            image: '/img/boards/Pico2.jpg',
+            supported: true,
+            desc: () => (
+                <p>
+                    <Translate id="boards.microcontroller.pico2.desc">
+                        {'The Raspberry Pi Pico 2 is a powerful, low-cost board based on the Raspberry Pi RP2350 microcontroller.'}
+                    </Translate>
+                </p>
+            ),
+        },
+        {
+            name: translate({
                 id: 'boards.microcontroller.kb2040.name',
                 message: 'Adafruit KB2040',
             }),
@@ -181,6 +199,42 @@ const boards = {
                         }}
                     >
                         {'The ARC Controller is an accessibility controller. This was designed by {TheTrain} taking some design ideas from {jfedor2} as well as the universal standards for accessibility controller connectors.'}
+                    </Translate>
+                </p>
+            ),
+        },
+        {
+            name: translate({
+                id: 'boards.community.asi_lvl_abc.name',
+                message: 'ASi LVL ABC',
+            }),
+            configName: 'ASiLVLABC',
+            pinout: null,
+            website: 'https://asindo.pro/products/lvl-abc',
+            image: '/img/boards/ASiLVLABC.jpg',
+            category: 'closed',
+            desc: () => (
+                <p>
+                    <Translate id="boards.community.asi_lvl_abc.desc">
+                        {'The ASi LVL ABC Controller is a compact leverless controller created by ASIndo.'}
+                    </Translate>
+                </p>
+            ),
+        },
+        {
+            name: translate({
+                id: 'boards.community.asi_lvl_wasd.name',
+                message: 'ASi LVL WASD',
+            }),
+            configName: 'ASiLVLWASD',
+            pinout: null,
+            website: 'https://asindo.pro/collections/lvl/products/lvl-wasd',
+            image: '/img/boards/ASiLVLWASD.jpg',
+            category: 'closed',
+            desc: () => (
+                <p>
+                    <Translate id="boards.community.asi_lvl_wasd.desc">
+                        {'The ASi LVL WASD Controller is a compact leverless controller created by ASIndo.'}
                     </Translate>
                 </p>
             ),
@@ -387,6 +441,33 @@ const boards = {
         },
         {
             name: translate({
+                id: 'boards.community.granola_beacon.name',
+                message: 'Granola Beacon',
+            }),
+            configName: 'GranolaBeacon',
+            pinout: null,
+            website: 'https://granola.games/products/beacon',
+            image: '/img/boards/GranolaBeacon.jpg',
+            category: 'closed',
+            desc: () => (
+                <p>
+                    <Translate
+                        id="boards.community.granola_beacon.desc"
+                        values={{
+                            site: (
+                                <a href="https://granola.games/products/beacon" target="_blank" rel="noreferrer">
+                                    Granola Beacon
+                                </a>
+                            ),
+                        }}
+                    >
+                        {'Configuration for the {site}'}
+                    </Translate>
+                </p>
+            ),
+        },
+        {
+            name: translate({
                 id: 'boards.community.haute42.name',
                 message: 'Haute42 Series',
             }),
@@ -529,6 +610,33 @@ const boards = {
                             site: (
                                 <a href="https://mavercade.com/" target="_blank" rel="noreferrer">
                                     Mavercade Rev2
+                                </a>
+                            ),
+                        }}
+                    >
+                        {'Configuration for the {site}. These revisions use a Waveshare RP2040-Zero board.'}
+                    </Translate>
+                </p>
+            ),
+        },
+        {
+            name: translate({
+                id: 'boards.community.mavercade_rev3.name',
+                message: 'Mavercade Rev3',
+            }),
+            configName: 'MavercadeRev3',
+            pinout: null,
+            website: 'https://mavercade.com/',
+            image: '/img/boards/MavercadeRev3.jpg',
+            category: 'closed',
+            desc: () => (
+                <p>
+                    <Translate
+                        id="boards.community.mavercade_rev3.desc"
+                        values={{
+                            site: (
+                                <a href="https://mavercade.com/" target="_blank" rel="noreferrer">
+                                    Mavercade Rev3
                                 </a>
                             ),
                         }}

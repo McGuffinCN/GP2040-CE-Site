@@ -785,6 +785,12 @@
   "boards.microcontroller.pico_w.desc": {
     "message": "树莓派 Pico W 是基于树莓派 RP2040 微控制器的功能强大且低成本的开发板。"
   },
+  "boards.microcontroller.pico2.name": {
+    "message": "树莓派 Pico 2"
+  },
+  "boards.microcontroller.pico2.desc": {
+    "message": "树莓派 Pico 2 是基于树莓派 RP2350 微控制器的功能强大且低成本的开发板。"
+  },
   "boards.microcontroller.kb2040.name": {
     "message": "Adafruit KB2040"
   },
@@ -820,6 +826,18 @@
   },
   "boards.community.arc.desc": {
     "message": "ARC 控制器是一款无障碍控制器。由 {TheTrain} 设计，借鉴了 {jfedor2} 的一些设计理念以及通用的无障碍控制器连接标准。"
+  },
+  "boards.community.asi_lvl_abc.name": {
+    "message": "ASi LVL ABC"
+  },
+  "boards.community.asi_lvl_abc.desc": {
+    "message": "ASi LVL ABC 是由 ASIndo 推出的一款紧凑型无摇杆控制器。"
+  },
+  "boards.community.asi_lvl_wasd.name": {
+    "message": "ASi LVL WASD"
+  },
+  "boards.community.asi_lvl_wasd.desc": {
+    "message": "ASi LVL WASD 是由 ASIndo 推出的一款紧凑型无摇杆控制器。"
   },
   "boards.community.flatbox_rev4.name": {
     "message": "Flatbox Rev 4"
@@ -863,6 +881,12 @@
   "boards.community.granola.desc": {
     "message": "用于 {granola} 的配置。PCB 和设计文件可在 {repo} 找到。"
   },
+  "boards.community.granola_beacon.name": {
+    "message": "Granola Beacon"
+  },
+  "boards.community.granola_beacon.desc": {
+    "message": "适用于 {site} 的配置"
+  },
   "boards.community.haute42.name": {
     "message": "Haute42 系列"
   },
@@ -897,6 +921,12 @@
     "message": "Mavercade Rev2"
   },
   "boards.community.mavercade_rev2.desc": {
+    "message": "适用于 {site} 的配置。这些版本使用 Waveshare RP2040-Zero 板。"
+  },
+  "boards.community.mavercade_rev3.name": {
+    "message": "Mavercade Rev3"
+  },
+  "boards.community.mavercade_rev3.desc": {
     "message": "适用于 {site} 的配置。这些版本使用 Waveshare RP2040-Zero 板。"
   },
   "boards.community.mistercade_v2.name": {

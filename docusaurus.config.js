@@ -4,7 +4,13 @@
 const lightCodeTheme = require("prism-react-renderer").themes.github;
 const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 
-const releaseVersion = "0.7.11";
+const releaseVersion = "0.7.12";
+
+const releaseLink = `<a href="https://github.com/OpenStickCommunity/GP2040-CE/releases/tag/v${releaseVersion}" target="_blank">GP2040-CE Releases</a>`;
+const announcementContent = {
+  en: `New Version Available! To get the v${releaseVersion} update, go to ${releaseLink}`,
+  zh: `新版本已发布！请前往 ${releaseLink} 获取 v${releaseVersion} 更新`,
+};
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -67,7 +73,7 @@ const config = {
       },
       announcementBar: {
         id: "new_release",
-        content: `New Version Available! To get the v${releaseVersion} update, go to <a href="https://github.com/OpenStickCommunity/GP2040-CE/releases/tag/v${releaseVersion}" target="_blank">GP2040-CE Releases</a>`,
+        content: announcementContent.en,
         backgroundColor: "#ec008c",
         textColor: "#FFFFFF",
         isCloseable: true,
@@ -192,4 +198,11 @@ const config = {
   ],
 };
 
-module.exports = config;
+// Exported as a function: Docusaurus caches this module but re-invokes the function for each
+// locale build, after setting DOCUSAURUS_CURRENT_LOCALE, so the banner can be localized.
+module.exports = () => {
+  const locale = process.env.DOCUSAURUS_CURRENT_LOCALE;
+  config.themeConfig.announcementBar.content =
+    announcementContent[locale] ?? announcementContent.en;
+  return config;
+};
